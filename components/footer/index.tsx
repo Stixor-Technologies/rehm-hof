@@ -1,11 +1,12 @@
 import React from "react";
+import Link from "next/link";
+import Image from "next/image";
 import logo from "@/public/assets/images/logo.svg";
 import hyestLogo from "@/public/assets/images/hyest-logo.svg";
-import Image from "next/image";
-import Link from "next/link";
 
 const Footer = () => {
-  const linkGroupClasses = "flex flex-col px-5 text-lg leading-[2.125rem]";
+  const linkGroupClasses =
+    "flex flex-col lg:px-4 2xl:px-5 text-base lg:text-sm xl:text-lg  xl:leading-[2.125rem]";
 
   const link = (href: string, text: string, needUppercase: boolean = false) => (
     <Link href={href} className={`${needUppercase && "uppercase"}`}>
@@ -22,10 +23,10 @@ const Footer = () => {
   );
 
   return (
-    <div className="min-h-[34.688rem] w-full px-[11.25rem] pb-[6.238rem] pt-[6.25rem] 2xl:bg-bone">
-      <div className="grid grid-cols-2 gap-10 text-secondary">
-        <div className="flex flex-col gap-y-32">
-          <div className="flex justify-between">
+    <div className="3xl:px-[11.25rem] w-full bg-bone p-4 pt-10 sm:p-10 xl:min-h-[34.688rem] xl:pb-[6.238rem] xl:pt-[6.25rem] 2xl:px-36">
+      <div className="grid gap-10 text-secondary md:grid-cols-2 md:gap-5 xl:gap-10">
+        <div className="4xl:gap-y-32 flex flex-col gap-y-5 xl:gap-y-28">
+          <div className="flex flex-col justify-between gap-5 lg:flex-row lg:gap-0">
             <Image
               src={logo}
               alt="Rehm Logo"
@@ -35,7 +36,7 @@ const Footer = () => {
             />
 
             <div
-              className={`${linkGroupClasses} me-11 h-[9.813rem] w-[22.25rem] gap-0`}
+              className={`${linkGroupClasses} gap-0 md:h-[9.813rem] md:w-[22.25rem] xl:me-11`}
             >
               {link("/", "BAUHERR", true)}
               {link("/", "Grundstücksgesellschaft Rehmstraße")}
@@ -47,12 +48,12 @@ const Footer = () => {
 
           {paragraph(
             "HINWEIS: Der Maklervertrag mit uns kommt entweder durch schriftliche Vereinbarung oder durch die Inanspruchnahme unserer Maklertätigkeit auf der Basis dieses Objekt-Exposés und seiner Bedingungen zustande. Die mit dem Abschluss eines Kaufvertrages entstehenden Kosten, Steuern undAbgaben (Notariatsgebühren, Grunderwerbssteuer, Gerichtskosten) sowie etwaige Finanzierungskosten sind vom",
-            "h-[4.375rem]",
+            "xl:h-[4.375rem]",
           )}
         </div>
 
-        <div className="flex flex-col space-y-[3.875rem]">
-          <div className="flex justify-between">
+        <div className="4xl:space-y-[3.875rem] flex flex-col space-y-5 md:space-y-10 xl:space-y-10">
+          <div className="flex flex-col justify-between gap-5 lg:flex-row lg:gap-0">
             <Image
               src={hyestLogo}
               alt="Hyest Logo"
@@ -61,7 +62,7 @@ const Footer = () => {
               className="max-h-[3.676rem]"
             />
 
-            <div className={`${linkGroupClasses} w-[22.5rem]`}>
+            <div className={`${linkGroupClasses} md:w-[22.5rem]`}>
               {link("/", "VERTRIEB", true)}
               {link("/", "HYEST Real Estate GmbH")}
               {link("/", "Jungfernstieg 50")}
@@ -81,7 +82,7 @@ const Footer = () => {
 
           {paragraph(
             "Käufer zu tragen. Die Courtage, die jeweils von Käufer und Verkäufer in gleicher Höhe von 2,68 % inkl. gesetzl. MwSt. auf den Kaufpreis an die HYEST Real Estate GmbH zu zahlen ist, ist bei notariellem Vertragsabschluss fällig.",
-            "h-[3.25rem]",
+            "xl:h-[3.25rem]",
           )}
         </div>
       </div>
