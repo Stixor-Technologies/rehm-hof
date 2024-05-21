@@ -10,7 +10,7 @@ const ImpressumDatenschutzTemplate = ({
 }) => {
   return (
     <div className="bg-white text-secondary">
-      <div className="bg-impressum-datenschutz-header relative min-h-[25rem] w-screen bg-cover bg-center bg-no-repeat">
+      <div className="relative min-h-[25rem] w-screen bg-impressum-datenschutz-header bg-cover bg-center bg-no-repeat">
         <Image
           src={"/assets/images/key.svg"}
           alt="Key image"
