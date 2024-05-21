@@ -59,7 +59,7 @@ const config: Config = {
           "@screen 2xl": {
             maxWidth: "1536px",
           },
-          "@screen 3xl": {
+          "@screen 4xl": {
             maxWidth: "1920px",
             paddingLeft: "11.25rem",
             paddingRight: "11.25rem",
