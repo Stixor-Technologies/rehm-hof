@@ -1,7 +1,12 @@
+import Header from "@/components/header";
 import React from "react";
 
 const Datenschutz = () => {
-  return <div>Datenschutz</div>;
+  return (
+    <div>
+      <Header />
+    </div>
+  );
 };
 
 export default Datenschutz;
