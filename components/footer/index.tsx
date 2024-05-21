@@ -1,8 +1,6 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import logo from "@/public/assets/images/logo.svg";
-import hyestLogo from "@/public/assets/images/hyest-logo.svg";
 
 const Footer = () => {
   const linkGroupClasses =
@@ -39,7 +37,7 @@ const Footer = () => {
         <div className="flex flex-col gap-y-5 xl:gap-y-28 4xl:gap-y-32">
           <div className={containerClasses}>
             <Image
-              src={logo}
+              src={"/assets/images/logo.svg"}
               alt="Rehm Logo"
               width={160}
               height={79.74}
@@ -66,7 +64,7 @@ const Footer = () => {
         <div className="flex flex-col space-y-5 md:space-y-10 xl:space-y-10 4xl:space-y-[3.875rem]">
           <div className={containerClasses}>
             <Image
-              src={hyestLogo}
+              src={"/assets/images/hyest-logo.svg"}
               alt="Hyest Logo"
               width={160.15}
               height={58.82}

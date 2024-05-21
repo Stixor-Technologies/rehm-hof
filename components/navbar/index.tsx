@@ -1,7 +1,6 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import logo from "@/public/assets/images/logo.svg";
 
 const Navbar = () => {
   return (
@@ -14,7 +13,7 @@ const Navbar = () => {
 
       <Link href={"/"}>
         <Image
-          src={logo}
+          src={"/assets/images/logo.svg"}
           alt="Logo"
           width={110}
           height={54.82}
