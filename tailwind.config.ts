@@ -8,6 +8,9 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      screens: {
+        "3xl": "1920px",
+      },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
@@ -27,6 +30,42 @@ const config: Config = {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
+    function ({ addComponents }) {
+      addComponents({
+        ".container": {
+          width: "100%",
+          paddingLeft: "1rem",
+          paddingRight: "1rem",
+          marginLeft: "auto",
+          marginRight: "auto",
+          "@screen sm": {
+            maxWidth: "100%",
+            paddingLeft: "2rem",
+            paddingRight: "2rem",
+          },
+          "@screen md": {
+            maxWidth: "100%",
+          },
+          "@screen lg": {
+            maxWidth: "100%",
+          },
+          "@screen xl": {
+            maxWidth: "1280px",
+          },
+          "@screen 2xl": {
+            maxWidth: "1536px",
+          },
+          "@screen 3xl": {
+            maxWidth: "1920px",
+            paddingLeft: "11.25rem",
+            paddingRight: "11.25rem",
+          },
+        },
+      });
+    },
+  ],
 };
 export default config;
