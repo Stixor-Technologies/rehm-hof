@@ -12,10 +12,18 @@ const Footer = () => {
     "flex flex-col justify-between gap-5 lg:flex-row lg:gap-0";
 
   const link = (href: string, text: string, needUppercase: boolean = false) => (
-    <Link href={href} className={`${needUppercase && "uppercase"}`}>
+    <Link
+      href={href}
+      className={`${needUppercase && "uppercase"} transition-all duration-300 hover:text-primary`}
+    >
       {text}
     </Link>
   );
+
+  const info = (text: string, needUppercase: boolean = false) => (
+    <h2 className={`${needUppercase && "uppercase"}`}>{text}</h2>
+  );
+
   const paragraph = (text: string, className: string = "") => (
     <p
       className={`text-sm leading-[1.125rem] ${className}`}
@@ -26,9 +34,9 @@ const Footer = () => {
   );
 
   return (
-    <div className="3xl:px-[11.25rem] w-full bg-bone p-4 pt-10 sm:p-10 xl:min-h-[34.688rem] xl:pb-[6.238rem] xl:pt-[6.25rem] 2xl:px-36">
+    <div className="w-full bg-bone p-4 pt-10 sm:p-10 xl:min-h-[34.688rem] xl:pb-[6.238rem] xl:pt-[6.25rem] 2xl:px-36 3xl:px-[11.25rem]">
       <div className="grid gap-10 text-secondary md:grid-cols-2 md:gap-5 xl:gap-10">
-        <div className="4xl:gap-y-32 flex flex-col gap-y-5 xl:gap-y-28">
+        <div className="flex flex-col gap-y-5 xl:gap-y-28 4xl:gap-y-32">
           <div className={containerClasses}>
             <Image
               src={logo}
@@ -41,11 +49,11 @@ const Footer = () => {
             <div
               className={`${linkGroupClasses} gap-0 md:h-[9.813rem] md:w-[22.25rem] xl:me-11`}
             >
-              {link("/", "BAUHERR", true)}
-              {link("/", "Grundstücksgesellschaft Rehmstraße")}
-              {link("/", "mbH & Co. KG")}
-              {link("/", "Magdalenenstraße 40")}
-              {link("/", "20148 Hamburg")}
+              {info("BAUHERR", true)}
+              {info("Grundstücksgesellschaft Rehmstraße")}
+              {info("mbH & Co. KG")}
+              {info("Magdalenenstraße 40")}
+              {info("20148 Hamburg")}
             </div>
           </div>
 
@@ -55,7 +63,7 @@ const Footer = () => {
           )}
         </div>
 
-        <div className="4xl:space-y-[3.875rem] flex flex-col space-y-5 md:space-y-10 xl:space-y-10">
+        <div className="flex flex-col space-y-5 md:space-y-10 xl:space-y-10 4xl:space-y-[3.875rem]">
           <div className={containerClasses}>
             <Image
               src={hyestLogo}
@@ -66,20 +74,20 @@ const Footer = () => {
             />
 
             <div className={`${linkGroupClasses} md:w-[22.5rem]`}>
-              {link("/", "VERTRIEB", true)}
-              {link("/", "HYEST Real Estate GmbH")}
-              {link("/", "Jungfernstieg 50")}
-              {link("/", "20354 Hamburg")}
+              {info("VERTRIEB", true)}
+              {info("HYEST Real Estate GmbH")}
+              {info("Jungfernstieg 50")}
+              {info("20354 Hamburg")}
 
               <div className={`${linkGroupClasses} !px-0 pt-[1.313rem]`}>
-                {link("/", "T 040/34 63 40")}
-                {link("/", "E verkauf@hyest.de")}
+                {info("T 040/34 63 40")}
+                {info("E verkauf@hyest.de")}
               </div>
             </div>
 
             <div className={linkGroupClasses}>
-              {link("/", "DATENSCHUTZ", true)}
-              {link("/", "IMPRESSUM", true)}
+              {link("/datenschutz", "DATENSCHUTZ", true)}
+              {link("/impressum", "IMPRESSUM", true)}
             </div>
           </div>
 
