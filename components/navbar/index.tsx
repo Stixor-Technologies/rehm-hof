@@ -5,7 +5,7 @@ import logo from "@/public/assets/images/logo.svg";
 
 const Navbar = () => {
   return (
-    <div className="flex h-[7.688rem] w-full items-center justify-between gap-4 bg-white px-5 md:px-8 lg:px-[3.75rem]">
+    <div className="flex h-[5rem] w-full items-center justify-between gap-4 bg-white px-5 sm:h-[7.688rem] md:px-8 lg:px-[3.75rem]">
       <div className="flex h-9 w-9 cursor-pointer flex-col gap-2.5 sm:w-14  sm:gap-3">
         <div className="border border-black sm:border-2" />
         <div className="border border-black sm:border-2" />
