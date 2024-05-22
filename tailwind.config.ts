@@ -21,6 +21,8 @@ const config: Config = {
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
         "hero-gradient":
           "linear-gradient(90deg, #DCD6C8 0%, rgba(220, 214, 200, 0) 100%)",
+        "impressum-datenschutz-header":
+          "url(../public/assets/images/impressum-datenschutz/header.png)",
       },
       colors: {
         primary: "#2621C5",
