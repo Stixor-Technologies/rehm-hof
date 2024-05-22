@@ -3,7 +3,7 @@ import React, { useRef, useState } from "react";
 import Image from "next/image";
 import OSVG from "@/public/assets/images/o.svg";
 import logo from "@/public/assets/images/logo.svg";
-import Section1Image from "@/public/assets/images/home-page/section3.jpg";
+import Section1Image from "@/public/assets/images/home-page/section1.jpg";
 import InnenraumStaffel from "@/public/assets/images/home-page/Innenraum_Staffel.png";
 import Strassenansicht from "@/public/assets/images/home-page/Strassenansicht.png";
 import Bildergruppe from "@/public/assets/images/home-page/Bildergruppe.jpg";
