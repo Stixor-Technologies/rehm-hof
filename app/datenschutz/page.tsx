@@ -4,10 +4,7 @@ import React from "react";
 const Datenschutz = () => {
   return (
     <ImpressumDatenschutzTemplate title="Datenschutz">
-      <div
-        className="text-base leading-8 text-secondary md:text-xl "
-        style={{ letterSpacing: "0.4px" }}
-      >
+      <div className="text-base leading-8 tracking-[0.025rem] text-secondary md:text-xl">
         <p>
           Personenbezogene Daten (nachfolgend zumeist nur „Daten“ genannt)
           werden von uns nur im Rahmen der Erforderlichkeit sowie zum Zwecke der
