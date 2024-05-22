@@ -34,6 +34,9 @@ const config: Config = {
         navBackground: "#00000029",
         slate: "#F0F1F1",
       },
+      padding: {
+        "7.5": "1.875rem",
+      },
     },
   },
   plugins: [

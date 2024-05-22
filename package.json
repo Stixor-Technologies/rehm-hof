@@ -18,10 +18,12 @@
     ]
   },
   "dependencies": {
+    "formik": "^2.4.6",
     "gsap": "file:gsap-bonus.tgz",
     "next": "^14.1.0",
     "react": "^18",
-    "react-dom": "^18"
+    "react-dom": "^18",
+    "yup": "^1.4.0"
   },
   "devDependencies": {
     "@types/node": "^20",
