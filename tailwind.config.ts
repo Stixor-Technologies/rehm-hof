@@ -16,8 +16,11 @@ const config: Config = {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+        "hero-gradient":
+          "linear-gradient(90deg, #DCD6C8 0%, rgba(220, 214, 200, 0) 100%)",
         "impressum-datenschutz-header":
           "url(../public/assets/images/impressum-datenschutz/header.png)",
+        "kontakt-header": "url(../public/assets/images/kontakt/header.png)",
       },
       colors: {
         primary: "#2621C5",
