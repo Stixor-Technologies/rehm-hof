@@ -41,10 +41,10 @@ const Datenschutz = () => {
           UNSERE DATENSCHUTZERKLÄRUNG IST WIE FOLGT GEGLIEDERT:
         </h2>
         <ol type="I">
-          <li>Informationen über uns als Verantwortliche</li>
-          <li>Rechte der Nutzer und Betroffenen</li>
-          <li>Informationen zur Datenverarbeitung</li>
-          <li>Informationen über uns als Verantwortliche</li>
+          <li>I. Informationen über uns als Verantwortliche</li>
+          <li>II. Rechte der Nutzer und Betroffenen</li>
+          <li>III. Informationen zur Datenverarbeitung</li>
+          <li>I. Informationen über uns als Verantwortliche</li>
         </ol>
         <h2 className="py-7">
           VERANTWORTLICHER ANBIETER DIESES INTERNETAUFTRITTS IM
