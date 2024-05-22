@@ -1,13 +1,15 @@
 import React, { ReactNode } from "react";
 import Image from "next/image";
 
-const ImpressumDatenschutzTemplate = ({
-  title,
-  children,
-}: {
+interface ImpressumDatenschutzTemplateProps {
   title: string;
+  className?: string;
   children: ReactNode;
-}) => {
+}
+
+const ImpressumDatenschutzTemplate: React.FC<
+  ImpressumDatenschutzTemplateProps
+> = ({ title, className = "", children }) => {
   return (
     <div className="bg-white text-secondary">
       <div className="relative min-h-[25rem] w-screen bg-impressum-datenschutz-header bg-cover bg-center bg-no-repeat">
@@ -20,8 +22,8 @@ const ImpressumDatenschutzTemplate = ({
         />
       </div>
 
-      <div className="container py-[6.25rem]">
-        <h1 className="pb-5 text-2xl uppercase text-primary md:pb-[6.25rem] lg:text-4xl xl:text-6xl">
+      <div className={`container py-[6.25rem] ${className}`}>
+        <h1 className="pb-5 text-3xl uppercase text-primary md:pb-10 lg:text-5xl xl:pb-[6.25rem] xl:text-6xl">
           {title}
         </h1>
 
