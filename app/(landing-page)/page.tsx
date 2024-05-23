@@ -141,7 +141,7 @@ const LandingPage = () => {
           </div>
         </div>
         <div
-          className="absolute inset-0 flex items-center bg-hero-gradient "
+          className="bg-hero-gradient absolute inset-0 flex items-center "
           onMouseEnter={handleMouseEnter}
           onMouseLeave={handleMouseLeave}
         >
@@ -195,8 +195,8 @@ const LandingPage = () => {
       <section className="relative">
         <section className="relative z-10 bg-bone bg-opacity-50">
           <div className="container flex flex-col justify-between gap-6 pb-[6.263rem] pt-[2.738rem] lg:flex-row lg:gap-[10vw]">
-            <div className="mt-[3.563rem] lg:order-1 lg:w-[50%] lg:max-w-[47.5rem] 2xl:w-full">
-              <h2 className="text-[clamp(1.6rem,2.4vw,2.813rem)] text-primary sm:w-[50%] lg:w-[70%] 2xl:w-full 2xl:leading-[3.813rem]">
+            <div className="mt-[3.563rem] lg:order-1 lg:w-1/2 lg:max-w-[47.5rem] 2xl:w-full">
+              <h2 className="text-[clamp(1.6rem,2.4vw,2.813rem)] text-primary sm:w-1/2 lg:w-[70%] 2xl:w-full 2xl:leading-[3.813rem]">
                 VIELFALTIGE WOHNMÖGLICHKEITEN IM HAMBURGER CHIC
               </h2>
               <p className="mt-4 tracking-[0.025rem] text-secondary xl:mt-[3.75rem] xl:text-xl xl:leading-[1.938rem]">
