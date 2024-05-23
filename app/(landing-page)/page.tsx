@@ -20,6 +20,7 @@ const LandingPage = () => {
   const image2Ref = useRef<HTMLDivElement | null>(null);
 
   const [isSliderActive, setIsSliderActive] = useState<boolean>(false);
+  const [activeImage, setActiveImage] = useState<number>(1);
 
   const marque1Data = [
     "INDIVIDUELLE GRUNDRISSMÖGLICHKEITEN",
@@ -44,99 +45,112 @@ const LandingPage = () => {
 
   const { contextSafe } = useGSAP();
 
-  const questionClicked = contextSafe(() => {
+  const slideImage = contextSafe(() => {
     const tl = gsap.timeline();
 
     setIsSliderActive(!isSliderActive);
-
     if (!isSliderActive) {
+      setActiveImage(2);
       tl.to(buttonRef.current, {
         right: -50,
       }).to(
         [image1Ref.current, image2Ref.current],
         {
           xPercent: 100,
-          duration: 0.4,
+          duration: 0.5,
           translateY: 0,
-          ease: "none",
         },
         0,
       );
     } else {
+      setActiveImage(1);
       tl.to(buttonRef.current, {
         right: 0,
-      })
-        .to(
-          image2Ref.current,
-          {
-            xPercent: -100,
-            duration: 0.4,
-            translateY: 0,
-            ease: "none",
-          },
-          0,
-        )
-        .to(
-          image1Ref.current,
-          {
-            xPercent: 0,
-            translateY: 0,
-            duration: 0.4,
-            ease: "none",
-          },
-          ">-0.5",
-        );
+      }).to(
+        [image1Ref.current, image2Ref.current],
+        {
+          xPercent: 0,
+          duration: 0.5,
+          translateY: 0,
+        },
+        0,
+      );
     }
   });
 
-  return (
-    <div className="min-h-screen">
-      {/* section# 1*/}
-      <section className="group relative h-[50rem] w-full overflow-hidden">
-        <div className="relative mx-auto h-full w-full max-w-[120rem] overflow-hidden">
-          <Image
-            src={OSVG}
-            ref={buttonRef}
-            width={150}
-            height={300}
-            alt=""
-            onClick={questionClicked}
-            className="absolute right-0 top-16 z-10"
-          />
+  const handleMouseEnter = () => {
+    if (activeImage === 1) {
+      // TODO: These Gsap transition will be different for both images, need to change them later
+      gsap.to(image1Ref.current, {
+        yPercent: -55,
+        scale: 1.15,
+      });
+    } else {
+      gsap.to(image2Ref.current, {
+        yPercent: -55,
+        scale: 1.15,
+      });
+    }
+  };
 
-          <div className="flex h-full">
-            <div ref={image1Ref} className=" shrink-0 overflow-hidden">
+  const handleMouseLeave = () => {
+    gsap.to(activeImage === 1 ? image1Ref.current : image2Ref.current, {
+      yPercent: 0,
+      scale: 1,
+    });
+  };
+
+  return (
+    <div>
+      {/* section# 1*/}
+
+      <section className="relative max-h-[42vw] w-full overflow-hidden">
+        <Image
+          src={OSVG}
+          ref={buttonRef}
+          width={150}
+          height={300}
+          alt="slide-button"
+          onClick={slideImage}
+          className="absolute right-0 top-16 z-10 cursor-pointer"
+        />
+        <div className="relative mx-auto h-full w-full max-w-[120rem] overflow-hidden">
+          <div className=" z-10 flex flex-nowrap items-start">
+            <div ref={image1Ref} className=" w-full  shrink-0 overflow-hidden">
               <Image
                 src={Building}
                 width={1920}
-                height={1600}
-                alt=""
-                className="mx-auto transition-transform duration-500 group-hover:translate-y-[-55%] group-hover:scale-[1.15]"
+                height={800}
+                alt="building"
+                className="mx-auto"
               />
             </div>
 
             <div
               ref={image2Ref}
-              className=" shrink-0 -translate-x-[200%]  overflow-hidden"
+              className=" w-full shrink-0 -translate-x-[200%]  overflow-hidden"
             >
               <Image
                 src={Strassenansicht}
                 width={1920}
                 height={1600}
-                alt=""
-                className="mx-auto transition-transform duration-500 group-hover:translate-y-[-55%] group-hover:scale-[1.15]"
+                alt="strassenansicht"
+                className="mx-auto"
               />
             </div>
           </div>
-
-          <div className="absolute inset-0 flex items-center bg-hero-gradient ">
-            <div className="container">
-              <p className=" text-[clamp(2rem,5vw,5.063rem)] uppercase leading-tight text-white">
-                Leben <br /> Zwischen <br /> stadtpark <br />
-                <span className=" font-semibold text-primary">& </span>
-                alster
-              </p>
-            </div>
+        </div>
+        <div
+          className="bg-hero-gradient absolute inset-0 flex items-center "
+          onMouseEnter={handleMouseEnter}
+          onMouseLeave={handleMouseLeave}
+        >
+          <div className="container">
+            <p className=" text-[clamp(2rem,5vw,5.063rem)] uppercase leading-tight text-white">
+              Leben <br /> Zwischen <br /> stadtpark <br />
+              <span className=" font-semibold text-primary">& </span>
+              alster
+            </p>
           </div>
         </div>
       </section>
@@ -148,7 +162,7 @@ const LandingPage = () => {
             src={Section1Image}
             width={760}
             height={699}
-            alt=""
+            alt="ENTDECKE"
             className="max-h-[43.688rem] w-full lg:max-w-[47.5rem]"
           />
         </div>
@@ -227,20 +241,25 @@ const LandingPage = () => {
         <section className="container my-[6.25rem] flex flex-col gap-16 md:flex-row md:gap-10 2xl:mt-3.5">
           <div className="grid w-full max-w-[47.5rem] flex-1 grid-cols-[53%_21%_26.4%] grid-rows-[45.9%_18.3%_24.3%] place-content-end ">
             <div className="col-span-2 row-start-1 row-end-2">
-              <Image src={Building} alt="" />
+              <Image src={Building} alt="building-sm" />
             </div>
             <div className="col-span-2 col-start-2 row-span-2">
-              <Image src={Bildergruppe} alt="" className="h-full" />
+              <Image src={Bildergruppe} alt="bildergruppe" className="h-full" />
             </div>
           </div>
           <div className="flex-1 self-end">
-            <Image src={InnenraumStaffel} width={760} height={494} alt="" />
+            <Image
+              src={InnenraumStaffel}
+              width={760}
+              height={494}
+              alt="InnenraumStaffel"
+            />
           </div>
         </section>
 
         <Image
           src={Pattern}
-          alt=""
+          alt="pattern"
           fill
           className="absolute !-left-5 !bottom-2.5 !top-auto hidden max-h-[58.375rem] max-w-[21.25rem] object-cover lg:block"
         />
@@ -292,7 +311,7 @@ const LandingPage = () => {
           src={Section6Image}
           fill
           className="absolute object-cover"
-          alt=""
+          alt="layout-tree"
         />
       </section>
     </div>
