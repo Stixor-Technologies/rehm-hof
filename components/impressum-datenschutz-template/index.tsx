@@ -16,14 +16,16 @@ const ImpressumDatenschutzTemplate: React.FC<
         <Image
           src={"/assets/images/key.svg"}
           alt="Key image"
-          width={150}
-          height={40}
-          className="absolute right-0 top-8"
+          width={254}
+          height={73.67}
+          className="absolute right-0 top-16"
         />
       </div>
 
-      <div className={`container py-[6.25rem] ${className}`}>
-        <h1 className="pb-5 text-3xl uppercase text-primary md:pb-10 lg:text-5xl xl:pb-[6.25rem] xl:text-6xl">
+      <div
+        className={`container pb-[4.563rem] pt-10 md:pb-[7.563rem] md:pt-16 xl:pb-[12.063rem] xl:pt-[6.25rem] ${className}`}
+      >
+        <h1 className="pb-5 text-3xl uppercase text-primary md:pb-10 lg:text-5xl xl:pb-[5.625rem] xl:text-[4.063rem]">
           {title}
         </h1>
 

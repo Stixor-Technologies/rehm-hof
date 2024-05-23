@@ -5,14 +5,14 @@ const Datenschutz = () => {
   return (
     <ImpressumDatenschutzTemplate title="Datenschutz">
       <div className="text-base leading-8 tracking-[0.025rem] text-secondary md:text-xl">
-        <p>
+        <p className="leading-8">
           Personenbezogene Daten (nachfolgend zumeist nur „Daten“ genannt)
           werden von uns nur im Rahmen der Erforderlichkeit sowie zum Zwecke der
           Bereitstellung eines funktionsfähigen und nutzerfreundlichen
           Internetauftritts, inklusive seiner Inhalte und der dort angebotenen
           Leistungen, verarbeitet.
         </p>
-        <p>
+        <p className="leading-8">
           Gemäß Art. 4 Ziffer 1. der Verordnung (EU) 2016/679, also der
           Datenschutz-Grundverordnung (nachfolgend nur „DSGVO“ genannt), gilt
           als „Verarbeitung“ jeder mit oder ohne Hilfe automatisierter Verfahren
@@ -24,7 +24,7 @@ const Datenschutz = () => {
           Bereitstellung, den Abgleich oder die Verknüpfung, die Einschränkung,
           das Löschen oder die Vernichtung.
         </p>
-        <p>
+        <p className="leading-8">
           Mit der nachfolgenden Datenschutzerklärung informieren wir Sie
           insbesondere über Art, Umfang, Zweck, Dauer und Rechtsgrundlage der
           Verarbeitung personenbezogener Daten, soweit wir entweder allein oder
@@ -34,20 +34,20 @@ const Datenschutz = () => {
           eingesetzten Fremdkomponenten, soweit hierdurch Dritte Daten in
           wiederum eigener Verantwortung verarbeiten.
         </p>
-        <h2 className="py-7">
+        <h2 className="py-7 leading-8">
           UNSERE DATENSCHUTZERKLÄRUNG IST WIE FOLGT GEGLIEDERT:
         </h2>
-        <ol type="I">
+        <ol type="I" className="leading-8">
           <li>I. Informationen über uns als Verantwortliche</li>
           <li>II. Rechte der Nutzer und Betroffenen</li>
           <li>III. Informationen zur Datenverarbeitung</li>
-          <li>I. Informationen über uns als Verantwortliche</li>
+          <li>IV. Informationen über uns als Verantwortliche</li>
         </ol>
-        <h2 className="py-7">
+        <h2 className="py-7 leading-8">
           VERANTWORTLICHER ANBIETER DIESES INTERNETAUFTRITTS IM
           DATENSCHUTZRECHTLICHEN SINNE IST:
         </h2>
-        <ol type="I">
+        <ol type="I" className="leading-8">
           <li>HYEST Real Estate GmbH</li>
           <li>
             Geschäftsführer: Julian Lorenz, Benjamin Marcus Tödt, Sven Thomsen
@@ -59,12 +59,14 @@ const Datenschutz = () => {
           <li>F +49 40 35 12 62</li>
           <li>E-Mail: info@hyest.de</li>
         </ol>
-        <h2 className="py-7">II. RECHTE DER NUTZER UND BETROFFENEN</h2>
-        <p>
+        <h2 className="py-7 leading-8">
+          II. RECHTE DER NUTZER UND BETROFFENEN
+        </h2>
+        <p className="leading-8">
           Mit Blick auf die nachfolgend noch näher beschriebene
           Datenverarbeitung haben die Nutzer und Betroffenen das Recht:
         </p>
-        <ul>
+        <ul className="leading-8">
           <li>
             {" "}
             – auf Bestätigung, ob sie betreffende Daten verarbeitet werden, auf
@@ -95,7 +97,7 @@ const Datenschutz = () => {
             werden (vgl. auch Art. 77 DSGVO).
           </li>
         </ul>
-        <p>
+        <p className="leading-8">
           Darüber hinaus ist der Anbieter dazu verpflichtet, alle Empfänger,
           denen gegenüber Daten durch den Anbieter offengelegt worden sind, über
           jedwede Berichtigung oder Löschung von Daten oder die Einschränkung
@@ -105,7 +107,7 @@ const Datenschutz = () => {
           Aufwand verbunden ist. Unbeschadet dessen hat der Nutzer ein Recht auf
           Auskunft über diese Empfänger.
         </p>
-        <p>
+        <p className="leading-8">
           Ebenfalls haben die Nutzer und Betroffenen nach Art. 21 DSGVO das
           Recht auf Widerspruch gegen die künftige Verarbeitung der sie
           betreffenden Daten, sofern die Daten durch den Anbieter nach Maßgabe
@@ -113,16 +115,18 @@ const Datenschutz = () => {
           ein Widerspruch gegen die Datenverarbeitung zum Zwecke der
           Direktwerbung statthaft.
         </p>
-        <h2 className="py-7">III. INFORMATIONEN ZUR DATENVERARBEITUNG</h2>
-        <p>
+        <h2 className="py-7 leading-8">
+          III. INFORMATIONEN ZUR DATENVERARBEITUNG
+        </h2>
+        <p className="leading-8">
           Ihre bei Nutzung unseres Internetauftritts verarbeiteten Daten werden
           gelöscht oder gesperrt, sobald der Zweck der Speicherung entfällt, der
           Löschung der Daten keine gesetzlichen Aufbewahrungspflichten
           entgegenstehen und nachfolgend keine anderslautenden Angaben zu
           einzelnen Verarbeitungsverfahren gemacht werden.
         </p>
-        <h2>Kontaktanfragen / Kontaktmöglichkeit</h2>
-        <p>
+        <h2 className="leading-8">Kontaktanfragen / Kontaktmöglichkeit</h2>
+        <p className="leading-8">
           Sofern Sie per Kontaktformular oder E-Mail mit uns in Kontakt treten,
           werden die dabei von Ihnen angegebenen Daten zur Bearbeitung Ihrer
           Anfrage genutzt. Die Angabe der Daten ist zur Bearbeitung und
@@ -130,14 +134,16 @@ const Datenschutz = () => {
           können wir Ihre Anfrage nicht oder allenfalls eingeschränkt
           beantworten.
         </p>
-        <p>
+        <p className="leading-8">
           Rechtsgrundlage für diese Verarbeitung ist Art. 6 Abs. 1 lit. b)
           DSGVO.
         </p>
-        Ihre Daten werden gelöscht, sofern Ihre Anfrage abschließend beantwortet
-        worden ist und der Löschung keine gesetzlichen Aufbewahrungspflichten
-        entgegenstehen, wie bspw. bei einer sich etwaig anschließenden
-        Vertragsabwicklung.
+        <p className="leading-8">
+          Ihre Daten werden gelöscht, sofern Ihre Anfrage abschließend
+          beantwortet worden ist und der Löschung keine gesetzlichen
+          Aufbewahrungspflichten entgegenstehen, wie bspw. bei einer sich etwaig
+          anschließenden Vertragsabwicklung.
+        </p>
       </div>
     </ImpressumDatenschutzTemplate>
   );

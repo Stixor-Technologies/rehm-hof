@@ -3,10 +3,10 @@ import ImpressumDatenschutzTemplate from "@/components/impressum-datenschutz-tem
 
 const Impressum = () => {
   return (
-    <ImpressumDatenschutzTemplate title="Impressum" className="!pb-[8.25rem]">
-      <div className="grid gap-0 text-base leading-8 tracking-[0.025rem] text-secondary md:grid-cols-2 md:gap-10 md:text-xl 2xl:gap-[11.313rem]">
-        <div className="4xl:w-[43.125rem]">
-          <h2 className="pb-7">ANGABEN GEMÄß § 5 TMG</h2>
+    <ImpressumDatenschutzTemplate title="Impressum">
+      <div className="grid gap-0 text-base tracking-[0.025rem] text-secondary md:grid-cols-2 md:gap-10 md:text-xl 2xl:gap-[11.313rem]">
+        <div className="leading-8 4xl:h-[85.5rem] 4xl:w-[43.125rem]">
+          <h2 className="pb-6">ANGABEN GEMÄß § 5 TMG</h2>
           <ul>
             <li>HYEST Real Estate GmbH</li>
             <li>Jungfernstieg 50</li>
@@ -17,13 +17,13 @@ const Impressum = () => {
             <li>Handelsregister: HRB 170512</li>
             <li>Registergericht: Amtsgericht Hamburg</li>
           </ul>
-          <ul className="pt-7">
+          <ul className="pt-6">
             <li>Umsatzsteuer-ID</li>
             <li>Umsatzsteuer-Identifikationsnummer gemäß §27 a</li>
             <li>Umsatzsteuergesetz:</li>
             <li>DE346184951</li>
           </ul>
-          <h2 className="py-7">HAFTUNG FÜR INHALTE</h2>
+          <h2 className="py-6">HAFTUNG FÜR INHALTE</h2>
           <p>
             Als Diensteanbieter sind wir gemäß § 7 Abs.1 TMG für eigene Inhalte
             auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach
@@ -40,7 +40,7 @@ const Impressum = () => {
             Bekanntwerden von entsprechenden Rechtsverletzungen werden wir diese
             Inhalte umgehend entfernen.
           </p>
-          <h2 className="py-7">URHEBERRECHT</h2>
+          <h2 className="py-6">URHEBERRECHT</h2>
           <p>
             Die durch die Seitenbetreiber erstellten Inhalte und Werke auf
             diesen Seiten unterliegen dem deutschen Urheberrecht. Die
@@ -57,7 +57,8 @@ const Impressum = () => {
             werden wir derartige Inhalte umgehend entfernen.
           </p>
         </div>
-        <div>
+
+        <div className="leading-8">
           <h2 className="pb-7">KONTAKT</h2>
           <ul>
             <li>T +49 40 34 68 34</li>
