@@ -33,24 +33,33 @@ const KontaktForm = () => {
       privacyPolicy: false,
     },
     validationSchema: Yup.object({
-      salutation: Yup.string().required("Required"),
-      firstName: Yup.string().required("Required"),
-      lastName: Yup.string().required("Required"),
-      street: Yup.string().required("Required"),
-      postalCode: Yup.string().required("Required"),
-      city: Yup.string().required("Required"),
-      phone: Yup.string().required("Required"),
-      email: Yup.string().email("Invalid email address").required("Required"),
+      salutation: Yup.string().required("Erforderlich"),
+      firstName: Yup.string().required("Erforderlich"),
+      lastName: Yup.string().required("Erforderlich"),
+      street: Yup.string().required("Erforderlich"),
+      postalCode: Yup.string()
+        .required("Erforderlich")
+        .max(5, "Es sind maximal 5 Zeichen zulässig"),
+      city: Yup.string().required("Erforderlich"),
+      phone: Yup.string()
+        .required("Erforderlich")
+        .matches(
+          /^\+?(\d[-\s]?){10,14}$/,
+          "Ungültige Telefonnummer. Bitte nur Zahlen, Leerzeichen und Bindestriche verwenden.",
+        ),
+      email: Yup.string()
+        .email("Ungültige E-Mail-Adresse")
+        .required("Erforderlich"),
       contactMethod: Yup.array()
-        .min(1, "Select at least one contact method")
-        .required("Required"),
-      roomsFrom: Yup.number().integer("Must be an integer").nullable(),
-      roomsTo: Yup.number().integer("Must be an integer").nullable(),
-      areaFrom: Yup.number().integer("Must be an integer").nullable(),
-      areaTo: Yup.number().integer("Must be an integer").nullable(),
+        .min(1, "Wählen Sie mindestens eine Kontaktmethode aus")
+        .required("Erforderlich"),
+      roomsFrom: Yup.number().integer("Muss eine Nummer sein").nullable(),
+      roomsTo: Yup.number().integer("Muss eine Nummer sein").nullable(),
+      areaFrom: Yup.number().integer("Muss eine Nummer sein").nullable(),
+      areaTo: Yup.number().integer("Muss eine Nummer sein").nullable(),
       privacyPolicy: Yup.bool()
-        .oneOf([true], "You must accept the privacy policy")
-        .required("Required"),
+        .oneOf([true], "Sie müssen die Datenschutzerklärung akzeptieren")
+        .required("Erforderlich"),
     }),
     onSubmit: (values) => {
       console.log(values);
@@ -83,21 +92,21 @@ const KontaktForm = () => {
 
   return (
     <div className="mx-auto bg-slate px-4 py-16 sm:px-8 md:pb-[6.107rem] md:pt-[6.25rem] 4xl:mx-0 4xl:px-[11.25rem]">
-      <div className="flex justify-between pb-[4.101rem]">
-        <h1 className="text-[4.063rem] uppercase leading-[4.688rem] text-primary">
+      <div className="flex flex-col justify-between gap-5 pb-8 sm:pb-[4.101rem] lg:flex-row">
+        <h1 className="text-3xl uppercase leading-10 text-primary md:text-[4.063rem] md:leading-[4.688rem]">
           INTERESSE?
           <br /> LASS DICH BERATEN
         </h1>
 
-        <div className=" text-base leading-8 tracking-[0.025rem] text-secondary md:text-xl">
-          <p className="pb-[1.875rem]">
+        <div className="text-base leading-8 tracking-[0.025rem] text-secondary md:text-xl">
+          <p className="pb-5 sm:pb-[1.875rem]">
             Gerne beraten wir dich und senden dir weitere Informationen zu.
             <br />
             Zur einfachen Bearbeitung deiner Anfrage nutz’ bitte unser
             Kontaktformular.
           </p>
 
-          <div className="flex gap-[3.75rem]">
+          <div className="flex flex-col gap-5 sm:flex-row sm:gap-[3.75rem]">
             <ul>
               <li>HYEST Real Estate GmbH</li>
               <li>Jungfernstieg 50</li>
@@ -112,15 +121,18 @@ const KontaktForm = () => {
         </div>
       </div>
 
-      <form onSubmit={formik.handleSubmit} className="text-lg text-secondary">
-        <div className="mb-[3.75rem]">
-          <label className="pb-7.5 flex items-center">
+      <form
+        onSubmit={formik.handleSubmit}
+        className="text-lg leading-8 text-secondary placeholder:leading-[1.875rem]"
+      >
+        <div className="mb-10 text-base sm:mb-[3.75rem] md:text-xl">
+          <label className="flex items-center pb-7.5">
             <input
               type="checkbox"
               name="requestType"
-              value={formik.values.requestType}
-              onChange={() => formik.handleChange}
-              className="mr-[1.594rem] h-[27.9px] w-[27.5px]"
+              value="Objektbezogene Anfrage und Informationen (insb. Exposé)"
+              onChange={formik.handleChange}
+              className="custom-checkbox"
             />
             Objektbezogene Anfrage und Informationen (insb. Exposé)
           </label>
@@ -129,15 +141,15 @@ const KontaktForm = () => {
             <input
               type="checkbox"
               name="requestType"
-              value="general"
+              value="Allgemeine Kontaktanfrage"
               onChange={formik.handleChange}
-              className="mr-[1.594rem] h-[27.9px] w-[27.5px]"
+              className="custom-checkbox"
             />
             Allgemeine Kontaktanfrage
           </label>
         </div>
 
-        <div className="mb-[3.75rem] flex gap-16">
+        <div className="mb-10 flex flex-col gap-10 sm:mb-[3.75rem] sm:flex-row sm:gap-16">
           {inputTemplate({
             name: "salutation",
             placeholder: "Anrede*",
@@ -155,7 +167,7 @@ const KontaktForm = () => {
           })}
         </div>
 
-        <div className="mb-[3.75rem] flex gap-16">
+        <div className="mb-10 flex flex-col gap-10 sm:mb-[3.75rem] sm:flex-row sm:gap-16">
           {inputTemplate({
             name: "firstName",
             placeholder: "Vorname*",
@@ -173,7 +185,7 @@ const KontaktForm = () => {
           })}
         </div>
 
-        <div className="mb-[3.75rem] flex gap-16">
+        <div className="mb-10 flex flex-col gap-10 sm:mb-[3.75rem] sm:flex-row sm:gap-16">
           {inputTemplate({
             name: "lastName",
             placeholder: "Name*",
@@ -191,175 +203,162 @@ const KontaktForm = () => {
           })}
         </div>
 
-        <div className="mb-4">
-          <label className="block  ">
-            Telefon
-            <input
-              type="text"
-              name="phone"
-              onChange={formik.handleChange}
-              onBlur={formik.handleBlur}
-              value={formik.values.phone}
-              className="mt-1 block w-full rounded-md border-gray-300 shadow-sm"
-            />
-            {formik.touched.phone && formik.errors.phone ? (
+        <div className="mb-10 flex flex-col-reverse gap-10 sm:mb-[3.75rem] sm:flex-row sm:gap-16">
+          <div className="w-full text-xl">
+            <span>Bevorzugte Kontaktart</span>
+
+            <label className="flex items-center pb-[2.076rem] pt-11">
+              <input
+                type="checkbox"
+                name="contactMethod"
+                value="Post"
+                onChange={formik.handleChange}
+                className="custom-checkbox"
+              />
+              Post
+            </label>
+
+            <label className="flex items-center pb-[2.076rem]">
+              <input
+                type="checkbox"
+                name="contactMethod"
+                value="Telefon"
+                onChange={formik.handleChange}
+                className="custom-checkbox"
+              />
+              Telefon
+            </label>
+
+            <label className="flex items-center">
+              <input
+                type="checkbox"
+                name="contactMethod"
+                value="Email"
+                onChange={formik.handleChange}
+                className="custom-checkbox"
+              />
+              E-Mail
+            </label>
+            {formik.touched.contactMethod && formik.errors.contactMethod ? (
               <div className="mt-1 text-sm text-red-500">
-                {formik.errors.phone}
+                {formik.errors.contactMethod}
               </div>
             ) : null}
-          </label>
+          </div>
+
+          <div className="flex w-full flex-col gap-[3.75rem]">
+            {inputTemplate({
+              name: "phone",
+              placeholder: "Telefon*",
+              value: formik.values.phone,
+              touched: formik.touched.phone,
+              error: formik.errors.phone,
+            })}
+
+            {inputTemplate({
+              name: "email",
+              placeholder: "E-Mail*",
+              value: formik.values.email,
+              touched: formik.touched.email,
+              error: formik.errors.email,
+            })}
+          </div>
         </div>
 
-        <div className="mb-4">
-          <label className="block  ">
-            E-Mail
-            <input
-              type="email"
-              name="email"
-              onChange={formik.handleChange}
-              onBlur={formik.handleBlur}
-              value={formik.values.email}
-              className="mt-1 block w-full rounded-md border-gray-300 shadow-sm"
-            />
-            {formik.touched.email && formik.errors.email ? (
-              <div className="mt-1 text-sm text-red-500">
-                {formik.errors.email}
-              </div>
-            ) : null}
-          </label>
-        </div>
+        <div className="mb-10 flex flex-col items-end gap-10 text-xl sm:mb-[3.75rem] sm:flex-row sm:gap-16">
+          <div className="w-full">
+            <h2 className="pb-[2.188rem]">NACHRICHT (FREIWILLIG)</h2>
 
-        <div className="mb-4">
-          <span className="block  ">Bevorzugte Kontaktart</span>
-          <label className="block  ">
-            <input
-              type="checkbox"
-              name="contactMethod"
-              value="Post"
-              onChange={formik.handleChange}
-              className="mr-2"
-            />
-            Post
-          </label>
-          <label className="block  ">
-            <input
-              type="checkbox"
-              name="contactMethod"
-              value="Telefon"
-              onChange={formik.handleChange}
-              className="mr-2"
-            />
-            Telefon
-          </label>
-          <label className="block  ">
-            <input
-              type="checkbox"
-              name="contactMethod"
-              value="Email"
-              onChange={formik.handleChange}
-              className="mr-2"
-            />
-            E-Mail
-          </label>
-          {formik.touched.contactMethod && formik.errors.contactMethod ? (
-            <div className="mt-1 text-sm text-red-500">
-              {formik.errors.contactMethod}
-            </div>
-          ) : null}
-        </div>
-
-        <div className="mb-4">
-          <label className="block  ">
-            Nachricht (freiwillig)
             <textarea
               name="message"
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
               value={formik.values.message}
-              className="mt-1 block w-full rounded-md border-gray-300 shadow-sm"
+              className="w-full border border-black bg-transparent p-2 leading-[1.875rem] tracking-[0.023rem] outline-none placeholder:text-secondary placeholder:text-opacity-50 3xl:h-[9.688rem]"
             />
-          </label>
-        </div>
-
-        <div className="mb-4">
-          <div className="flex space-x-4">
-            <label className="block w-full  ">
-              Zimmer von
-              <input
-                type="number"
-                name="roomsFrom"
-                onChange={formik.handleChange}
-                onBlur={formik.handleBlur}
-                value={formik.values.roomsFrom}
-                className="mt-1 block w-full rounded-md border-gray-300 shadow-sm"
-              />
-            </label>
-            <label className="block w-full  ">
-              Zimmer bis
-              <input
-                type="number"
-                name="roomsTo"
-                onChange={formik.handleChange}
-                onBlur={formik.handleBlur}
-                value={formik.values.roomsTo}
-                className="mt-1 block w-full rounded-md border-gray-300 shadow-sm"
-              />
-            </label>
           </div>
-        </div>
 
-        <div className="mb-4">
-          <div className="flex space-x-4">
-            <label className="block w-full  ">
-              Fläche von (qm)
-              <input
-                type="number"
-                name="areaFrom"
-                onChange={formik.handleChange}
-                onBlur={formik.handleBlur}
-                value={formik.values.areaFrom}
-                className="mt-1 block w-full rounded-md border-gray-300 shadow-sm"
-              />
-            </label>
-            <label className="block w-full  ">
-              Fläche bis (qm)
-              <input
-                type="number"
-                name="areaTo"
-                onChange={formik.handleChange}
-                onBlur={formik.handleBlur}
-                value={formik.values.areaTo}
-                className="mt-1 block w-full rounded-md border-gray-300 shadow-sm"
-              />
-            </label>
-          </div>
-        </div>
+          <div className="flex w-full flex-col gap-[1.688rem] sm:gap-[2.063rem] sm:ps-2">
+            <div className="flex flex-col gap-[1.688rem] sm:flex-row">
+              <div className="grid items-center gap-4 sm:grid-cols-2 sm:gap-[1.125rem] md:max-w-[15.75rem]">
+                <label>Zimmer von</label>
+                <input
+                  type="number"
+                  name="roomsFrom"
+                  onChange={formik.handleChange}
+                  onBlur={formik.handleBlur}
+                  value={formik.values.roomsFrom}
+                  className="w-full border border-black bg-transparent p-2 leading-[1.875rem] tracking-[0.023rem] outline-none placeholder:text-secondary placeholder:text-opacity-50 3xl:h-[3.813rem] 3xl:w-[7.5rem]"
+                />
+              </div>
 
-        <div className="mb-4">
-          <label className="block  ">
-            <input
-              type="checkbox"
-              name="privacyPolicy"
-              onChange={formik.handleChange}
-              onBlur={formik.handleBlur}
-              checked={formik.values.privacyPolicy}
-              className="mr-2"
-            />
-            Ich habe die Datenschutzerklärung gelesen und akzeptiere sie.
-          </label>
-          {formik.touched.privacyPolicy && formik.errors.privacyPolicy ? (
-            <div className="mt-1 text-sm text-red-500">
-              {formik.errors.privacyPolicy}
+              <div className="flex flex-col items-start gap-4 sm:flex-row sm:items-center sm:gap-[1.563rem] md:max-w-[10.75rem]">
+                <label className="w-[1.688rem]">bis</label>
+                <input
+                  type="number"
+                  name="roomsTo"
+                  onChange={formik.handleChange}
+                  onBlur={formik.handleBlur}
+                  value={formik.values.roomsTo}
+                  className="colspan-2 w-full border border-black bg-transparent p-2 leading-[1.875rem] tracking-[0.023rem] outline-none placeholder:text-secondary placeholder:text-opacity-50 3xl:h-[3.813rem] 3xl:w-[7.5rem]"
+                />
+              </div>
             </div>
-          ) : null}
+
+            <div className="flex flex-col gap-[1.688rem] sm:flex-row">
+              <div className="grid items-center gap-4 sm:grid-cols-2 sm:gap-[1.125rem] md:max-w-[15.75rem]">
+                <label>Fläche von</label>
+                <input
+                  type="number"
+                  name="areaFrom"
+                  onChange={formik.handleChange}
+                  onBlur={formik.handleBlur}
+                  value={formik.values.areaFrom}
+                  className="w-full border border-black bg-transparent p-2 leading-[1.875rem] tracking-[0.023rem] outline-none placeholder:text-secondary placeholder:text-opacity-50 3xl:h-[3.813rem] 3xl:w-[7.5rem]"
+                />
+              </div>
+
+              <div className="flex flex-col items-start gap-4 sm:flex-row sm:items-center sm:gap-[1.563rem] md:max-w-[10.75rem]">
+                <label className="w-[1.688rem]">bis</label>
+                <input
+                  type="number"
+                  name="areaTo"
+                  onChange={formik.handleChange}
+                  onBlur={formik.handleBlur}
+                  value={formik.values.areaTo}
+                  className="colspan-2 w-full border border-black bg-transparent p-2 leading-[1.875rem] tracking-[0.023rem] outline-none placeholder:text-secondary placeholder:text-opacity-50 3xl:h-[3.813rem] 3xl:w-[7.5rem]"
+                />
+              </div>
+            </div>
+          </div>
         </div>
 
-        <button
-          type="submit"
-          className="rounded-md bg-blue-500 px-4 py-2 text-white shadow-sm hover:bg-blue-600"
-        >
-          Absenden
-        </button>
+        <div className="flex flex-col items-start gap-10 text-xl lg:flex-row lg:items-end lg:gap-16">
+          <div>
+            <label className="flex !w-full items-center text-xl leading-8 lg:items-start">
+              <input
+                type="checkbox"
+                name="privacyPolicy"
+                onChange={formik.handleChange}
+                onBlur={formik.handleBlur}
+                checked={formik.values.privacyPolicy}
+                className="custom-checkbox"
+              />
+              Datenschutzrichtlinie*
+              <br />
+              Ich bin mit den Erklärungen der DATENSCHUTZRICHTLINIE
+              einverstanden.
+            </label>
+
+            {formik.touched.privacyPolicy && formik.errors.privacyPolicy ? (
+              <div className="mt-1 text-sm text-red-500">
+                {formik.errors.privacyPolicy}
+              </div>
+            ) : null}
+          </div>
+
+          <h2 className="lg:ps-2">* Pflichtfelder</h2>
+        </div>
       </form>
     </div>
   );
