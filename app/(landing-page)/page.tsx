@@ -52,7 +52,7 @@ const LandingPage = () => {
     if (!isSliderActive) {
       setActiveImage(2);
       tl.to(buttonRef.current, {
-        right: -50,
+        right: -40,
       }).to(
         [image1Ref.current, image2Ref.current],
         {
@@ -112,7 +112,7 @@ const LandingPage = () => {
           height={300}
           alt="slide-button"
           onClick={slideImage}
-          className="absolute right-0 top-16 z-10 cursor-pointer"
+          className="absolute -right-20 top-3 z-10 cursor-pointer sm:right-0 sm:top-16"
         />
         <div className="relative mx-auto h-full w-full max-w-[120rem] overflow-hidden">
           <div className=" z-10 flex flex-nowrap items-start">
@@ -146,7 +146,7 @@ const LandingPage = () => {
           onMouseLeave={handleMouseLeave}
         >
           <div className="container">
-            <p className=" text-[clamp(2rem,5vw,5.063rem)] uppercase leading-tight text-white">
+            <p className=" text-[clamp(1.5rem,5.5vw,6.563rem)] uppercase leading-tight text-white">
               Leben <br /> Zwischen <br /> stadtpark <br />
               <span className=" font-semibold text-primary">& </span>
               alster
