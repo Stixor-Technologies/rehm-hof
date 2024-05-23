@@ -1,22 +1,20 @@
 import KontaktForm from "@/components/kontakt-form";
 import KontaktInformation from "@/components/kontakt-information";
 import React from "react";
-// import Image from "next/image";
 
 const Kontakt = () => {
   return (
     <div className="bg-white text-secondary">
-      <div className=" max-h-[50rem] min-h-[50rem] overflow-hidden">
-        <div className="bg-kontakt-header relative z-0 min-h-[50rem]  bg-cover bg-center bg-no-repeat transition-all duration-700 hover:scale-150">
-          {/* <div className="bg-hero-gradient absolute inset-0 flex items-center ">
+      <div className="group relative max-h-[50rem] min-h-[50rem] overflow-hidden">
+        <div className="z-0 min-h-[50rem] bg-kontakt-header bg-cover bg-center bg-no-repeat transition-all duration-700 group-hover:scale-150" />
+        <div className="absolute inset-0 max-w-[150px] bg-hero-gradient bg-no-repeat md:max-w-[400px] xl:max-w-[600px] 2xl:max-w-[800px] 3xl:max-w-[900px] 4xl:max-w-[1100px]">
+          <div className="bg-pattern flex h-full  items-center bg-no-repeat">
             <div className="container">
-              <p className=" text-[clamp(2rem,5vw,5.063rem)] uppercase leading-tight text-white">
-                Leben <br /> Zwischen <br /> stadtpark <br />
-                <span className=" font-semibold text-primary">& </span>
-                alster
+              <p className=" text-[clamp(1.5rem,5vw,4.063rem)] uppercase leading-tight text-white">
+                MAßGEFERTIGTE IMMOBILIENLÖSUNGEN FÜR IHRE ANFORDERUNGEN
               </p>
             </div>
-          </div> */}
+          </div>
         </div>
       </div>
 

@@ -335,7 +335,7 @@ const KontaktForm = () => {
 
         <div className="flex flex-col items-start gap-10 text-xl lg:flex-row lg:items-end lg:gap-16">
           <div>
-            <label className="flex !w-full items-center text-xl leading-8 lg:items-start">
+            <label className="flex !w-full items-center text-base leading-8 md:text-xl lg:items-start">
               <input
                 type="checkbox"
                 name="privacyPolicy"

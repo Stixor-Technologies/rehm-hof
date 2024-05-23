@@ -24,6 +24,7 @@ const config: Config = {
         "impressum-datenschutz-header":
           "url(../public/assets/images/impressum-datenschutz/header.png)",
         "kontakt-header": "url(../public/assets/images/kontakt/header.png)",
+        pattern: "url(../public/assets/images/Pattern-white.svg)",
       },
       colors: {
         primary: "#2621C5",
