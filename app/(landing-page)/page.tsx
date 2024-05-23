@@ -141,7 +141,7 @@ const LandingPage = () => {
           </div>
         </div>
         <div
-          className="bg-hero-gradient absolute inset-0 flex items-center "
+          className="absolute inset-0 flex items-center bg-hero-gradient "
           onMouseEnter={handleMouseEnter}
           onMouseLeave={handleMouseLeave}
         >
