@@ -25,7 +25,7 @@ const ImpressumDatenschutzTemplate: React.FC<
           alt="Key image"
           width={254}
           height={73.67}
-          className=" absolute right-0 top-4 z-10 w-24 max-w-[15.875rem] cursor-pointer sm:top-16 lg:top-[3.938rem] lg:h-[4.563rem] lg:w-auto"
+          className=" absolute right-0 top-4 z-10 w-24 max-w-[15.875rem] sm:top-16 lg:top-[3.938rem] lg:h-[4.563rem] lg:w-auto"
         />
       </div>
 
