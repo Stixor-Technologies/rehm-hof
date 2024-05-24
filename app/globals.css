@@ -31,3 +31,12 @@
     @apply text-[clamp(2rem,5.5vw,6.563rem)] xl:w-[7.688rem] 2xl:leading-[6.75rem];
   }
 }
+
+.custom-checkbox {
+  @apply mr-4 flex h-[27.9px] w-[27.5px] min-w-[27.5px] appearance-none items-center justify-center border border-black bg-transparent sm:mr-[1.594rem];
+}
+
+.custom-checkbox:checked::before {
+  content: "X";
+  @apply font-extralight text-black;
+}

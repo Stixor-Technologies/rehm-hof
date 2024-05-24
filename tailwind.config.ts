@@ -23,6 +23,8 @@ const config: Config = {
           "linear-gradient(90deg, #DCD6C8 0%, rgba(220, 214, 200, 0) 100%)",
         "impressum-datenschutz-header":
           "url(../public/assets/images/impressum-datenschutz/header.png)",
+        "kontakt-header": "url(../public/assets/images/kontakt/header.png)",
+        pattern: "url(../public/assets/images/Pattern-white.svg)",
       },
       colors: {
         primary: "#2621C5",
@@ -35,6 +37,9 @@ const config: Config = {
         boneFade: "#DCD6C800",
         navBackground: "#00000029",
         slate: "#F0F1F1",
+      },
+      padding: {
+        "7.5": "1.875rem",
       },
     },
   },
