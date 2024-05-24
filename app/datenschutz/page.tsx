@@ -68,7 +68,6 @@ const Datenschutz = () => {
         </p>
         <ul className="leading-8">
           <li>
-            {" "}
             – auf Bestätigung, ob sie betreffende Daten verarbeitet werden, auf
             Auskunft über die verarbeiteten Daten, auf weitere Informationen
             über die Datenverarbeitung sowie auf Kopien der Daten (vgl. auch
@@ -85,7 +84,6 @@ const Datenschutz = () => {
             Verarbeitung nach Maßgabe von Art. 18 DSGVO;
           </li>
           <li>
-            {" "}
             – auf Erhalt der sie betreffenden und von ihnen bereitgestellten
             Daten und auf Übermittlung dieser Daten an andere
             Anbieter/Verantwortliche (vgl. auch Art. 20 DSGVO);

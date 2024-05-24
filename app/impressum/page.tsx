@@ -58,7 +58,7 @@ const Impressum = () => {
           </p>
         </div>
 
-        <div className="leading-8">
+        <div className="leading-8 4xl:w-[43.063rem]">
           <h2 className="pb-7">KONTAKT</h2>
           <ul>
             <li>T +49 40 34 68 34</li>
