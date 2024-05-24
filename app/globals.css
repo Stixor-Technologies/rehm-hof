@@ -7,6 +7,10 @@
     text-wrap: balance;
   }
 
+  .hamburg-winter-text {
+    @apply tracking-[0.025rem] text-secondary xl:text-xl xl:leading-[2rem];
+  }
+
   .marquee-list {
     @apply relative flex whitespace-nowrap;
   }
