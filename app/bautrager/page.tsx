@@ -171,7 +171,7 @@ const Bautrager = () => {
             height={73}
             alt="slide-button"
             onClick={slideImage}
-            className=" absolute right-0 top-4 z-10 w-24 max-w-[254px] cursor-pointer sm:top-16 lg:top-[3.938rem] lg:h-[73px] lg:w-auto"
+            className=" absolute right-0 top-4 z-10 w-24 max-w-[15.875rem] cursor-pointer sm:top-16 lg:top-[3.938rem] lg:h-[4.563rem] lg:w-auto"
           />
 
           <div className=" z-10 flex flex-nowrap items-start">
@@ -214,7 +214,7 @@ const Bautrager = () => {
             className=" hidden lg:block"
           />
 
-          <div className="mb-[110px] grid  flex-1 grid-cols-[53%_21%_26.4%] grid-rows-[61.6%_24.4%_32.6%] lg:mt-[6.798rem] ">
+          <div className="mb-[6.875rem] grid  flex-1 grid-cols-[53%_21%_26.4%] grid-rows-[61.6%_24.4%_32.6%] lg:mt-[6.798rem] ">
             <div
               ref={gridImage1Container}
               className="col-[1_/_span_2] row-[1_/_span_2]  overflow-hidden"
