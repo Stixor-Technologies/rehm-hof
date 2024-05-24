@@ -1,13 +1,210 @@
-import React from "react";
+"use client";
+import React, { useRef, useState } from "react";
 import Image from "next/image";
 import TorHous from "@/public/assets/images/bautrager/tor-haus.svg";
-import Pinneberger from "@/public/assets/images/bautrager/Pinneberger.png";
+import Pinneberger from "@/public/assets/images/bautrager/pinneberger.png";
 import Strassenansicht from "@/public/assets/images/bautrager/strassenansicht.png";
+import PinnebergerSM from "@/public/assets/images/bautrager/pinneberger_sm.png";
+import StrassenansichtSM from "@/public/assets/images/bautrager/strassenansich_sm.png";
+import OSVG from "@/public/assets/images/o.svg";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
 
 const Bautrager = () => {
+  const buttonRef = useRef<HTMLImageElement | null>(null);
+  const slideImage1Ref = useRef<HTMLDivElement | null>(null);
+  const slideImage2Ref = useRef<HTMLDivElement | null>(null);
+
+  const gridImage1Ref = useRef<HTMLImageElement | null>(null);
+  const gridImage2Ref = useRef<HTMLImageElement | null>(null);
+  const gridImage1Container = useRef<HTMLImageElement | null>(null);
+  const gridImage2Container = useRef<HTMLImageElement | null>(null);
+
+  const [isSliderActive, setIsSliderActive] = useState<boolean>(false);
+  const [activeImage, setActiveImage] = useState<number>(1);
+
+  const { contextSafe } = useGSAP();
+
+  // animation for Sliding images
+  const slideImage = contextSafe(() => {
+    const tl = gsap.timeline();
+
+    setIsSliderActive(!isSliderActive);
+    if (!isSliderActive) {
+      setActiveImage(2);
+      tl.to(buttonRef.current, {
+        right: -40,
+      }).to(
+        [slideImage1Ref.current, slideImage2Ref.current],
+        {
+          xPercent: 100,
+          duration: 0.5,
+          scale: 1,
+        },
+        0,
+      );
+    } else {
+      setActiveImage(1);
+      tl.to(buttonRef.current, {
+        right: 0,
+      }).to(
+        [slideImage1Ref.current, slideImage2Ref.current],
+        {
+          xPercent: 0,
+          duration: 0.5,
+          scale: 1,
+        },
+        0,
+      );
+    }
+  });
+
+  const handleMouseEnterSlideAnimation = () => {
+    if (activeImage === 1) {
+      // TODO: These Gsap transition will be different for both images, need to change them later
+      gsap.to(slideImage1Ref.current, {
+        yPercent: -26,
+        transformOrigin: "bottom right",
+        scale: 1.15,
+      });
+    } else {
+      gsap.to(slideImage2Ref.current, {
+        yPercent: -45,
+        scale: 1.15,
+      });
+    }
+  };
+
+  const handleMouseLeaveSlideAnimation = () => {
+    gsap.to(
+      activeImage === 1 ? slideImage1Ref.current : slideImage2Ref.current,
+      {
+        yPercent: 0,
+        scale: 1,
+      },
+    );
+  };
+
+  // animation for Grid images
+  const handleMouseEnterGrid = contextSafe(() => {
+    console.log("asas");
+    const tl = gsap.timeline();
+    console.log(gridImage1Ref?.current?.clientWidth);
+
+    tl.to(gridImage1Ref.current, {
+      scale: 1.2,
+      transformOrigin: "top left",
+      duration: 0.4,
+    })
+      .to(
+        gridImage1Container.current,
+        {
+          translateX: -10,
+          translateY: -10,
+          duration: 0.4,
+        },
+        0,
+      )
+      .to(
+        gridImage2Container.current,
+        {
+          translateX: 10,
+          duration: 0.4,
+        },
+        0,
+      )
+      .to(
+        gridImage2Ref.current,
+        {
+          scale: 1.7,
+          transformOrigin: "bottom center",
+          duration: 0.4,
+        },
+        0,
+      );
+  });
+  const handleMouseLeaveGrid = contextSafe(() => {
+    const tl = gsap.timeline();
+    tl.to(gridImage1Ref.current, {
+      scale: 1,
+      duration: 0.4,
+    })
+      .to(
+        gridImage1Container.current,
+        {
+          translateX: 0,
+          translateY: 0,
+          duration: 0.4,
+        },
+        0,
+      )
+      .to(
+        gridImage2Container.current,
+        {
+          translateX: 0,
+          duration: 0.4,
+        },
+        0,
+      )
+      .to(
+        gridImage2Ref.current,
+        {
+          scale: 1,
+          duration: 0.4,
+        },
+        0,
+      );
+  });
+
   return (
     <div>
-      <section className="container my-10 flex flex-col gap-0 lg:flex-row lg:gap-10 xl:my-[6.25rem]">
+      <section
+        className="max-h-[20.9vw] w-full overflow-hidden"
+        onMouseEnter={handleMouseEnterSlideAnimation}
+        onMouseLeave={handleMouseLeaveSlideAnimation}
+      >
+        <div className="relative mx-auto h-full w-full max-w-[120rem] overflow-hidden">
+          <Image
+            src={OSVG}
+            ref={buttonRef}
+            width={254}
+            height={73}
+            alt="slide-button"
+            onClick={slideImage}
+            className=" absolute right-0 top-4 z-10 w-24 max-w-[254px] cursor-pointer sm:top-16 lg:top-[3.938rem] lg:h-[73px] lg:w-auto"
+          />
+
+          <div className=" z-10 flex flex-nowrap items-start">
+            <div
+              ref={slideImage1Ref}
+              className=" w-full shrink-0 -translate-y-[30%] overflow-hidden"
+            >
+              <Image
+                src={Pinneberger}
+                width={1920}
+                height={800}
+                alt="building"
+                className="mx-auto"
+              />
+            </div>
+
+            <div
+              ref={slideImage2Ref}
+              className=" w-full shrink-0 -translate-x-[200%] overflow-hidden lg:-translate-y-[8%]"
+            >
+              <Image
+                src={Strassenansicht}
+                width={1920}
+                height={1600}
+                alt="strassenansicht"
+                className="mx-auto"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="container my-10 flex flex-col sm:gap-20 lg:flex-row lg:gap-10 xl:my-[6.25rem]">
         <div className="w-full lg:max-w-[47.5rem]">
           <Image
             src={TorHous}
@@ -17,13 +214,32 @@ const Bautrager = () => {
             className=" hidden lg:block"
           />
 
-          <div className="grid flex-1  grid-cols-[53%_21%_26.4%] grid-rows-[43.05%_17%_22.8%] lg:mt-[6.798rem] ">
-            <div className="col-span-2">
-              <Image src={Strassenansicht} alt="building-sm" />
+          <div className="mb-[110px] grid  flex-1 grid-cols-[53%_21%_26.4%] grid-rows-[61.6%_24.4%_32.6%] lg:mt-[6.798rem] ">
+            <div
+              ref={gridImage1Container}
+              className="col-[1_/_span_2] row-[1_/_span_2]  overflow-hidden"
+            >
+              <Image
+                src={StrassenansichtSM}
+                alt="strassenansicht-sm"
+                ref={gridImage1Ref}
+                onMouseEnter={handleMouseEnterGrid}
+                onMouseLeave={handleMouseLeaveGrid}
+                className="h-full"
+              />
             </div>
-
-            <div className="col-span-2 col-start-2 row-span-2">
-              <Image src={Pinneberger} alt="bildergruppe" className="h-full" />
+            <div
+              ref={gridImage2Container}
+              className="col-[2_/_span_3] row-[2_/_span_3] overflow-hidden"
+              onMouseEnter={handleMouseEnterGrid}
+              onMouseLeave={handleMouseLeaveGrid}
+            >
+              <Image
+                ref={gridImage2Ref}
+                src={PinnebergerSM}
+                alt="pinneberger-sm"
+                className="h-full"
+              />
             </div>
           </div>
         </div>
