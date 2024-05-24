@@ -61,7 +61,6 @@ const Bautrager = () => {
 
   const handleMouseEnterSlideAnimation = () => {
     if (activeImage === 1) {
-      // TODO: These Gsap transition will be different for both images, need to change them later
       gsap.to(slideImage1Ref.current, {
         yPercent: -26,
         transformOrigin: "bottom right",
@@ -87,9 +86,7 @@ const Bautrager = () => {
 
   // animation for Grid images
   const handleMouseEnterGrid = contextSafe(() => {
-    console.log("asas");
     const tl = gsap.timeline();
-    console.log(gridImage1Ref?.current?.clientWidth);
 
     tl.to(gridImage1Ref.current, {
       scale: 1.2,
