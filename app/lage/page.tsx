@@ -148,7 +148,7 @@ const Lage = () => {
       {/* section# 1 */}
 
       <section className="mx-auto mt-10 flex max-w-[1920px] flex-col gap-10 bg-slate px-4 pb-[4.535rem] pt-12 sm:px-8 lg:mt-[5.625rem] lg:flex-row lg:pr-0 lg:pt-[5.84rem] 4xl:pl-[11.25rem]">
-        <div className=" flex-1   xl:ml-[10.313rem] ">
+        <div className=" flex-1  xl:ml-[10.313rem] ">
           <p className=" w-full text-[clamp(2rem,5.5vw,6.563rem)] uppercase leading-tight text-secondary 2xl:leading-[6.75rem]">
             Leben <br /> Zwischen <br /> stadtpark <br />
             <span className=" font-semibold text-primary">& </span>
