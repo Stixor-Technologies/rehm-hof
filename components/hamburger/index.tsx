@@ -58,6 +58,9 @@ const Hamburger = ({
       type="button"
       onClick={() => {
         setIsMenuOpen(!isMenuOpen);
+        !isMenuOpen
+          ? document.body.classList.add("!overflow-hidden")
+          : document.body.classList.remove("!overflow-hidden");
       }}
     >
       <div
