@@ -113,9 +113,7 @@ const Lage = () => {
   const { contextSafe } = useGSAP();
 
   const handleMouseEnter = contextSafe(() => {
-    console.log("asas");
     const tl = gsap.timeline();
-    console.log(image1Ref?.current?.clientWidth);
     tl.to(image1Ref.current, {
       scaleX: 1.35,
       scaleY: 1.2,
