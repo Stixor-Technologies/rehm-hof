@@ -2,6 +2,7 @@
 import React from "react";
 import * as Yup from "yup";
 import { useFormik } from "formik";
+import { toast } from "react-toastify";
 
 interface InputType {
   type?: string;
@@ -53,31 +54,73 @@ const KontaktForm = () => {
       contactMethod: Yup.array()
         .min(1, "Wählen Sie mindestens eine Kontaktmethode aus")
         .required("Erforderlich"),
-      roomsFrom: Yup.number().integer("Muss eine Nummer sein").nullable(),
-      roomsTo: Yup.number().integer("Muss eine Nummer sein").nullable(),
-      areaFrom: Yup.number().integer("Muss eine Nummer sein").nullable(),
-      areaTo: Yup.number().integer("Muss eine Nummer sein").nullable(),
+      roomsFrom: Yup.number()
+        .integer("Muss eine Nummer sein")
+        .min(1, "Muss größer als 0 sein")
+        .nullable(),
+      roomsTo: Yup.number()
+        .integer("Muss eine Nummer sein")
+        .min(1, "Muss größer als 0 sein")
+        .nullable()
+        .when("roomsFrom", (roomsFrom, schema) =>
+          roomsFrom
+            ? schema.min(
+                roomsFrom,
+                "Zimmer 'bis' muss größer oder gleich 'von' sein",
+              )
+            : schema,
+        ),
+      areaFrom: Yup.number()
+        .integer("Muss eine Nummer sein")
+        .min(1, "Muss größer als 0 sein")
+        .nullable(),
+      areaTo: Yup.number()
+        .integer("Muss eine Nummer sein")
+        .min(1, "Muss größer als 0 sein")
+        .nullable()
+        .when("areaFrom", (areaFrom, schema) =>
+          areaFrom
+            ? schema.min(
+                areaFrom,
+                "Fläche 'bis' muss größer oder gleich 'von' sein",
+              )
+            : schema,
+        ),
       privacyPolicy: Yup.bool()
         .oneOf([true], "Sie müssen die Datenschutzerklärung akzeptieren")
         .required("Erforderlich"),
     }),
     onSubmit: async (values) => {
-      console.log(values);
       try {
         const emailTemplate = `<div>
-          <h3>You've got a new inquiry from  </h3>
+          <h2>${values.requestType.length > 0 ? `Sie haben eine neue Anfrage des Typs erhalten ${values.requestType[0]} aus ${values.firstName} ${values.lastName}` : `Sie haben eine Anfrage von erhalten ${values.firstName} ${values.lastName}`}</h2>
 
-          <h4>Name: </h4>
+          <h3>Persönliche Daten</h3>
+          <p><strong>Name:</strong>${values.firstName} ${values.lastName}</p>
+          <p><strong>Anrede:</strong>${values.salutation}</p>
+          <p><strong>E-Mail: </strong>${values.email}</p>
+          <p><strong>Telefon: </strong>${values.phone}</p>
+          <p><strong>Ausgewählte Kontaktmethode: </strong>${values.contactMethod[0]}</p>
+          
+          <h3>Adresse</h3>
+          <p><strong>Straße: </strong>${values.street}</p>
+          <p><strong>PLZ: </strong>${values.postalCode}</p>
+          <p><strong>Ort: </strong>${values.city}</p>
 
-          <h4>Email: ${values.email}</h4>
+          <h3>Raum und Fläche</h3>
+          <p><strong>Zimmer von: </strong>${values.roomsFrom}</p>
+          <p><strong>Zimmer bis: </strong>${values.roomsTo}</p>
+          <p><strong>Fläche von: </strong>${values.areaFrom}</p>
+          <p><strong>Zimmer bis: </strong>${values.areaTo}</p>
 
-         <p>Message:  </p></div>`;
+
+          <p><strong>NACHRICHT: </strong> ${values.message}</p></div>`;
 
         const res = await fetch("/api/contact", {
           body: JSON.stringify({
             email: values.email,
-            fullname: values.firstName,
-            subject: "Hello G",
+            fullname: values.firstName + "" + values.lastName,
+            subject: `Anfrage von ${values.firstName} ${values.lastName}`,
             htmlContent: emailTemplate,
           }),
           headers: {
@@ -88,23 +131,30 @@ const KontaktForm = () => {
 
         const resp = await res.json();
 
-        console.log("RESPONSe=>", resp);
-
-        // if (resp?.code ? resp.code === 202 : resp[0].statusCode === 202) {
-        //   reset();
-        //   toast.success(
-        //     "Thank you for contacting us. Our team will reach you soon",
-        //     {
-        //       position: width > 768 ? "bottom-right" : "top-right",
-        //       ...TOAST_DETAILS,
-        //     },
-        //   );
-        // } else {
-        //   toast.error("Please try again", {
-        //     position: width > 768 ? "bottom-right" : "top-right",
-        //     ...TOAST_DETAILS,
-        //   });
-        // }
+        if (resp?.code ? resp.code === 202 : resp[0].statusCode === 202) {
+          toast.success(
+            "Danke, dass Sie uns kontaktiert haben. Unser Team wird Sie bald erreichen",
+            {
+              position: "top-right",
+              progressClassName: "fancy-progress-bar",
+              autoClose: 2000,
+              hideProgressBar: false,
+              closeOnClick: true,
+              pauseOnHover: true,
+              draggable: true,
+            },
+          );
+        } else {
+          toast.error("Bitte versuchen Sie es später noch einmal", {
+            position: "top-right",
+            progressClassName: "fancy-progress-bar",
+            autoClose: 2000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+          });
+        }
       } catch (error) {
         console.error(error);
       }
@@ -174,7 +224,7 @@ const KontaktForm = () => {
         className="text-lg leading-8 text-secondary placeholder:leading-[1.875rem]"
       >
         <div className="mb-10 text-base sm:mb-[3.75rem] md:text-xl">
-          <label className="pb-7.5 flex items-center">
+          <label className="flex items-center pb-7.5">
             <input
               type="checkbox"
               name="requestType"
@@ -281,7 +331,7 @@ const KontaktForm = () => {
               <input
                 type="checkbox"
                 name="contactMethod"
-                value="Email"
+                value="E-Mail"
                 onChange={formik.handleChange}
                 className="custom-checkbox"
               />
@@ -327,56 +377,70 @@ const KontaktForm = () => {
           </div>
 
           <div className="flex w-full flex-col gap-[1.688rem] sm:gap-[2.063rem] sm:ps-2">
-            <div className="flex flex-col gap-[1.688rem] sm:flex-row">
-              <div className="grid items-center gap-4 sm:grid-cols-2 sm:gap-[1.125rem] md:max-w-[15.75rem]">
-                <label>Zimmer von</label>
-                <input
-                  type="number"
-                  name="roomsFrom"
-                  onChange={formik.handleChange}
-                  onBlur={formik.handleBlur}
-                  value={formik.values.roomsFrom}
-                  className="w-full border border-black bg-transparent p-2 leading-[1.875rem] tracking-[0.023rem] outline-none placeholder:text-secondary placeholder:text-opacity-50 3xl:h-[3.813rem] 3xl:w-[7.5rem]"
-                />
-              </div>
+            <div>
+              <div className="flex flex-col gap-[1.688rem] sm:flex-row">
+                <div className="grid items-center gap-4 sm:grid-cols-2 sm:gap-[1.125rem] md:max-w-[15.75rem]">
+                  <label>Zimmer von</label>
+                  <input
+                    type="number"
+                    name="roomsFrom"
+                    onChange={formik.handleChange}
+                    onBlur={formik.handleBlur}
+                    value={formik.values.roomsFrom}
+                    className="w-full border border-black bg-transparent p-2 leading-[1.875rem] tracking-[0.023rem] outline-none placeholder:text-secondary placeholder:text-opacity-50 3xl:h-[3.813rem] 3xl:w-[7.5rem]"
+                  />
+                </div>
 
-              <div className="flex flex-col items-start gap-4 sm:flex-row sm:items-center sm:gap-[1.563rem] md:max-w-[10.75rem]">
-                <label className="w-[1.688rem]">bis</label>
-                <input
-                  type="number"
-                  name="roomsTo"
-                  onChange={formik.handleChange}
-                  onBlur={formik.handleBlur}
-                  value={formik.values.roomsTo}
-                  className="colspan-2 w-full border border-black bg-transparent p-2 leading-[1.875rem] tracking-[0.023rem] outline-none placeholder:text-secondary placeholder:text-opacity-50 3xl:h-[3.813rem] 3xl:w-[7.5rem]"
-                />
+                <div className="flex flex-col items-start gap-4 sm:flex-row sm:items-center sm:gap-[1.563rem] md:max-w-[10.75rem]">
+                  <label className="w-[1.688rem]">bis</label>
+                  <input
+                    type="number"
+                    name="roomsTo"
+                    onChange={formik.handleChange}
+                    onBlur={formik.handleBlur}
+                    value={formik.values.roomsTo}
+                    className="colspan-2 w-full border border-black bg-transparent p-2 leading-[1.875rem] tracking-[0.023rem] outline-none placeholder:text-secondary placeholder:text-opacity-50 3xl:h-[3.813rem] 3xl:w-[7.5rem]"
+                  />
+                </div>
               </div>
+              {formik.touched.roomsTo && formik.errors.roomsTo ? (
+                <div className="mt-2 text-sm text-red-600">
+                  {formik.errors.roomsTo}
+                </div>
+              ) : null}
             </div>
 
-            <div className="flex flex-col gap-[1.688rem] sm:flex-row">
-              <div className="grid items-center gap-4 sm:grid-cols-2 sm:gap-[1.125rem] md:max-w-[15.75rem]">
-                <label>Fläche von</label>
-                <input
-                  type="number"
-                  name="areaFrom"
-                  onChange={formik.handleChange}
-                  onBlur={formik.handleBlur}
-                  value={formik.values.areaFrom}
-                  className="w-full border border-black bg-transparent p-2 leading-[1.875rem] tracking-[0.023rem] outline-none placeholder:text-secondary placeholder:text-opacity-50 3xl:h-[3.813rem] 3xl:w-[7.5rem]"
-                />
-              </div>
+            <div>
+              <div className="flex flex-col gap-[1.688rem] sm:flex-row">
+                <div className="grid items-center gap-4 sm:grid-cols-2 sm:gap-[1.125rem] md:max-w-[15.75rem]">
+                  <label>Fläche von</label>
+                  <input
+                    type="number"
+                    name="areaFrom"
+                    onChange={formik.handleChange}
+                    onBlur={formik.handleBlur}
+                    value={formik.values.areaFrom}
+                    className="w-full border border-black bg-transparent p-2 leading-[1.875rem] tracking-[0.023rem] outline-none placeholder:text-secondary placeholder:text-opacity-50 3xl:h-[3.813rem] 3xl:w-[7.5rem]"
+                  />
+                </div>
 
-              <div className="flex flex-col items-start gap-4 sm:flex-row sm:items-center sm:gap-[1.563rem] md:max-w-[10.75rem]">
-                <label className="w-[1.688rem]">bis</label>
-                <input
-                  type="number"
-                  name="areaTo"
-                  onChange={formik.handleChange}
-                  onBlur={formik.handleBlur}
-                  value={formik.values.areaTo}
-                  className="colspan-2 w-full border border-black bg-transparent p-2 leading-[1.875rem] tracking-[0.023rem] outline-none placeholder:text-secondary placeholder:text-opacity-50 3xl:h-[3.813rem] 3xl:w-[7.5rem]"
-                />
+                <div className="flex flex-col items-start gap-4 sm:flex-row sm:items-center sm:gap-[1.563rem] md:max-w-[10.75rem]">
+                  <label className="w-[1.688rem]">bis</label>
+                  <input
+                    type="number"
+                    name="areaTo"
+                    onChange={formik.handleChange}
+                    onBlur={formik.handleBlur}
+                    value={formik.values.areaTo}
+                    className="colspan-2 w-full border border-black bg-transparent p-2 leading-[1.875rem] tracking-[0.023rem] outline-none placeholder:text-secondary placeholder:text-opacity-50 3xl:h-[3.813rem] 3xl:w-[7.5rem]"
+                  />
+                </div>
               </div>
+              {formik.touched.areaTo && formik.errors.areaTo ? (
+                <div className="mt-2 text-sm text-red-600">
+                  {formik.errors.areaTo}
+                </div>
+              ) : null}
             </div>
           </div>
         </div>
