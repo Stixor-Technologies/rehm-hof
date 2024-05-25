@@ -224,7 +224,7 @@ const KontaktForm = () => {
         className="text-lg leading-8 text-secondary placeholder:leading-[1.875rem]"
       >
         <div className="mb-10 text-base sm:mb-[3.75rem] md:text-xl">
-          <label className="pb-7.5 flex items-center">
+          <label className="flex items-center pb-7.5">
             <input
               type="checkbox"
               name="requestType"
