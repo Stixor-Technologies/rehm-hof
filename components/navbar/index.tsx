@@ -6,12 +6,12 @@ import Hamburger from "../hamburger";
 import Sidebar from "../sidebar";
 
 const Navbar = () => {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
     <div className="relative">
       <div className="z-50 flex h-[5rem] w-full items-center justify-between gap-4 bg-white px-5 sm:h-[7.688rem] md:px-8 lg:px-[3.75rem]">
-        <Hamburger isMenuOpen={isOpen} setIsMenuOpen={setIsOpen} />
+        <Hamburger isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
 
         <Link href={"/"} className="z-50">
           <Image
@@ -31,7 +31,9 @@ const Navbar = () => {
         </Link>
       </div>
 
-      {isOpen && <Sidebar />}
+      {/* {isMenuOpen && ( */}
+      <Sidebar isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
+      {/* )} */}
     </div>
   );
 };
