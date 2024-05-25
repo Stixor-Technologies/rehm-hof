@@ -62,14 +62,14 @@ const KontaktForm = () => {
         .integer("Muss eine Nummer sein")
         .min(1, "Muss größer als 0 sein")
         .nullable()
-        .when("roomsFrom", (roomsFrom, schema) =>
-          roomsFrom
-            ? schema.min(
-                roomsFrom,
-                "Zimmer 'bis' muss größer oder gleich 'von' sein",
-              )
-            : schema,
-        ),
+        .when("roomsFrom", {
+          is: (value: number | null) => value != null,
+          then: (schema) =>
+            schema.min(
+              Yup.ref("roomsFrom"),
+              "Zimmer 'bis' muss größer oder gleich 'von' sein",
+            ),
+        }),
       areaFrom: Yup.number()
         .integer("Muss eine Nummer sein")
         .min(1, "Muss größer als 0 sein")
@@ -78,14 +78,14 @@ const KontaktForm = () => {
         .integer("Muss eine Nummer sein")
         .min(1, "Muss größer als 0 sein")
         .nullable()
-        .when("areaFrom", (areaFrom, schema) =>
-          areaFrom
-            ? schema.min(
-                areaFrom,
-                "Fläche 'bis' muss größer oder gleich 'von' sein",
-              )
-            : schema,
-        ),
+        .when("areaFrom", {
+          is: (value: number | null) => value != null,
+          then: (schema) =>
+            schema.min(
+              Yup.ref("areaFrom"),
+              "Fläche 'bis' muss größer oder gleich 'von' sein",
+            ),
+        }),
       privacyPolicy: Yup.bool()
         .oneOf([true], "Sie müssen die Datenschutzerklärung akzeptieren")
         .required("Erforderlich"),
@@ -224,7 +224,7 @@ const KontaktForm = () => {
         className="text-lg leading-8 text-secondary placeholder:leading-[1.875rem]"
       >
         <div className="mb-10 text-base sm:mb-[3.75rem] md:text-xl">
-          <label className="flex items-center pb-7.5">
+          <label className="pb-7.5 flex items-center">
             <input
               type="checkbox"
               name="requestType"
