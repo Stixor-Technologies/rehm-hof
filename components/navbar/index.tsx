@@ -31,9 +31,7 @@ const Navbar = () => {
         </Link>
       </div>
 
-      {/* {isMenuOpen && ( */}
       <Sidebar isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
-      {/* )} */}
     </div>
   );
 };

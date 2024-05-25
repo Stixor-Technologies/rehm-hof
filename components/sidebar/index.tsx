@@ -1,8 +1,5 @@
 import Link from "next/link";
-import React, {
-  useEffect,
-  //  useRef
-} from "react";
+import React, { useEffect } from "react";
 import { gsap } from "gsap";
 
 const Sidebar = ({
@@ -12,14 +9,7 @@ const Sidebar = ({
   isMenuOpen: boolean;
   setIsMenuOpen: React.Dispatch<React.SetStateAction<boolean>>;
 }) => {
-  //   const tl = useRef<GSAPTimeline>();
-
   useEffect(() => {
-    // tl.current?.play();
-    // isMenuOpen
-    //   ? gsap.to(".animated", { opacity: 1, duration: 0.15 })
-    //   : gsap.to(".animated", { opacity: 0, duration: 0.15 });
-
     if (isMenuOpen) {
       gsap.to("#sidebar", {
         width: "100vw",
@@ -43,31 +33,6 @@ const Sidebar = ({
       });
     }
   }, [isMenuOpen]);
-
-  //   useEffect(() => {
-  //     tl.current = gsap.timeline({ paused: true });
-  //     if (isMenuOpen) {
-  //       tl.current.to("#sidebar", {
-  //         width: "100vw",
-  //         height: "100vh",
-  //         top: 0,
-  //         left: 0,
-  //         opacity: 1,
-  //         duration: 0.5,
-  //       });
-  //       gsap.to(".animated", { opacity: 1, duration: 0.15 });
-  //     } else {
-  //       tl.current.to("#sidebar", {
-  //         width: 0,
-  //         height: 0,
-  //         top: 112,
-  //         left: 64,
-  //         opacity: 0,
-  //         duration: 0.5,
-  //       });
-  //       gsap.to(".animated", { opacity: 0, duration: 0.15 });
-  //     }
-  //   }, []);
 
   const link = (title: string, href: string, className: string = "") => (
     <Link
