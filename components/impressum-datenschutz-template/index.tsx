@@ -12,22 +12,24 @@ const ImpressumDatenschutzTemplate: React.FC<
 > = ({ title, className = "", children }) => {
   return (
     <div className="bg-white text-secondary">
-      <div className="relative">
-        <Image
-          src={"/assets/images/impressum-datenschutz/header.png"}
-          alt="Header"
-          width={1920}
-          height={400}
-          className="4xl:!h-[400px]"
-        />
-        <Image
-          src={"/assets/images/key.svg"}
-          alt="Key image"
-          width={254}
-          height={73.67}
-          className=" absolute right-0 top-4 z-10 w-24 max-w-[15.875rem] sm:top-16 lg:top-[3.938rem] lg:h-[4.563rem] lg:w-auto"
-        />
-      </div>
+      <section className=" w-full overflow-hidden">
+        <div className="relative mx-auto h-full w-full max-w-[120rem] overflow-hidden">
+          <Image
+            src={"/assets/images/impressum-datenschutz/header.png"}
+            alt="Header"
+            width={1920}
+            height={400}
+            className="4xl:mx-auto 4xl:!h-[400px]"
+          />
+          <Image
+            src={"/assets/images/key.svg"}
+            alt="Key image"
+            width={254}
+            height={73.67}
+            className=" absolute right-0 top-4 z-10 w-24 max-w-[15.875rem] cursor-pointer sm:top-16 lg:top-[3.938rem] lg:h-[4.563rem] lg:w-auto"
+          />
+        </div>
+      </section>
 
       <div
         className={`container pb-[4.563rem] pt-10 md:pb-[7.563rem] md:pt-16 xl:pb-[12.063rem] xl:pt-[6.25rem] ${className}`}
