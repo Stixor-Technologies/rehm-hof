@@ -61,8 +61,53 @@ const KontaktForm = () => {
         .oneOf([true], "Sie müssen die Datenschutzerklärung akzeptieren")
         .required("Erforderlich"),
     }),
-    onSubmit: (values) => {
+    onSubmit: async (values) => {
       console.log(values);
+      try {
+        const emailTemplate = `<div>
+          <h3>You've got a new inquiry from  </h3>
+
+          <h4>Name: </h4>
+
+          <h4>Email: ${values.email}</h4>
+
+         <p>Message:  </p></div>`;
+
+        const res = await fetch("/api/contact", {
+          body: JSON.stringify({
+            email: values.email,
+            fullname: values.firstName,
+            subject: "Hello G",
+            htmlContent: emailTemplate,
+          }),
+          headers: {
+            "Content-Type": "application/json",
+          },
+          method: "POST",
+        });
+
+        const resp = await res.json();
+
+        console.log("RESPONSe=>", resp);
+
+        // if (resp?.code ? resp.code === 202 : resp[0].statusCode === 202) {
+        //   reset();
+        //   toast.success(
+        //     "Thank you for contacting us. Our team will reach you soon",
+        //     {
+        //       position: width > 768 ? "bottom-right" : "top-right",
+        //       ...TOAST_DETAILS,
+        //     },
+        //   );
+        // } else {
+        //   toast.error("Please try again", {
+        //     position: width > 768 ? "bottom-right" : "top-right",
+        //     ...TOAST_DETAILS,
+        //   });
+        // }
+      } catch (error) {
+        console.error(error);
+      }
     },
   });
 
@@ -122,11 +167,14 @@ const KontaktForm = () => {
       </div>
 
       <form
-        onSubmit={formik.handleSubmit}
+        onSubmit={(e) => {
+          e.preventDefault();
+          formik.handleSubmit();
+        }}
         className="text-lg leading-8 text-secondary placeholder:leading-[1.875rem]"
       >
         <div className="mb-10 text-base sm:mb-[3.75rem] md:text-xl">
-          <label className="flex items-center pb-7.5">
+          <label className="pb-7.5 flex items-center">
             <input
               type="checkbox"
               name="requestType"
@@ -333,7 +381,7 @@ const KontaktForm = () => {
           </div>
         </div>
 
-        <div className="flex flex-col items-start gap-10 text-xl lg:flex-row lg:items-end lg:gap-16">
+        <div className="mb-10 flex flex-col items-start gap-10 text-xl sm:mb-[3.75rem] lg:flex-row lg:items-end lg:gap-16">
           <div>
             <label className="flex !w-full items-center text-base leading-8 md:text-xl lg:items-start">
               <input
@@ -359,6 +407,13 @@ const KontaktForm = () => {
 
           <h2 className="lg:ps-2">* Pflichtfelder</h2>
         </div>
+
+        <button
+          type="submit"
+          className="hover flex w-full items-center justify-center border border-secondary bg-transparent px-16 py-2 transition-all duration-500 hover:bg-secondary hover:text-white sm:w-auto"
+        >
+          Submit
+        </button>
       </form>
     </div>
   );
