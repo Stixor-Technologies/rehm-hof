@@ -4,6 +4,8 @@ import Image from "next/image";
 import OSVG from "@/public/assets/images/o.svg";
 import logo from "@/public/assets/images/logo.svg";
 import Section1Image from "@/public/assets/images/home-page/section1.jpg";
+import StadTPark from "@/public/assets/images/home-page/Stadtpark.png";
+
 import InnenraumStaffel from "@/public/assets/images/home-page/Innenraum_Staffel.png";
 import Strassenansicht from "@/public/assets/images/home-page/Strassenansicht.png";
 import Bildergruppe from "@/public/assets/images/home-page/Bildergruppe.jpg";
@@ -172,7 +174,7 @@ const LandingPage = () => {
       <section className="container mb-[6.25rem] mt-[5.125rem] flex flex-col justify-between gap-10 lg:flex-row">
         <div className="md:flex-1">
           <Image
-            src={Section1Image}
+            src={StadTPark}
             width={760}
             height={699}
             alt="ENTDECKE"
@@ -185,14 +187,14 @@ const LandingPage = () => {
             alt="Logo"
             width={210}
             height={104.79}
-            className="mx-auto pb-4 lg:mx-0"
+            className="mx-auto pb-4 lg:mx-0 lg:pb-0"
           />
 
           <h2 className=" my-4 text-[clamp(2.063rem,5vw,4.063rem)] leading-snug text-primary lg:leading-[4.688rem] xl:my-[3.75rem]">
             ENTDECKE DIE RUHE DES NEUEN.
           </h2>
 
-          <p className=" text-[clamp(1rem,2vw,1.253rem)] tracking-[0.025rem] text-secondary lg:leading-[1.92rem]">
+          <p className=" text-[clamp(1rem,2vw,1.253rem)] tracking-[0.025rem] text-secondary lg:leading-[2rem]">
             In begehrter Lage von Hamburg-Winterhude erwartet Sie ein
             beeindruckendes Neubauprojekt, das moderne Architektur und urbanen
             Lifestyle vereint. Diese exklusive Anlage mit nur 9 Einheiten bietet
