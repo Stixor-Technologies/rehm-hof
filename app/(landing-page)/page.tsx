@@ -58,7 +58,7 @@ const LandingPage = () => {
         {
           xPercent: 100,
           duration: 0.5,
-          translateY: 0,
+          scale: 1,
         },
         0,
       );
@@ -71,7 +71,7 @@ const LandingPage = () => {
         {
           xPercent: 0,
           duration: 0.5,
-          translateY: 0,
+          scale: 1,
         },
         0,
       );
@@ -82,7 +82,7 @@ const LandingPage = () => {
     if (activeImage === 1) {
       // TODO: These Gsap transition will be different for both images, need to change them later
       gsap.to(image1Ref.current, {
-        yPercent: -55,
+        yPercent: -52,
         scale: 1.15,
       });
     } else {
@@ -104,7 +104,7 @@ const LandingPage = () => {
     <div>
       {/* section# 1*/}
 
-      <section className="relative max-h-[42vw] w-full overflow-hidden">
+      <section className="relative max-h-[41.667vw] w-full overflow-hidden">
         <Image
           src={OSVG}
           ref={buttonRef}
@@ -116,7 +116,10 @@ const LandingPage = () => {
         />
         <div className="relative mx-auto h-full w-full max-w-[120rem] overflow-hidden">
           <div className=" z-10 flex flex-nowrap items-start">
-            <div ref={image1Ref} className=" w-full  shrink-0 overflow-hidden">
+            <div
+              ref={image1Ref}
+              className=" w-full  shrink-0 overflow-hidden lg:-translate-y-[6%]"
+            >
               <Image
                 src={Building}
                 width={1920}
