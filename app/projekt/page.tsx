@@ -301,7 +301,7 @@ const Projekt = () => {
           alt="project-group-bg"
         />
       </section>
-      {/* <ProjectsHighlight /> */}
+      <ProjectsHighlight />
     </div>
   );
 };
