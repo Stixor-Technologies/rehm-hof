@@ -54,7 +54,7 @@ const Hamburger = ({
 
   return (
     <button
-      className="group z-50 flex size-9 h-[2.125rem] w-9 transform items-center justify-center drop-shadow-lg sm:w-[3.125rem]"
+      className="group z-50 flex size-9 h-4 w-7 transform items-center justify-center drop-shadow-lg sm:h-[2.125rem] sm:w-[3.125rem]"
       type="button"
       onClick={() => {
         setIsMenuOpen(!isMenuOpen);
@@ -64,7 +64,7 @@ const Hamburger = ({
       }}
     >
       <div
-        className={`group-hover:bg-light-purple absolute left-1/2 top-1/2 -z-10 h-[2.125rem] w-9 -translate-x-1/2 -translate-y-1/2 scale-0 transform rounded-full  transition-all duration-[400ms] ease-[cubic-bezier(0.68,-0.55,0.27,1.55)] group-hover:scale-100 group-hover:opacity-60 sm:w-[3.125rem] `}
+        className={`group-hover:bg-light-purple absolute left-1/2 top-1/2 -z-10 h-4 w-7 -translate-x-1/2 -translate-y-1/2 scale-0 transform rounded-full transition-all  duration-[400ms] ease-[cubic-bezier(0.68,-0.55,0.27,1.55)] group-hover:scale-100 group-hover:opacity-60 sm:h-[2.125rem] sm:w-[3.125rem] `}
       />
       <svg
         width="100%"

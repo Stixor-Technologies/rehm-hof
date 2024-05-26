@@ -33,7 +33,7 @@ const Footer = () => {
 
   return (
     <div className="w-full border-0 bg-bone p-4 pt-10 sm:p-10 xl:min-h-[34.688rem] xl:pb-[6.238rem] xl:pt-[6.25rem] 2xl:px-36 3xl:px-[11.25rem]">
-      <div className="grid max-w-[97.5rem] gap-10 text-secondary md:grid-cols-2 md:gap-5 xl:gap-10 4xl:mx-auto">
+      <div className="grid max-w-[97.5rem] gap-10 text-secondary md:grid-cols-2 md:gap-5 xl:gap-10 3xl:gap-[5.25rem] 4xl:mx-auto">
         <div className="flex flex-col gap-y-5 xl:gap-y-28 4xl:gap-y-32">
           <div className={containerClasses}>
             <Image
@@ -41,11 +41,11 @@ const Footer = () => {
               alt="Rehm Logo"
               width={160}
               height={79.74}
-              className="max-h-[4.984rem]"
+              className="h-14 max-h-[4.984rem] w-28 lg:h-auto lg:w-auto"
             />
 
             <div
-              className={`${linkGroupClasses} gap-0 md:h-[9.813rem] md:w-[22.25rem] xl:me-11`}
+              className={`${linkGroupClasses} gap-0 md:h-[9.813rem] md:w-[22.25rem] xl:me-11 3xl:me-0 3xl:!pe-10 3xl:!ps-0`}
             >
               {info("BAUHERR", true)}
               {info("Grundstücksgesellschaft Rehmstraße")}
@@ -62,16 +62,16 @@ const Footer = () => {
         </div>
 
         <div className="flex flex-col space-y-5 md:space-y-10 xl:space-y-10 4xl:space-y-[3.875rem]">
-          <div className={containerClasses}>
+          <div className={`${containerClasses} 3xl:gap-10`}>
             <Image
               src={"/assets/images/hyest-logo.svg"}
               alt="Hyest Logo"
               width={160.15}
               height={58.82}
-              className="max-h-[3.676rem]"
+              className="h-14 max-h-[3.676rem] w-32 lg:h-auto lg:w-auto"
             />
 
-            <div className={`${linkGroupClasses} md:w-[22.5rem]`}>
+            <div className={`${linkGroupClasses} md:w-[22.5rem] 3xl:px-0`}>
               {info("VERTRIEB", true)}
               {info("HYEST Real Estate GmbH")}
               {info("Jungfernstieg 50")}
@@ -83,7 +83,7 @@ const Footer = () => {
               </div>
             </div>
 
-            <div className={linkGroupClasses}>
+            <div className={`${linkGroupClasses} 3xl:px-0`}>
               {link("/datenschutz", "DATENSCHUTZ", true)}
               {link("/impressum", "IMPRESSUM", true)}
             </div>
