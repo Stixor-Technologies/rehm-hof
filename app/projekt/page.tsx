@@ -11,6 +11,7 @@ import Room from "@/public/assets/images/lage/room.png";
 import Tap from "@/public/assets/images/project-page/taps.png";
 import Shower from "@/public/assets/images/project-page/shower.png";
 import OSVG from "@/public/assets/images/o-white.svg";
+import ProjectsSlider from "@/components/projects-slider";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 
@@ -125,7 +126,7 @@ const Projekt = () => {
               anspruchsvolles, modernes Wohnen in Hamburg.
             </p>
 
-            <p className="mt-8 tracking-[0.025rem] text-secondary xl:text-xl xl:leading-[2rem]">
+            <p className="mt-6 tracking-[0.025rem] text-secondary xl:text-xl xl:leading-[2rem]">
               Ein weiteres Highlight ist die Tiefgarage. Die zukünftigen
               Bewohner können die Vorzüge des innerstädtischen Lebens in vollen
               Zügen genießen, ohne auf den Luxus eines eigenen Stellplatzes
@@ -145,7 +146,7 @@ const Projekt = () => {
       </section>
 
       {/* section# 3 */}
-      <section className="mx-auto mt-6 flex max-w-[1920px] flex-col gap-5 lg:mt-14 lg:mt-[1.813rem] lg:flex-row lg:gap-10">
+      <section className="mx-auto flex max-w-[1920px] flex-col gap-5 lg:flex-row lg:gap-10">
         <Image
           src={InteriorBg}
           width={1140}
@@ -172,7 +173,7 @@ const Projekt = () => {
 
       {/* section# 4 */}
       <section className="container">
-        <div className="my-[3.125rem] flex flex-row items-start gap-10">
+        <div className=" mb-[3.125rem] mt-[2.563rem] flex flex-row items-start gap-10">
           {/* <div className="my-[3.125rem] flex items-start gap-10"> */}
           <p className="max-w-[560px] tracking-[0.025rem] text-secondary lg:mt-[3.125rem] xl:text-xl xl:leading-[2rem]">
             Der „Rehm-Hof“ integriert modernste energetische Technologien,
@@ -235,8 +236,10 @@ const Projekt = () => {
         </div>
       </section>
 
+      <ProjectsSlider />
+
       {/* section# 6 */}
-      <section className="relative mx-auto flex max-w-[1920px] flex-col gap-[2.313rem] px-4 tracking-[0.025rem] text-secondary sm:px-8 lg:flex-row lg:pr-0 lg:pt-[5.84rem] xl:text-xl xl:leading-[2rem] 4xl:pl-[11.25rem]">
+      <section className="relative mx-auto flex max-w-[1920px] flex-col gap-[2.313rem] px-4 pt-16 tracking-[0.025rem] text-secondary sm:px-8 lg:flex-row lg:pr-0 lg:pt-[5.84rem] xl:pt-[204px] xl:text-xl xl:leading-[2rem] 4xl:pl-[11.25rem]">
         <div className="w-full max-w-[22.688rem]">
           <h2 className="text-[clamp(2.063rem,4vw,4.063rem)] leading-tight text-primary 2xl:leading-[4.688rem]">
             EXKLUSIVE STADT-HÄUSER
@@ -297,7 +300,7 @@ const Projekt = () => {
           alt="project-group-bg"
         />
       </section>
-      <ProjectsHighlight />
+      {/* <ProjectsHighlight /> */}
     </div>
   );
 };

@@ -54,3 +54,153 @@ export const faq: FaqITemType[] = [
     answer: ["25 Stadtpark"],
   },
 ];
+
+export const tableData = [
+  {
+    WE: [
+      {
+        value: "01",
+      },
+      {
+        value: "02",
+      },
+      {
+        value: "03",
+      },
+      {
+        value: "04",
+      },
+    ],
+
+    GESCHOSS: [
+      {
+        value: "EG - 1. OG",
+      },
+      {
+        value: "EG - 1. OG",
+      },
+      {
+        value: "EG - 1. OG",
+      },
+      {
+        value: "EG - 1. OG",
+      },
+    ],
+
+    GRÖßE: [
+      {
+        value: "122.92 m²",
+      },
+      {
+        value: "143.08 m²",
+      },
+      {
+        value: "173.81 m²",
+      },
+      {
+        value: "111.93 m²",
+      },
+    ],
+
+    GARTEN: [
+      {
+        value: "88.4 m²",
+      },
+      {
+        value: "92.7 m²",
+      },
+      {
+        value: "49.3 m²",
+      },
+      {
+        value: "46.0 m²",
+      },
+    ],
+
+    ZIMMER: [
+      {
+        value: "4",
+      },
+      {
+        value: "4",
+      },
+      {
+        value: "4",
+      },
+      {
+        value: "3 1/2",
+      },
+    ],
+
+    KAUFPREIS: [
+      {
+        value: "860.000 €",
+      },
+      {
+        value: "899.000 €",
+      },
+      {
+        value: "489.000 €",
+      },
+      {
+        value: "459.000 €",
+      },
+    ],
+  },
+
+  {
+    WE: [
+      {
+        value: "05",
+      },
+      {
+        value: "06",
+      },
+    ],
+
+    GESCHOSS: [
+      {
+        value: "2 OG",
+      },
+      {
+        value: "2 OG",
+      },
+    ],
+
+    GRÖßE: [
+      {
+        value: "140.11 m²",
+      },
+      {
+        value: "154.85 m²",
+      },
+    ],
+
+    GARTEN: [
+      {
+        value: "-",
+      },
+      {
+        value: "-",
+      },
+    ],
+
+    ZIMMER: [
+      {
+        value: "4",
+      },
+      {
+        value: "5",
+      },
+    ],
+
+    KAUFPREIS: [
+      {
+        value: "383.000 €",
+      },
+      {
+        value: "510.000 €",
+      },
+    ],
+  },
+];
