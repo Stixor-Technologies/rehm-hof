@@ -55,7 +55,6 @@ const ProjectsSlider = () => {
           }}
           modules={[EffectFade, Navigation, Pagination]}
           className="mySwiper !mx-0 lg:w-1/2 lg:max-w-[43.728rem]"
-          //   paginationUpdate={(swiper: any, paginationEl: HTMLElement) => {}}
           onPaginationUpdate={(swiper) => {
             setActive(swiper?.activeIndex);
           }}

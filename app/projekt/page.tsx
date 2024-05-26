@@ -70,7 +70,6 @@ const Projekt = () => {
     }).to(
       showerImageRef.current,
       {
-        // scaleY: 1.2,
         scale: 1.2,
         transformOrigin: "top center",
         duration: DURATION,
@@ -89,7 +88,6 @@ const Projekt = () => {
       {
         scale: 1,
         transformOrigin: "top center",
-        // transformOrigin: "top center",
         duration: DURATION,
       },
       0,
@@ -109,7 +107,6 @@ const Projekt = () => {
           />
         </section>
 
-        {/* section# 2 */}
         <div className="container relative z-10">
           {/* section# 2 */}
           <section className="my-7 w-full lg:my-14 lg:max-w-[47.5rem] xl:my-[6.25rem]">
