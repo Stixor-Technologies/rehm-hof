@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { act, useRef, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperClass from "swiper";
 
@@ -20,27 +20,31 @@ const ProjectsSlider = () => {
 
   const SlideData = [
     {
+      number: "00",
+      header: "ERDGESCHOSS",
+      subHeading: "STADTHäUSER 01 - 04",
+      map: "/assets/images/project-page/map1.png",
+    },
+    {
       number: "01",
-      header: "OBERGESCHOSS",
+      header: "Obergeschoss",
+      subHeading: "STADTHäUSER 01 - 04",
       map: "/assets/images/project-page/map1.png",
     },
     {
       number: "02",
-      header: "asasasas",
+      header: "Obergeschoss",
+      subHeading: "STADTHäUSER 05 - 06",
       map: "/assets/images/project-page/map1.png",
     },
     {
       number: "03",
-      header: "OBERGESCHOSS",
-      map: "/assets/images/project-page/map1.png",
-    },
-    {
-      number: "04",
-      header: "AwAasas",
+      header: "Obergeschoss",
+      subHeading: "STADTHäUSER 05 - 06",
       map: "/assets/images/project-page/map1.png",
     },
   ];
-
+  console.log(active);
   return (
     <div className=" container ml-auto mt-[4.188rem] max-w-[120rem] pl-4 sm:pl-8 lg:pr-0 3xl:pl-[11.25rem]">
       <div className="flex flex-col gap-10 lg:flex-row 2xl:gap-[6.273rem]">
@@ -75,7 +79,7 @@ const ProjectsSlider = () => {
                       {slide?.header}
                     </span>
                     <span className="block text-secondaryLight xl:text-xl xl:leading-[1.5rem]">
-                      STADTHÄUSER 01 - 04
+                      {slide?.subHeading}
                     </span>
                   </div>
                 </div>
@@ -107,7 +111,9 @@ const ProjectsSlider = () => {
                 <th className="w-[7.842rem] pb-[1.113rem] pl-[2.342rem] font-normal">
                   GRÖßE
                 </th>
-                <th className="w-[7.133rem] pb-[1.113rem] pl-[2.445rem] font-normal">
+                <th
+                  className={`w-[7.133rem] pb-[1.113rem] pl-[2.445rem] font-normal ${active === 1 && "hidden"}`}
+                >
                   GARTEN
                 </th>
                 <th className="w-[6.046rem] pb-[1.113rem]  pl-[2.983rem] font-normal">
@@ -153,7 +159,9 @@ const ProjectsSlider = () => {
                       ))}
                     </td>
 
-                    <td className="td-container pl-[2.445rem]">
+                    <td
+                      className={`td-container pl-[2.445rem] ${active === 1 && "hidden"} text-pink`}
+                    >
                       {data?.GARTEN?.map((garten, idx) => (
                         <span key={idx} className="td-item">
                           {garten.value}
@@ -169,7 +177,9 @@ const ProjectsSlider = () => {
                       ))}
                     </td>
 
-                    <td className="td-container pl-[2.636rem]">
+                    <td
+                      className={`td-container pl-[2.636rem] ${active === 1 ? "text-secondary" : "text-pink"}`}
+                    >
                       {data?.KAUFPREIS?.map((kaufpreis, idx) => (
                         <span key={idx} className="td-item">
                           {kaufpreis.value}

@@ -203,4 +203,98 @@ export const tableData = [
       },
     ],
   },
+
+  {
+    WE: [
+      {
+        value: "07",
+      },
+      {
+        value: "08",
+      },
+    ],
+
+    GESCHOSS: [
+      {
+        value: "3 OG",
+      },
+      {
+        value: "3 OG",
+      },
+    ],
+
+    GRÖßE: [
+      {
+        value: "140.11 m²",
+      },
+      {
+        value: "154.85 m²",
+      },
+    ],
+
+    GARTEN: [
+      {
+        value: "-",
+      },
+      {
+        value: "-",
+      },
+    ],
+
+    ZIMMER: [
+      {
+        value: "4",
+      },
+      {
+        value: "5",
+      },
+    ],
+
+    KAUFPREIS: [
+      {
+        value: "383.000 €",
+      },
+      {
+        value: "510.000 €",
+      },
+    ],
+  },
+
+  {
+    WE: [
+      {
+        value: "09",
+      },
+    ],
+
+    GESCHOSS: [
+      {
+        value: "STG",
+      },
+    ],
+
+    GRÖßE: [
+      {
+        value: "175 m²",
+      },
+    ],
+
+    GARTEN: [
+      {
+        value: "-",
+      },
+    ],
+
+    ZIMMER: [
+      {
+        value: "4",
+      },
+    ],
+
+    KAUFPREIS: [
+      {
+        value: "383.000 €",
+      },
+    ],
+  },
 ];
