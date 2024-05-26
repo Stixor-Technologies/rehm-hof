@@ -187,7 +187,7 @@ const KontaktForm = () => {
 
   return (
     <div className="mx-auto bg-slate px-4 py-16 sm:px-8 md:pb-[6.107rem] md:pt-[6.25rem] 4xl:mx-0 4xl:px-[11.25rem]">
-      <div className="flex flex-col justify-between gap-5 pb-8 sm:pb-[4.101rem] lg:flex-row">
+      <div className="flex flex-col justify-between gap-5 pb-8 sm:pb-[3.438rem] lg:flex-row">
         <h1 className="text-3xl uppercase leading-10 text-primary md:text-[4.063rem] md:leading-[4.688rem]">
           INTERESSE?
           <br /> LASS DICH BERATEN
@@ -372,7 +372,7 @@ const KontaktForm = () => {
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
               value={formik.values.message}
-              className="w-full border border-black bg-transparent p-2 leading-[1.875rem] tracking-[0.023rem] outline-none placeholder:text-secondary placeholder:text-opacity-50 3xl:h-[9.688rem]"
+              className="w-full border border-black bg-transparent p-2 leading-[1.875rem] tracking-[0.023rem] outline-none placeholder:text-secondary placeholder:text-opacity-50 3xl:h-[9.688rem] 3xl:w-[46.938rem]"
             />
           </div>
 
@@ -476,7 +476,7 @@ const KontaktForm = () => {
           type="submit"
           className="hover flex w-full items-center justify-center border border-secondary bg-transparent px-16 py-2 transition-all duration-500 hover:bg-secondary hover:text-white sm:w-auto"
         >
-          Submit
+          Senden
         </button>
       </form>
     </div>
