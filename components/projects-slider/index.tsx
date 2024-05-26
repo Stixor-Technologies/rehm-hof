@@ -1,4 +1,4 @@
-import React, { act, useRef, useState } from "react";
+import React, { useRef, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperClass from "swiper";
 
@@ -44,7 +44,6 @@ const ProjectsSlider = () => {
       map: "/assets/images/project-page/map1.png",
     },
   ];
-  console.log(active);
   return (
     <div className=" container ml-auto mt-[4.188rem] max-w-[120rem] pl-4 sm:pl-8 lg:pr-0 3xl:pl-[11.25rem]">
       <div className="flex flex-col gap-10 lg:flex-row 2xl:gap-[6.273rem]">
@@ -58,8 +57,6 @@ const ProjectsSlider = () => {
           className="mySwiper !mx-0 lg:w-1/2 lg:max-w-[43.728rem]"
           //   paginationUpdate={(swiper: any, paginationEl: HTMLElement) => {}}
           onPaginationUpdate={(swiper) => {
-            console.log(swiper?.activeIndex);
-            console.log("asasas");
             setActive(swiper?.activeIndex);
           }}
           onBeforeInit={(swiper) => {
