@@ -27,23 +27,19 @@ const ProjectsSlider = () => {
     {
       number: "02",
       header: "asasasas",
-      map: "/assets/images/project-page/bildergruppe.png",
+      map: "/assets/images/project-page/map1.png",
     },
     {
       number: "03",
       header: "OBERGESCHOSS",
-      map: "/assets/images/project-page/rehmstrasse-bg.png",
+      map: "/assets/images/project-page/map1.png",
     },
     {
       number: "04",
       header: "AwAasas",
-      map: "/assets/images/project-page/project-group-bg.png",
+      map: "/assets/images/project-page/map1.png",
     },
   ];
-
-  const row = (index: number) => {
-    return `before:content-['']before:w-full relative z-50 mb-3 overflow-hidden border-b-[10px] before:absolute before:inset-0 before:-z-10 before:-translate-y-[0] before:bg-green-100  before:opacity-0 ${index === active ? " before:translate-y-[0]  before:opacity-100" : " before:bg-red-100"} medium-gray transition-all duration-500 ease-in-out before:transition-all before:duration-700`;
-  };
 
   return (
     <div className=" container ml-auto mt-[67px] max-w-[1920px] pl-4 sm:pl-8 lg:pr-0 3xl:pl-[11.25rem]">

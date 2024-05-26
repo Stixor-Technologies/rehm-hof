@@ -72,7 +72,7 @@
   height: max-content !important;
   width: 1.916rem !important; */
 
-  @apply !static !-bottom-10 flex-col gap-[12.35px] p-0 md:!max-h-max lg:!absolute lg:!bottom-auto lg:!left-0 lg:!top-[192.53px] lg:flex lg:!w-[1.916rem];
+  @apply !static !-bottom-10 flex-col gap-[12.35px] p-0 md:!max-h-max lg:!absolute lg:!bottom-auto lg:!left-0 lg:!top-[194.53px] lg:flex lg:!w-[1.916rem];
 }
 
 .swiper-pagination-bullet {
@@ -94,7 +94,7 @@
   content: "" !important;
   background: url("/assets/images/project-page/arrow-icon.svg") no-repeat
     center/contain;
-  @apply -rotate-90 lg:rotate-0;
+  @apply -rotate-90 self-end lg:rotate-0;
 }
 
 .swiper-button-prev::after {
@@ -120,7 +120,7 @@
   top: 385px !important;
   left: 10px !important; */
 
-  @apply !top-auto bottom-1.5 !h-4 !w-4 !opacity-100 lg:!left-[5px] lg:!top-[385px] lg:bottom-auto lg:!h-[19.81px] lg:!w-[29.63px];
+  @apply !right-[26%] !top-auto bottom-1.5 !h-4 !w-4 !opacity-100 sm:!right-[35%] md:!right-[40%] lg:!left-[5px] lg:!top-[385px] lg:bottom-auto lg:!h-[19.81px] lg:!w-[29.63px];
 }
 
 .swiper-button-prev {
@@ -129,5 +129,5 @@
   opacity: 1 !important;
   top: 185.53px !important;
   left: 10px !important; */
-  @apply !left-[26%] !right-[80%] !top-auto bottom-1.5 !h-4 !w-4 !opacity-100 lg:!left-[5px] lg:!top-[185.53px] lg:bottom-auto lg:!h-[19.81px] lg:!w-[29.63px];
+  @apply !left-[26%] !top-auto bottom-1.5 !h-4 !w-4 !opacity-100 sm:!left-[35%] md:!left-[40%]  lg:!left-[5px] lg:!top-[185.53px] lg:bottom-auto lg:!h-[19.81px] lg:!w-[29.63px];
 }

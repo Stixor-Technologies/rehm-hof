@@ -173,9 +173,8 @@ const Projekt = () => {
 
       {/* section# 4 */}
       <section className="container">
-        <div className=" mb-[3.125rem] mt-[2.563rem] flex flex-row items-start gap-10">
-          {/* <div className="my-[3.125rem] flex items-start gap-10"> */}
-          <p className="max-w-[560px] tracking-[0.025rem] text-secondary lg:mt-[3.125rem] xl:text-xl xl:leading-[2rem]">
+        <div className=" mb-[3.125rem] mt-[2.563rem] flex flex-row flex-wrap items-start gap-10">
+          <p className="tracking-[0.025rem] text-secondary lg:mt-[3.125rem] xl:text-xl xl:leading-[2rem] 4xl:max-w-[560px]">
             Der „Rehm-Hof“ integriert modernste energetische Technologien,
             einschließlich einer Photovoltaikanlage für Solarstrom, einer
             effizienten Luft-Wasser-Wärmepumpe zur Heizung und Kühlung, sowie
@@ -185,28 +184,30 @@ const Projekt = () => {
             für die Bewohner.
           </p>
 
-          <div className="h-[250px] max-h-[347px] overflow-hidden sm:h-[300px] lg:h-[20vw]">
-            <Image
-              onMouseEnter={handleMouseEnterInterior}
-              onMouseLeave={handleMouseLeaveInterior}
-              ref={tapImageRef}
-              src={Tap}
-              width={360}
-              height={347}
-              alt="tap-interior"
-            />
-          </div>
+          <div className="flex flex-wrap gap-10">
+            <div className="max-h-[347px] overflow-hidden">
+              <Image
+                onMouseEnter={handleMouseEnterInterior}
+                onMouseLeave={handleMouseLeaveInterior}
+                ref={tapImageRef}
+                src={Tap}
+                width={360}
+                height={347}
+                alt="tap-interior"
+              />
+            </div>
 
-          <div className=" overflow-hidden">
-            <Image
-              onMouseEnter={handleMouseEnterInterior}
-              onMouseLeave={handleMouseLeaveInterior}
-              ref={showerImageRef}
-              src={Shower}
-              width={560}
-              height={347}
-              alt="shower-interior"
-            />
+            <div className=" overflow-hidden">
+              <Image
+                onMouseEnter={handleMouseEnterInterior}
+                onMouseLeave={handleMouseLeaveInterior}
+                ref={showerImageRef}
+                src={Shower}
+                width={560}
+                height={347}
+                alt="shower-interior"
+              />
+            </div>
           </div>
         </div>
 
