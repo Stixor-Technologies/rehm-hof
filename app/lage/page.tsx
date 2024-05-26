@@ -4,8 +4,8 @@ import HamburgWinterHude from "@/public/assets/images/lage/hamburg-winterhude.pn
 import Leben from "@/public/assets/images/lage/leben.png";
 import Essen from "@/public/assets/images/lage/essen.png";
 import Alster from "@/public/assets/images/lage/Alster.png";
-import Markt from "@/public/assets/images/lage/Markt.jpeg";
-import Room from "@/public/assets/images/lage/room.png";
+import Markt from "@/public/assets/images/lage/Markt.png";
+import Room from "@/public/assets/images/lage/interior-c.png";
 
 import Image from "next/image";
 import { useGSAP } from "@gsap/react";
@@ -115,14 +115,13 @@ const Lage = () => {
   const handleMouseEnter = contextSafe(() => {
     const tl = gsap.timeline();
     tl.to(image1Ref.current, {
-      scaleX: 1.35,
-      scaleY: 1.2,
+      scale: 1.26,
       transformOrigin: "top right",
       duration: 1,
     }).to(
       image2Ref.current,
       {
-        scale: 1.25,
+        scale: 1.2,
         duration: 1,
       },
       0,
@@ -260,7 +259,7 @@ const Lage = () => {
 
         {/* section# 3 */}
         <section className="my-[6.25rem] flex flex-col items-start gap-12 md:flex-row md:gap-10">
-          <div className="flex-1">
+          <div className="flex-1 overflow-hidden">
             <Image src={Alster} width={760} height={487} alt="" />
           </div>
 
