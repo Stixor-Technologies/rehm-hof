@@ -156,7 +156,7 @@ const Bautrager = () => {
   return (
     <div>
       <section
-        className="max-h-[20.9vw] w-full overflow-hidden"
+        className="max-h-[20.834vw] w-full overflow-hidden"
         onMouseEnter={handleMouseEnterSlideAnimation}
         onMouseLeave={handleMouseLeaveSlideAnimation}
       >
@@ -210,8 +210,8 @@ const Bautrager = () => {
             alt="tor-haus"
             className=" hidden lg:block"
           />
-
-          <div className="mb-[6.875rem] grid  flex-1 grid-cols-[53%_21%_26.4%] grid-rows-[61.6%_24.4%_32.6%] lg:mt-[6.798rem] ">
+          {/* grid-cols-[53%_21%_26.4%] grid-rows-[61.6%_24.4%_32.6%] */}
+          <div className="mb-[6.875rem] grid flex-1 grid-cols-[52.632%_21.054%_26.3%] grid-rows-[61.634%_24.4%_32.544%] lg:mt-[6.798rem] ">
             <div
               ref={gridImage1Container}
               className="col-[1_/_span_2] row-[1_/_span_2]  overflow-hidden"
@@ -249,10 +249,10 @@ const Bautrager = () => {
             className="mb-7 block w-40 sm:w-auto lg:hidden"
           />
 
-          <h2 className="break-words text-[clamp(2.063rem,5vw,4.063rem)] leading-snug text-primary 2xl:leading-[4.688rem]">
-            TORHAUS PROJEKTENTWICKLUNGSGE SELLSCHAFT
+          <h2 className=" break-words  text-[clamp(2.063rem,5vw,4.063rem)] leading-snug text-primary xl:leading-tight 2xl:leading-[4.688rem] 4xl:h-[14.75rem] 4xl:w-[52.125rem]">
+            TORHAUS PROJEKTENTWICKLUNGS GESELLSCHAFT
           </h2>
-          <p className=" mt-4 break-words tracking-[0.025rem] text-secondary lg:mt-[3.125rem] lg:text-xl lg:leading-[2rem]">
+          <p className=" mt-4 break-words tracking-[0.025rem] text-secondary lg:mt-[3.125rem] lg:text-xl lg:leading-[1.929rem]">
             Seit über 25 Jahren baut die torHaus
             Projektsentwicklungsgesellschaft Wohnimmobilien in den beliebtesten
             Stadtteilen Hamburgs. Mit mehr als 50 erfolgreich realisierten
