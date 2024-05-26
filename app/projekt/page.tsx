@@ -98,9 +98,9 @@ const Projekt = () => {
 
   return (
     <div>
-      <section className="relative mx-auto max-w-[1920px] overflow-hidden">
+      <section className="relative mx-auto max-w-[120rem] overflow-hidden">
         {/* section# 1 */}
-        <section className="h-full max-h-[800px]">
+        <section className="h-full max-h-[50rem]">
           <Image
             src={RehmstrasseBg}
             width={1920}
@@ -146,16 +146,16 @@ const Projekt = () => {
       </section>
 
       {/* section# 3 */}
-      <section className="mx-auto flex max-w-[1920px] flex-col gap-5 lg:flex-row lg:gap-10">
+      <section className="mx-auto flex max-w-[120rem] flex-col gap-5 lg:flex-row lg:gap-10">
         <Image
           src={InteriorBg}
           width={1140}
           height={573}
           alt="interior-bg"
-          className=" w-full max-w-[1140px] lg:w-1/2 3xl:w-full"
+          className=" w-full max-w-[71.25rem] lg:w-1/2 3xl:w-full"
         />
 
-        <div className="mt-2 px-4 sm:px-8 lg:w-1/2 lg:max-w-[560px] lg:px-4 3xl:px-0">
+        <div className="mt-2 px-4 sm:px-8 lg:w-1/2 lg:max-w-[35rem] lg:px-4 3xl:px-0">
           <h2 className="text-[clamp(2.063rem,4vw,4.063rem)] leading-tight text-primary 2xl:leading-[4.688rem]">
             MODERN INTERIOR
           </h2>
@@ -174,7 +174,7 @@ const Projekt = () => {
       {/* section# 4 */}
       <section className="container">
         <div className=" mb-[3.125rem] mt-[2.563rem] flex flex-row flex-wrap items-start gap-10">
-          <p className="tracking-[0.025rem] text-secondary lg:mt-[3.125rem] xl:text-xl xl:leading-[2rem] 4xl:max-w-[560px]">
+          <p className="tracking-[0.025rem] text-secondary lg:mt-[3.125rem] xl:text-xl xl:leading-[2rem] 4xl:max-w-[35rem]">
             Der „Rehm-Hof“ integriert modernste energetische Technologien,
             einschließlich einer Photovoltaikanlage für Solarstrom, einer
             effizienten Luft-Wasser-Wärmepumpe zur Heizung und Kühlung, sowie
@@ -185,7 +185,7 @@ const Projekt = () => {
           </p>
 
           <div className="flex flex-wrap gap-10">
-            <div className="max-h-[347px] overflow-hidden">
+            <div className="max-h-[21.688rem] overflow-hidden">
               <Image
                 onMouseEnter={handleMouseEnterInterior}
                 onMouseLeave={handleMouseLeaveInterior}
@@ -197,7 +197,7 @@ const Projekt = () => {
               />
             </div>
 
-            <div className=" overflow-hidden">
+            <div className="overflow-hidden">
               <Image
                 onMouseEnter={handleMouseEnterInterior}
                 onMouseLeave={handleMouseLeaveInterior}
@@ -240,12 +240,12 @@ const Projekt = () => {
       <ProjectsSlider />
 
       {/* section# 6 */}
-      <section className="relative mx-auto flex max-w-[1920px] flex-col gap-[2.313rem] px-4 pt-16 tracking-[0.025rem] text-secondary sm:px-8 lg:flex-row lg:pr-0 lg:pt-[5.84rem] xl:pt-[204px] xl:text-xl xl:leading-[2rem] 4xl:pl-[11.25rem]">
+      <section className="relative mx-auto flex max-w-[120rem] flex-col gap-[2.313rem] px-4 pt-16 tracking-[0.025rem] text-secondary sm:px-8 lg:flex-row lg:pr-0 lg:pt-[5.84rem] xl:pt-[12.75rem] xl:text-xl xl:leading-[2rem] 4xl:pl-[11.25rem]">
         <div className="w-full max-w-[22.688rem]">
           <h2 className="text-[clamp(2.063rem,4vw,4.063rem)] leading-tight text-primary 2xl:leading-[4.688rem]">
             EXKLUSIVE STADT-HÄUSER
           </h2>
-          <ul className="exlusive mt-5 list-none tracking-[0px] xl:mt-[8.748rem] ">
+          <ul className="exlusive mt-5 list-none xl:mt-[8.748rem] ">
             <li className="custom-list-type">EIGENER EINGANG </li>
             <li className="custom-list-type">EIGENER GARTENANTEIL </li>
             <li className="custom-list-type">IDEAL FÜR JUNGE FAMILIEN </li>

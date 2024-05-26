@@ -42,23 +42,8 @@ const ProjectsSlider = () => {
   ];
 
   return (
-    <div className=" container ml-auto mt-[67px] max-w-[1920px] pl-4 sm:pl-8 lg:pr-0 3xl:pl-[11.25rem]">
+    <div className=" container ml-auto mt-[4.188rem] max-w-[120rem] pl-4 sm:pl-8 lg:pr-0 3xl:pl-[11.25rem]">
       <div className="flex flex-col gap-10 lg:flex-row 2xl:gap-[6.273rem]">
-        {/* <div className="flex items-start text-primary">
-          <h2 className="-mt-10 w-[160px] text-[clamp(2rem,5.5vw,6.563rem)] 2xl:leading-[6.75rem]">
-            01
-          </h2>
-
-          <div>
-            <span className="block text-[clamp(1.4rem,2.4vw,2.813rem)] 2xl:leading-[3.813rem] ">
-              OBERGESCHOSS
-            </span>
-            <span className="block text-secondaryLight xl:text-xl xl:leading-[2rem]">
-              STADTHÄUSER 01 - 04
-            </span>
-          </div>
-        </div> */}
-
         <Swiper
           effect={"fade"}
           navigation={true}
@@ -81,12 +66,12 @@ const ProjectsSlider = () => {
             <>
               <SwiperSlide key={idx} className="bg-white">
                 <div className="bg flex items-start gap-4 text-primary">
-                  <h2 className=" text-[clamp(3rem,5.5vw,6.563rem)] leading-tight 2xl:leading-[6.75rem] 3xl:h-[124px] 3xl:w-[160px]">
+                  <h2 className=" text-[clamp(3rem,5.5vw,6.563rem)] leading-tight 2xl:leading-[6.75rem] 3xl:h-[7.75rem] 3xl:w-[10rem]">
                     {slide?.number}
                   </h2>
 
                   <div>
-                    <span className="block text-[clamp(1.4rem,2.4vw,2.813rem)] lg:mt-[30px] 2xl:leading-[3.813rem]">
+                    <span className="block text-[clamp(1.4rem,2.4vw,2.813rem)] lg:mt-[1.875rem] 2xl:leading-[3.813rem]">
                       {slide?.header}
                     </span>
                     <span className="block text-secondaryLight xl:text-xl xl:leading-[1.5rem]">
@@ -95,7 +80,7 @@ const ProjectsSlider = () => {
                   </div>
                 </div>
 
-                <div className=" mt-6 lg:ml-[58px] lg:mt-[2.526rem] ">
+                <div className=" mt-6 lg:ml-[3.625rem] lg:mt-[2.526rem] ">
                   <Image
                     src={slide?.map}
                     width={642}
@@ -109,29 +94,29 @@ const ProjectsSlider = () => {
           ))}
         </Swiper>
 
-        <div className="relative flex-1 overflow-y-auto  lg:mt-[135px] 2xl:mt-[158.97px] ">
+        <div className="relative flex-1 overflow-y-auto  lg:mt-[8.438rem] 2xl:mt-[9.936rem]">
           <table className="w-full table-fixed border-collapse">
             <thead>
-              <tr className=" text-lg leading-[30px] tracking-[0.36px] text-primary ">
-                <th className="w-[130px] pb-[17.8px] pl-[60px] font-normal">
+              <tr className=" text-lg leading-[1.875rem] tracking-[0.023rem] text-primary ">
+                <th className="w-[8.125rem] pb-[1.113rem] pl-[3.75rem] font-normal">
                   WE
                 </th>
-                <th className="w-[138px] pb-[17.8px] pl-[46px] font-normal">
+                <th className="w-[8.625rem] pb-[1.113rem] pl-[2.875rem] font-normal">
                   GESCHOSS
                 </th>
-                <th className="w-[125.47px] pb-[17.8px] pl-[37.47px] font-normal">
+                <th className="w-[7.842rem] pb-[1.113rem] pl-[2.342rem] font-normal">
                   GRÖßE
                 </th>
-                <th className="w-[114.12px] pb-[17.8px] pl-[39.12px] font-normal">
+                <th className="w-[7.133rem] pb-[1.113rem] pl-[2.445rem] font-normal">
                   GARTEN
                 </th>
-                <th className="w-[96.73px] pb-[17.8px]  pl-[47.73] font-normal">
+                <th className="w-[6.046rem] pb-[1.113rem]  pl-[2.983rem] font-normal">
                   ZIMMER
                 </th>
-                <th className="w-[140.18px] pb-[17.8px] pl-[42.18px] font-normal">
+                <th className="w-[8.761rem] pb-[1.113rem] pl-[2.636rem] font-normal">
                   KAUFPREIS
                 </th>
-                <th className=" w-[50px] pb-[17.8px] font-normal 3xl:w-auto"></th>
+                <th className=" w-[3.125rem]] pb-[1.113rem] font-normal 3xl:w-auto"></th>
               </tr>
             </thead>
             <tbody>
@@ -141,18 +126,18 @@ const ProjectsSlider = () => {
                     key={idx}
                     className={`td-row ${active === idx && "bg-slate"}`}
                   >
-                    <td className="td-container pl-[60px]">
+                    <td className="td-container pl-[3.75rem]">
                       {data?.WE?.map((we, idx) => (
                         <div
                           key={idx}
-                          className="flex items-center gap-[10.68px]"
+                          className="flex items-center gap-[0.668rem]"
                         >
                           <Image src={LinkIcon} width={16} height={16} alt="" />
                           <span className="td-item flex-1">{we.value}</span>
                         </div>
                       ))}
                     </td>
-                    <td className="td-container pl-[46px]">
+                    <td className="td-container pl-[2.875rem]">
                       {data?.GESCHOSS?.map((geschoss, idx) => (
                         <span key={idx} className="td-item">
                           {geschoss.value}
@@ -160,7 +145,7 @@ const ProjectsSlider = () => {
                       ))}
                     </td>
 
-                    <td className="td-container pl-[37.47px]">
+                    <td className="td-container pl-[2.342rem]">
                       {data?.GRÖßE?.map((grobe, idx) => (
                         <span key={idx} className="td-item">
                           {grobe.value}
@@ -168,7 +153,7 @@ const ProjectsSlider = () => {
                       ))}
                     </td>
 
-                    <td className="td-container pl-[39.12px]">
+                    <td className="td-container pl-[2.445rem]">
                       {data?.GARTEN?.map((garten, idx) => (
                         <span key={idx} className="td-item">
                           {garten.value}
@@ -176,7 +161,7 @@ const ProjectsSlider = () => {
                       ))}
                     </td>
 
-                    <td className="td-container pl-[47.73]">
+                    <td className="td-container pl-[2.983rem]">
                       {data?.ZIMMER?.map((zimmer, idx) => (
                         <span key={idx} className="td-item">
                           {zimmer.value}
@@ -184,7 +169,7 @@ const ProjectsSlider = () => {
                       ))}
                     </td>
 
-                    <td className="td-container pl-[42.18px]">
+                    <td className="td-container pl-[2.636rem]">
                       {data?.KAUFPREIS?.map((kaufpreis, idx) => (
                         <span key={idx} className="td-item">
                           {kaufpreis.value}
@@ -195,124 +180,6 @@ const ProjectsSlider = () => {
                   </tr>
                 );
               })}
-
-              {/* <tr className={`td-row ${active === 1 && "bg-slate"}`}>
-                <td className="td-container">
-                  <span className="td-item">01</span>
-                  <span className="td-item">02</span>
-                  <span className="td-item">03</span>
-                  <span className="td-item">04</span>
-                </td>
-                <td className="td-container td-container-2">
-                  <span className="td-item">EG - 1. OG</span>
-                  <span className="td-item">EG - 1. OG</span>
-                  <span className="td-item">EG - 1. OG</span>
-                  <span className="td-item">EG - 1. OG</span>
-                </td>
-                <td className="td-container">
-                  <span className="td-item">122.92 m²</span>
-                  <span className="td-item">143.08 m²</span>
-                  <span className="td-item">173.81 m²</span>
-                  <span className="td-item">111.93 m²</span>
-                </td>
-                <td className="td-container">
-                  <span className="td-item">88.4 m²</span>
-                  <span className="td-item">92.7 m²</span>
-                  <span className="td-item">49.3 m²</span>
-                  <span className="td-item">46.0 m²</span>
-                </td>
-                <td className="td-container">
-                  <span className="td-item">4</span>
-                  <span className="td-item">4</span>
-                  <span className="td-item">4</span>
-                  <span className="td-item">3 1/2</span>
-                </td>
-                <td className="td-container">
-                  <span className="td-item">860.000 €</span>
-                  <span className="td-item">899.000 €</span>
-                  <span className="td-item">489.000 €</span>
-                  <span className="td-item">459.000 €</span>
-                </td>
-              </tr>
-
-              <tr className={`td-row ${active === 2 && "bg-slate"}`}>
-                <td className="td-container">
-                  <span className="td-item">05</span>
-                  <span className="td-item">06</span>
-                </td>
-                <td className="td-container">
-                  <span className="td-item">2. OG</span>
-                  <span className="td-item">2. OG</span>
-                </td>
-                <td className="td-container">
-                  <span className="td-item">140.11 m²</span>
-                  <span className="td-item">154.85 m²</span>
-                </td>
-                <td className="td-container">
-                  <span className="td-item">-</span>
-                  <span className="td-item">-</span>
-                </td>
-                <td className="td-container">
-                  <span className="td-item">4</span>
-                  <span className="td-item">5</span>
-                </td>
-                <td className="td-container">
-                  <span className="td-item">383.000 €</span>
-                  <span className="td-item">510.000 €</span>
-                </td>
-              </tr>
-
-              <tr className={`td-row  ${active === 3 && "bg-slate"}`}>
-                <td className="td-container">
-                  <span className="td-item">07</span>
-                  <span className="td-item">08</span>
-                </td>
-                <td className="td-container">
-                  <span className="td-item">3. OG</span>
-                  <span className="td-item">3. OG</span>
-                </td>
-                <td className="td-container">
-                  <span className="td-item">140.11 m²</span>
-                  <span className="td-item">154.85 m²</span>
-                </td>
-                <td className="td-container">
-                  <span className="td-item">-</span>
-                  <span className="td-item">-</span>
-                </td>
-                <td className="td-container">
-                  <span className="td-item">4</span>
-                  <span className="td-item">5</span>
-                </td>
-                <td className="td-container">
-                  <span className="td-item">383.000 €</span>
-                  <span className="td-item">510.000 €</span>
-                </td>
-              </tr>
-
-              <tr className={` td-row ${active === 4 && "bg-slate"}`}>
-                <td className="td-container">
-                  <span className="td-item">09</span>
-                </td>
-                <td className="td-container">
-                  <span className="td-item">STG</span>
-                </td>
-                <td className="td-container">
-                  <span className="td-item">175 m²</span>
-                </td>
-                <td className="td-container">
-                  <span className="td-item">-</span>
-                  <span className="td-item">-</span>
-                </td>
-                <td className="td-container">
-                  <span className="td-item">4</span>
-                </td>
-                <td className="td-container">
-                  <span className="td-item">383.000 €</span>
-                </td>
-              </tr> */}
-
-              {/* ); */}
-              {/* })} */}
             </tbody>
           </table>
         </div>
