@@ -105,7 +105,7 @@ const LandingPage = () => {
       {/* section# 1*/}
 
       <section className="relative max-h-[41.667vw] w-full overflow-hidden">
-        <Image
+        {/* <Image
           src={OSVG}
           ref={buttonRef}
           width={150}
@@ -113,6 +113,16 @@ const LandingPage = () => {
           alt="slide-button"
           onClick={slideImage}
           className="absolute -right-20 top-3 z-10 cursor-pointer sm:right-0 sm:top-16"
+        /> */}
+
+        <Image
+          src={OSVG}
+          ref={buttonRef}
+          width={254}
+          height={73}
+          alt="slide-button"
+          onClick={slideImage}
+          className=" absolute right-0 top-4 z-10 w-24 max-w-[15.875rem] cursor-pointer sm:top-16 lg:top-[3.962rem] lg:h-[4.563rem] lg:w-auto"
         />
         <div className="relative mx-auto h-full w-full max-w-[120rem] overflow-hidden">
           <div className=" z-10 flex flex-nowrap items-start">

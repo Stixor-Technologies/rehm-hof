@@ -168,7 +168,7 @@ const Bautrager = () => {
             height={73}
             alt="slide-button"
             onClick={slideImage}
-            className=" absolute right-0 top-4 z-10 w-24 max-w-[15.875rem] cursor-pointer sm:top-16 lg:top-[3.938rem] lg:h-[4.563rem] lg:w-auto"
+            className=" absolute right-0 top-4 z-10 w-24 max-w-[15.875rem] cursor-pointer sm:top-16 lg:top-[3.962rem] lg:h-[4.563rem] lg:w-auto"
           />
 
           <div className=" z-10 flex flex-nowrap items-start">
