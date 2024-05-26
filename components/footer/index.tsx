@@ -35,7 +35,7 @@ const Footer = () => {
     <div className="w-full border-0 bg-bone p-4 pt-10 sm:p-10 xl:min-h-[34.688rem] xl:pb-[6.238rem] xl:pt-[6.25rem] 2xl:px-36 3xl:px-[11.25rem]">
       <div className="grid max-w-[97.5rem] gap-10 text-secondary md:grid-cols-2 md:gap-5 xl:gap-10 3xl:gap-[5.25rem] 4xl:mx-auto">
         <div className="flex flex-col gap-y-5 xl:gap-y-28 4xl:gap-y-32">
-          <div className={containerClasses}>
+          <div className={`${containerClasses} 3xl:max-w-[44.75rem]`}>
             <Image
               src={"/assets/images/logo.svg"}
               alt="Rehm Logo"
@@ -62,7 +62,9 @@ const Footer = () => {
         </div>
 
         <div className="flex flex-col space-y-5 md:space-y-10 xl:space-y-10 4xl:space-y-[3.875rem]">
-          <div className={`${containerClasses} 3xl:gap-10`}>
+          <div
+            className={`${containerClasses} 3xl:max-w-[45.75rem] 3xl:gap-10`}
+          >
             <Image
               src={"/assets/images/hyest-logo.svg"}
               alt="Hyest Logo"
