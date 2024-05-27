@@ -228,7 +228,6 @@ const Lage = () => {
             <Image src={Alster} width={760} height={487} alt="" />
           </div>
 
-          {/* grid-cols-[26.5%_21%_52.6%] grid-rows-[28.4%_49.3%_19%] */}
           <div className="grid w-full max-w-[47.5rem] flex-1 grid-cols-[26.318%_21.055%_52.633%] grid-rows-[27.19%_47.2%_18.18%]">
             <div className="col-span-2  col-start-2 row-span-2 row-start-1 overflow-hidden">
               <Image

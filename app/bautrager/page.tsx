@@ -210,7 +210,6 @@ const Bautrager = () => {
             alt="tor-haus"
             className=" hidden lg:block"
           />
-          {/* grid-cols-[53%_21%_26.4%] grid-rows-[61.6%_24.4%_32.6%] */}
           <div className="mb-[6.875rem] grid flex-1 grid-cols-[52.632%_21.054%_26.3%] grid-rows-[61.72%_24.4%_32.544%] lg:mt-[6.798rem] ">
             <div
               ref={gridImage1Container}
