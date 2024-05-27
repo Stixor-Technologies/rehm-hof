@@ -11,6 +11,8 @@ import Room from "@/public/assets/images/lage/room.png";
 import Tap from "@/public/assets/images/project-page/taps.png";
 import Shower from "@/public/assets/images/project-page/shower.png";
 import OSVG from "@/public/assets/images/o-white.svg";
+import OSVGGray from "@/public/assets/images/o.svg";
+
 import ProjectsSlider from "@/components/projects-slider";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
@@ -113,7 +115,7 @@ const Projekt = () => {
             <h2 className="text-[clamp(2.063rem,4vw,4.063rem)] leading-tight text-primary 2xl:leading-[4.688rem]">
               PROJEKT BESCHREIBUNG
             </h2>
-            <p className="mt-4 tracking-[0.025rem] text-secondary xl:mt-[3.84rem] xl:text-xl xl:leading-[2rem]">
+            <p className="mt-4 tracking-[0.025rem] text-secondary xl:mt-[4.465rem] xl:text-xl xl:leading-[2rem]">
               Der Innenhof des „Rehm-Hof“ bietet eine harmonische Ruheoase im
               lebendigen Winterhude. Eine stilvolle Gartenanlage lädt zum
               Entspannen und Verweilen ein, während man sich dennoch mitten im
@@ -138,12 +140,12 @@ const Projekt = () => {
           alt="pattern"
           width={468}
           height={1300}
-          className="absolute -right-10 bottom-28 hidden h-full max-h-[81.25rem] w-[24.38vw] overflow-visible object-cover lg:block"
+          className="absolute -right-10 bottom-28 hidden h-full max-h-[81.25rem] w-[24.38vw] max-w-[29.25rem] overflow-visible object-cover lg:block"
         />
       </section>
 
       {/* section# 3 */}
-      <section className="mx-auto flex max-w-[120rem] flex-col gap-5 lg:flex-row lg:gap-10">
+      <section className="relative mx-auto flex max-w-[120rem] flex-col gap-5 overflow-hidden lg:flex-row lg:gap-10">
         <Image
           src={InteriorBg}
           width={1140}
@@ -152,11 +154,18 @@ const Projekt = () => {
           className=" w-full max-w-[71.25rem] lg:w-1/2 3xl:w-full"
         />
 
-        <div className="mt-2 px-4 sm:px-8 lg:w-1/2 lg:max-w-[35rem] lg:px-4 3xl:px-0">
+        <div className=" px-4 sm:px-8 lg:w-1/2 lg:max-w-[35rem] lg:px-4 3xl:px-0">
+          <Image
+            src={OSVGGray}
+            width={340}
+            height={73}
+            alt="slide-button"
+            className=" absolute right-0 top-4 -z-10  w-24 max-w-[21.25rem] cursor-pointer sm:top-16 lg:top-0 lg:h-[4.563rem] lg:w-full 2xl:top-[1.962rem] "
+          />
           <h2 className="text-[clamp(2.063rem,4vw,4.063rem)] leading-tight text-primary 2xl:leading-[4.688rem]">
             MODERN INTERIOR
           </h2>
-          <p className="tracking-[0.025rem] text-secondary lg:mt-[3.125rem] xl:text-xl xl:leading-[2rem]">
+          <p className="tracking-[0.025rem] text-secondary lg:mt-[3.75rem] xl:text-xl xl:leading-[2rem]">
             Hier vereinen sich modernes Design und nachhaltige Technologie, um
             ein unvergleichliches Wohngefühl zu bieten. Mit individuellen
             Grundrisskonzepten können wird der Wohnraum nach Ihren persönlichen
