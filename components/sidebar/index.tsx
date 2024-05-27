@@ -41,7 +41,8 @@ const Sidebar = ({
       className={`animated flex justify-start pb-8 text-4xl uppercase tracking-normal text-primary opacity-0 sm:pb-[2.813rem] sm:text-[4.063rem] sm:leading-[4.688rem] ${className} transition-all duration-500 hover:translate-x-[3.75rem]`}
       onClick={() => {
         setIsMenuOpen(false);
-        setTimeout(() => router.push(href), 400);
+        document.body.classList.remove("!overflow-hidden");
+        setTimeout(() => router.push(href), 350);
       }}
       disabled={!isMenuOpen}
     >
