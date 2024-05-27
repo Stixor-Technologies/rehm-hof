@@ -1,6 +1,6 @@
-import Link from "next/link";
 import React, { useEffect } from "react";
 import { gsap } from "gsap";
+import { useRouter } from "next/navigation";
 
 const Sidebar = ({
   isMenuOpen,
@@ -9,6 +9,8 @@ const Sidebar = ({
   isMenuOpen: boolean;
   setIsMenuOpen: React.Dispatch<React.SetStateAction<boolean>>;
 }) => {
+  const router = useRouter();
+
   useEffect(() => {
     if (isMenuOpen) {
       gsap.to("#sidebar", {
@@ -35,13 +37,16 @@ const Sidebar = ({
   }, [isMenuOpen]);
 
   const link = (title: string, href: string, className: string = "") => (
-    <Link
-      href={href}
-      className={`animated pb-8 text-4xl uppercase tracking-normal text-primary opacity-0 sm:pb-[2.813rem] sm:text-[4.063rem] sm:leading-[4.688rem] ${className} transition-all duration-500 hover:translate-x-[3.75rem]`}
-      onClick={() => setIsMenuOpen(false)}
+    <button
+      className={`animated flex justify-start pb-8 text-4xl uppercase tracking-normal text-primary opacity-0 sm:pb-[2.813rem] sm:text-[4.063rem] sm:leading-[4.688rem] ${className} transition-all duration-500 hover:translate-x-[3.75rem]`}
+      onClick={() => {
+        setIsMenuOpen(false);
+        setTimeout(() => router.push(href), 400);
+      }}
+      disabled={!isMenuOpen}
     >
       {title}
-    </Link>
+    </button>
   );
 
   return (

@@ -37,6 +37,7 @@ const config: Config = {
         boneFade: "#DCD6C800",
         navBackground: "#00000029",
         slate: "#F0F1F1",
+        pink: "#FF00EB",
       },
       padding: {
         "7.5": "1.875rem",
