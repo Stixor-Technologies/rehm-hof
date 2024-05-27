@@ -242,7 +242,7 @@ const Lage = () => {
           />
         </div>
 
-        <p className="hidden text-xl xl:block 2xl:hidden">
+        <p className="hidden text-xl text-secondary xl:block 2xl:hidden">
           Das lebhafte Treiben zeigt sich nicht nur in den Straßen, sondern auch
           in einer breiten Palette von Sport- und Freizeitmöglichkeiten. Der
           Stadtpark und das Alsterufer laden zu entspannten Spaziergängen oder
