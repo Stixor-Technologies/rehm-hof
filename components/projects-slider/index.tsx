@@ -127,7 +127,7 @@ const ProjectsSlider = () => {
                 return (
                   <tr
                     key={idx}
-                    className={`td-row ${active === idx && "bg-slate"}`}
+                    className={`td-row ${((active === 1 && idx === 0) || (active !== 1 && active === idx)) && "bg-slate"}`}
                   >
                     <td
                       className={`td-container pl-[3.75rem] ${tableData?.length - 1 === idx && "border-none"}`}
