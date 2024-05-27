@@ -154,7 +154,7 @@ const Projekt = () => {
           className=" w-full max-w-[71.25rem] lg:w-1/2 3xl:w-full"
         />
 
-        <div className=" px-4 sm:px-8 lg:w-1/2 lg:max-w-[35rem] lg:px-4 3xl:px-0">
+        <div className=" px-4 sm:px-8 lg:w-1/2 lg:max-w-[35rem] lg:px-4 4xl:px-0">
           <Image
             src={OSVGGray}
             width={340}
