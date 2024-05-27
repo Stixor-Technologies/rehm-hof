@@ -6,7 +6,7 @@ import InteriorBg from "@/public/assets/images/project-page/interior-bg.png";
 import ProjectGroupBg from "@/public/assets/images/project-page/project-group-bg.png";
 import ProjectsHighlight from "@/components/project-highlight";
 import Pattern from "@/public/assets/images/Pattern.svg";
-import BuilderGruppe from "@/public/assets/images/project-page/bildergruppe.png";
+import BuilderGruppe from "@/public/assets/images/project-page/bildergruppe2.png";
 import Room from "@/public/assets/images/lage/room.png";
 import Tap from "@/public/assets/images/project-page/taps.png";
 import Shower from "@/public/assets/images/project-page/shower.png";
@@ -40,7 +40,7 @@ const Projekt = () => {
       .to(
         gruppeImage2Ref.current,
         {
-          scale: 1.17,
+          scale: 1.25,
           transformOrigin: "bottom right",
           duration: DURATION,
         },
@@ -228,16 +228,17 @@ const Projekt = () => {
             />
           </div>
           <div
-            className="overflow-hidden"
+            className="group max-h-[555px] overflow-hidden"
             onMouseEnter={handleMouseEnterGruppe}
             onMouseLeave={handleMouseLeaveGruppe}
           >
             <Image
-              ref={gruppeImage2Ref}
+              // ref={gruppeImage2Ref}
               src={BuilderGruppe}
               width={1160}
               height={555}
               alt="wood-texture"
+              className="origin-bottom-right -translate-y-[240px] transition-all duration-500 group-hover:-translate-y-[270px] group-hover:scale-125"
             />
           </div>
         </div>
