@@ -124,7 +124,7 @@ const KontaktForm = () => {
           <p><strong>Anrede:</strong>${values.salutation}</p>
           <p><strong>E-Mail: </strong>${values.email}</p>
           <p><strong>Telefon: </strong>${values.phone}</p>
-          <p><strong>Ausgewählte Kontaktmethode: </strong>${values.contactMethod[0]}</p>
+          <p><strong>Ausgewählte Kontaktmethode: </strong>${values.contactMethod.map((value: string, index: number) => <span key={index}>{values.contactMethod.length === index + 1 ? value : `${value}, `} </span>)}</p>
           
           <h3>Adresse</h3>
           <p><strong>Straße: </strong>${values.street}</p>
