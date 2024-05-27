@@ -263,7 +263,7 @@ const Projekt = () => {
         </div>
 
         <div className="flex-1 bg-slate px-5 py-14 xl:pb-[12.275rem] xl:pl-[12.688rem] xl:pt-[6.248rem]">
-          <div className="flex flex-col gap-7 font-light text-secondary sm:flex-row lg:gap-10">
+          <div className="flex flex-col gap-7 text-secondary sm:flex-row lg:gap-10">
             <div className="w-full sm:max-w-[22.5rem]">
               <p>
                 Die Stadthäuser kombinieren Ruhe mit urbaner Eleganz und sorgen
@@ -299,7 +299,7 @@ const Projekt = () => {
       </section>
 
       {/* section# 7 */}
-      <section className="container relative my-10 md:my-[3.75rem] xl:-mt-[6rem]">
+      <section className="container relative my-14 md:my-[3.75rem] xl:-mt-[6rem]">
         <Image
           src={ProjectGroupBg}
           width={1560}

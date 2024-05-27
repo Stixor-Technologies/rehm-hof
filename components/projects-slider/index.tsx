@@ -29,13 +29,13 @@ const ProjectsSlider = () => {
       number: "01",
       header: "Obergeschoss",
       subHeading: "STADTHÄUSER 01 - 04",
-      map: "/assets/images/project-page/map1.png",
+      map: "/assets/images/project-page/map2.png",
     },
     {
       number: "02",
       header: "Obergeschoss",
       subHeading: "STADTHÄUSER 05 - 06",
-      map: "/assets/images/project-page/map1.png",
+      map: "/assets/images/project-page/map3.png",
     },
     {
       number: "03",
@@ -123,6 +123,7 @@ const ProjectsSlider = () => {
             </thead>
             <tbody>
               {tableData?.map((data, idx) => {
+                console.log(active);
                 return (
                   <tr
                     key={idx}

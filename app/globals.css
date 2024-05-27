@@ -32,7 +32,7 @@
   }
 
   .custom-list-type {
-    @apply before:pr-1.5 before:text-secondary before:content-['-'];
+    @apply tracking-normal before:pr-1.5 before:text-secondary before:content-['-'];
   }
 
   .td-row {
@@ -41,7 +41,6 @@
 
   .td-container {
     @apply min-w-[5.75rem] border-b border-slate py-4 lg:py-8;
-    /* background-color: aqua; */
   }
 
   .td-item {
