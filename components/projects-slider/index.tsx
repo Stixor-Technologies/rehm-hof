@@ -22,25 +22,25 @@ const ProjectsSlider = () => {
     {
       number: "00",
       header: "ERDGESCHOSS",
-      subHeading: "STADTHäUSER 01 - 04",
+      subHeading: "STADTHÄUSER 01 - 04",
       map: "/assets/images/project-page/map1.png",
     },
     {
       number: "01",
       header: "Obergeschoss",
-      subHeading: "STADTHäUSER 01 - 04",
+      subHeading: "STADTHÄUSER 01 - 04",
       map: "/assets/images/project-page/map1.png",
     },
     {
       number: "02",
       header: "Obergeschoss",
-      subHeading: "STADTHäUSER 05 - 06",
+      subHeading: "STADTHÄUSER 05 - 06",
       map: "/assets/images/project-page/map1.png",
     },
     {
       number: "03",
       header: "Obergeschoss",
-      subHeading: "STADTHäUSER 05 - 06",
+      subHeading: "STADTHÄUSER 05 - 06",
       map: "/assets/images/project-page/map1.png",
     },
   ];
@@ -71,7 +71,7 @@ const ProjectsSlider = () => {
                   </h2>
 
                   <div>
-                    <span className="block text-[clamp(1.4rem,2.4vw,2.813rem)] lg:mt-[1.875rem] 2xl:leading-[3.813rem]">
+                    <span className="block text-[clamp(1.4rem,2.4vw,2.813rem)] uppercase lg:mt-[1.875rem] 2xl:leading-[3.813rem]">
                       {slide?.header}
                     </span>
                     <span className="block text-secondaryLight xl:text-xl xl:leading-[1.5rem]">
@@ -126,6 +126,7 @@ const ProjectsSlider = () => {
                 return (
                   <tr
                     key={idx}
+                    // className={`td-row ${active === idx && "bg-slate"}`}
                     className={`td-row ${active === idx && "bg-slate"}`}
                   >
                     <td className="td-container pl-[3.75rem]">
