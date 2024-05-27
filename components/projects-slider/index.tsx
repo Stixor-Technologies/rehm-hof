@@ -126,7 +126,6 @@ const ProjectsSlider = () => {
                 return (
                   <tr
                     key={idx}
-                    // className={`td-row ${active === idx && "bg-slate"}`}
                     className={`td-row ${active === idx && "bg-slate"}`}
                   >
                     <td

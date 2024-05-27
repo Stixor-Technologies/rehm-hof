@@ -95,7 +95,6 @@ const LandingPage = () => {
     } else {
       gsap.to(image2Ref.current, {
         yPercent: -18,
-        // scale: 1.15,
       });
     }
   };
@@ -227,7 +226,7 @@ const LandingPage = () => {
           onMouseLeave={handleMouseLeave}
         >
           <div className="container  xl:ml-[calc((105vw-1278px)/2)] xl:pl-0 2xl:ml-[calc((105vw-1534px)/2)] 4xl:ml-[11.25rem]">
-            <p className=" text-[clamp(1.5rem,5.5vw,6.563rem)] uppercase leading-tight text-white 3xl:leading-[6.75rem]">
+            <p className="text-[clamp(1.5rem,5.5vw,6.563rem)] uppercase leading-tight text-white 3xl:leading-[6.75rem]">
               Leben <br /> Zwischen <br /> stadtpark <br />
               <span className=" font-semibold text-primary">& </span>
               alster
@@ -294,7 +293,7 @@ const LandingPage = () => {
 
             <div className="lg:order-0 flex max-w-[29.688rem] flex-col justify-between gap-5 uppercase text-primary sm:flex-row lg:w-[30%] lg:flex-col lg:gap-0 2xl:w-full">
               <div>
-                <div className="flex w-full items-end gap-5 lg:gap-2">
+                <div className="mb-5 flex w-full items-end gap-5 lg:gap-2">
                   <span className="town-houses-numbers">4</span>
                   <span className="town-houses-tag">STADTHÄUSER</span>
                 </div>

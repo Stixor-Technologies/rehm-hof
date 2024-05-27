@@ -149,8 +149,8 @@ const Lage = () => {
 
       <section className="mx-4 max-w-[120rem] sm:mx-8  lg:mx-auto">
         <div className="mr-0 mt-12 flex flex-col gap-10 bg-slate px-4 py-12 sm:px-8 lg:ml-[calc((105vw-100%)/2)] lg:mt-[6.25rem] lg:flex-row lg:justify-end lg:py-[5.188rem] lg:pr-0 xl:ml-[calc((105vw-1280px)/2)] xl:px-0 2xl:ml-[calc((105vw-1534px)/2)] 4xl:ml-[11.25rem] 4xl:h-[50rem]">
-          <div className=" flex-1  lg:max-w-lg xl:ml-[10.313rem] xl:max-w-none">
-            <p className=" w-full text-[clamp(2rem,5.5vw,6.563rem)] uppercase leading-tight text-secondary lg:max-w-[31.25rem] 2xl:leading-[6.75rem] 4xl:h-[28.938rem]">
+          <div className="flex-1 lg:max-w-lg xl:ml-[10.313rem] xl:max-w-none">
+            <p className="w-full text-[clamp(2rem,5.5vw,6.563rem)] uppercase leading-tight text-secondary lg:max-w-[31.25rem] 2xl:max-w-[37.5rem] 2xl:leading-[6.75rem] 4xl:h-[28.938rem]">
               Leben Zwischen stadtpark
               <span className="font-bold text-primary"> & </span>
               alster
@@ -175,7 +175,7 @@ const Lage = () => {
         {/* section# 2 */}
         <div className="mb-[6.375rem] mt-[6.438rem] flex flex-col items-start gap-10 lg:flex-row">
           <div className="flex-1 lg:order-last lg:w-1/2 lg:max-w-[47.5rem]">
-            <h2 className=" text-[clamp(2.063rem,4vw,4.063rem)] leading-none text-primary 2xl:leading-[4.688rem] 4xl:w-[52.125rem]">
+            <h2 className=" text-[clamp(2.063rem,4vw,4.063rem)] leading-none text-primary 2xl:leading-[4.688rem] 4xl:h-[4.75rem] 4xl:w-[52.125rem]">
               HAMBURG-WINTERHUDE
             </h2>
 
@@ -228,7 +228,7 @@ const Lage = () => {
             <Image src={Alster} width={760} height={487} alt="" />
           </div>
 
-          <div className="grid w-full max-w-[47.5rem] flex-1 grid-cols-[26.318%_21.055%_52.633%] grid-rows-[27.19%_47.2%_18.18%]">
+          <div className="grid w-full max-w-[47.5rem] flex-1 grid-cols-[26.318%_21.055%_52.633%] grid-rows-[27.85%_48.34%_18.618%]">
             <div className="col-span-2  col-start-2 row-span-2 row-start-1 overflow-hidden">
               <Image
                 ref={image1Ref}
