@@ -19,8 +19,15 @@ const LandingPage = () => {
   const image1Ref = useRef<HTMLDivElement | null>(null);
   const image2Ref = useRef<HTMLDivElement | null>(null);
 
+  const collageImage1Container = useRef<HTMLDivElement | null>(null);
+  const collageImage2Container = useRef<HTMLDivElement | null>(null);
+  const collageImage1Ref = useRef<HTMLImageElement | null>(null);
+  const collageImage2Ref = useRef<HTMLImageElement | null>(null);
+
   const [isSliderActive, setIsSliderActive] = useState<boolean>(false);
   const [activeImage, setActiveImage] = useState<number>(1);
+
+  const DURATION = 0.3;
 
   const marque1Data = [
     "INDIVIDUELLE GRUNDRISSMÖGLICHKEITEN",
@@ -99,6 +106,73 @@ const LandingPage = () => {
       scale: 1,
     });
   };
+
+  const handleMouseEnterCollage = contextSafe(() => {
+    const tl = gsap.timeline();
+
+    tl.to(collageImage1Ref.current, {
+      scale: 1.32,
+      transformOrigin: "right",
+      duration: DURATION,
+    })
+      .to(
+        collageImage1Container.current,
+        {
+          translateX: -10,
+          translateY: -10,
+          duration: DURATION,
+        },
+        0,
+      )
+      .to(
+        collageImage2Container.current,
+        {
+          translateX: 10,
+          duration: DURATION,
+        },
+        0,
+      )
+      .to(
+        collageImage2Ref.current,
+        {
+          scale: 1.15,
+          duration: DURATION,
+        },
+        0,
+      );
+  });
+  const handleMouseLeaveCollage = contextSafe(() => {
+    const tl = gsap.timeline();
+    tl.to(collageImage1Ref.current, {
+      scale: 1,
+      duration: DURATION,
+    })
+      .to(
+        collageImage1Container.current,
+        {
+          translateX: 0,
+          translateY: 0,
+          duration: DURATION,
+        },
+        0,
+      )
+      .to(
+        collageImage2Container.current,
+        {
+          translateX: 0,
+          duration: DURATION,
+        },
+        0,
+      )
+      .to(
+        collageImage2Ref.current,
+        {
+          scale: 1,
+          duration: DURATION,
+        },
+        0,
+      );
+  });
 
   return (
     <div>
@@ -242,13 +316,34 @@ const LandingPage = () => {
 
         {/* section# 4 */}
         {/* grid-cols-[53%_21%_26.4%] grid-rows-[45.9%_18.3%_24.3%] */}
-        <section className="container my-[6.25rem] flex flex-col gap-16 md:flex-row md:gap-10 2xl:mt-3.5">
-          <div className="grid w-full max-w-[47.5rem] flex-1 grid-cols-[52.632%_21.054%_26.316%] grid-rows-[43.14%_17.06%_22.745%] place-content-end ">
-            <div className="col-span-2 row-start-1 row-end-2">
-              <Image src={Building} alt="building-sm" />
+        <section className="container mb-[6.25rem] mt-[6.6rem] flex flex-col gap-16 md:flex-row md:gap-10">
+          {/* grid-cols-[52.632%_21.054%_26.316%] grid-rows-[43.14%_17.06%_22.745%] */}
+          <div className="grid w-full max-w-[47.5rem] flex-1 grid-cols-[52.632%_21.054%_26.316%] grid-rows-[53.86%_21.297%_28.396%] place-content-end ">
+            <div
+              ref={collageImage1Container}
+              className="col-span-2 col-start-1 row-span-2 row-start-1 overflow-hidden"
+            >
+              <Image
+                onMouseEnter={handleMouseEnterCollage}
+                onMouseLeave={handleMouseLeaveCollage}
+                ref={collageImage1Ref}
+                src={Building}
+                alt="building-sm"
+                className="h-full"
+              />
             </div>
-            <div className="col-span-2 col-start-2 row-span-2">
-              <Image src={Bildergruppe} alt="bildergruppe" className="h-full" />
+            <div
+              ref={collageImage2Container}
+              className="col-span-2 col-start-2 row-span-2 row-start-2 overflow-hidden"
+            >
+              <Image
+                onMouseEnter={handleMouseEnterCollage}
+                onMouseLeave={handleMouseLeaveCollage}
+                ref={collageImage2Ref}
+                src={Bildergruppe}
+                alt="bildergruppe"
+                className="h-full"
+              />
             </div>
           </div>
           <div className="flex-1 self-end">
