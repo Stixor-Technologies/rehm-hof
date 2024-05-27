@@ -30,6 +30,23 @@
   .town-houses-numbers {
     @apply text-[clamp(2rem,5.5vw,6.563rem)] xl:w-[7.688rem] 2xl:leading-[6.75rem];
   }
+
+  .custom-list-type {
+    @apply before:pr-1.5 before:text-secondary before:content-['-'];
+  }
+
+  .td-row {
+    @apply bg-opacity-50 text-center text-lg leading-[2.125rem] text-secondary;
+  }
+
+  .td-container {
+    @apply min-w-[5.75rem] border-b border-slate py-8;
+    /* background-color: aqua; */
+  }
+
+  .td-item {
+    @apply block;
+  }
 }
 
 .custom-checkbox {
@@ -39,4 +56,43 @@
 .custom-checkbox:checked::before {
   content: "X";
   @apply font-light text-black 3xl:flex 3xl:h-[0.854rem] 3xl:w-[0.854rem] 3xl:items-center 3xl:justify-center;
+}
+
+.swiper-pagination {
+  @apply !static !-bottom-10 flex-col gap-[0.772rem] p-0 md:!max-h-max lg:!absolute lg:!bottom-auto lg:!left-0 lg:!top-[12.158rem] lg:flex lg:!w-[1.916rem];
+}
+
+.swiper-pagination-bullet {
+  @apply !h-4 !w-4 rounded-full !border-[0.188rem] border-bone !bg-transparent !opacity-30 lg:!h-[1.916rem] lg:!w-[1.916rem] lg:!border-[0.313rem];
+}
+
+.swiper-pagination-bullet-active {
+  @apply !opacity-100;
+}
+
+.swiper-button-next:after {
+  content: "" !important;
+  background: url("/assets/images/project-page/arrow-icon.svg") no-repeat
+    center/contain;
+  @apply -rotate-90 self-end lg:rotate-0;
+}
+
+.swiper-button-prev::after {
+  content: "" !important;
+  background: url("/assets/images/project-page/arrow-icon.svg") no-repeat
+    center/contain;
+  @apply rotate-90 lg:rotate-180;
+}
+
+.swiper-button-next:after,
+.swiper-button-prev:after {
+  @apply h-[1.238rem] w-[1.852rem];
+}
+
+.swiper-button-next {
+  @apply !right-[26%] !top-auto bottom-1.5 !h-4 !w-4 !opacity-100 sm:!right-[35%] md:!right-[40%] lg:!left-[0.313rem] lg:!top-[24.063rem] lg:bottom-auto lg:!h-[1.238rem] lg:!w-[1.852rem];
+}
+
+.swiper-button-prev {
+  @apply !left-[26%] !top-auto bottom-1.5 !h-4 !w-4 !opacity-100 sm:!left-[35%] md:!left-[40%]  lg:!left-[0.313rem] lg:!top-[11.596rem] lg:bottom-auto lg:!h-[1.238rem] lg:!w-[1.852rem];
 }
