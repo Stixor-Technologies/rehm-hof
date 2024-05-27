@@ -138,7 +138,7 @@ const Projekt = () => {
           alt="pattern"
           width={468}
           height={1300}
-          className="absolute bottom-24 right-0 hidden w-[24.38vw] lg:block"
+          className="absolute -right-10 bottom-28 hidden h-full max-h-[81.25rem] w-[24.38vw] overflow-visible object-cover lg:block"
         />
       </section>
 
