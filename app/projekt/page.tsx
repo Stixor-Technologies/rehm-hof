@@ -154,7 +154,7 @@ const Projekt = () => {
           className=" w-full max-w-[71.25rem] lg:w-1/2 3xl:w-full"
         />
 
-        <div className=" px-4 sm:px-8 lg:w-1/2 lg:max-w-[35rem] lg:px-4 3xl:px-0">
+        <div className=" px-4 sm:px-8 lg:w-1/2 lg:max-w-[35rem] lg:px-4 4xl:px-0">
           <Image
             src={OSVGGray}
             width={340}
@@ -262,8 +262,8 @@ const Projekt = () => {
           </ul>
         </div>
 
-        <div className="flex-1 bg-slate px-5 py-14 xl:pb-[12.065rem] xl:pl-[12.688rem] xl:pt-[6.248rem]">
-          <div className="flex flex-col gap-7 sm:flex-row lg:gap-10">
+        <div className="flex-1 bg-slate px-5 py-14 xl:pb-[12.275rem] xl:pl-[12.688rem] xl:pt-[6.248rem]">
+          <div className="flex flex-col gap-7 text-secondary sm:flex-row lg:gap-10">
             <div className="w-full sm:max-w-[22.5rem]">
               <p>
                 Die Stadthäuser kombinieren Ruhe mit urbaner Eleganz und sorgen
@@ -272,7 +272,7 @@ const Projekt = () => {
                 eigenen Eingang und einen privaten Gartenanteil, der ausreichend
                 Platz zum Spielen und Entspannen bietet.
               </p>
-              <p className="mt-7 lg:mt-10">
+              <p className="mt-7 lg:mt-6">
                 Dank der Photovoltaikanlage für Solarstrom und einer effizienten
                 Luft-Wasser-Wärmepumpe für Heizung und Kühlung leben die
                 zukünftigen Bewohner zudem umweltfreundlich und energiesparend.
@@ -299,7 +299,7 @@ const Projekt = () => {
       </section>
 
       {/* section# 7 */}
-      <section className="container relative my-10 md:my-[3.75rem] xl:-mt-[6rem]">
+      <section className="container relative my-14 md:my-[3.75rem] xl:-mt-[6rem]">
         <Image
           src={ProjectGroupBg}
           width={1560}

@@ -59,7 +59,7 @@ const FaqItem = ({
   });
   return (
     <div
-      className={` py-4 lg:pb-[clamp(0.3rem,2vw,2.281rem)] lg:pt-[clamp(0.2rem,2vw,2rem)] ${id !== 5 && "border-b border-b-black"}`}
+      className={` py-4 lg:pb-[clamp(0.3rem,2vw,2.281rem)] ${id !== 0 && "lg:pt-[clamp(0.2rem,2vw,2rem)]"} ${id !== 5 && "border-b border-b-black"}`}
     >
       <div
         className="group relative flex cursor-pointer items-center gap-[1.125rem]"
@@ -92,7 +92,7 @@ const FaqItem = ({
 
       <div
         ref={answerRef}
-        className="ml-[3.125rem] h-0 overflow-hidden text-lg leading-[1.875rem] text-secondary"
+        className="ml-[3.125rem] h-0 overflow-hidden  text-secondary lg:text-lg lg:leading-[1.875rem]"
       >
         <ul>
           {faqItem?.answer?.map((item, idx) => <li key={idx}>{item}</li>)}
@@ -147,7 +147,7 @@ const Lage = () => {
     <section>
       {/* section# 1 */}
 
-      <section className="mx-4 max-w-[120rem] sm:mx-8  lg:mx-auto">
+      <section className="ml-4 max-w-[120rem] sm:ml-8  lg:mx-auto">
         <div className="mr-0 mt-12 flex flex-col gap-10 bg-slate px-4 py-12 sm:px-8 lg:ml-[calc((105vw-100%)/2)] lg:mt-[6.25rem] lg:flex-row lg:justify-end lg:py-[5.188rem] lg:pr-0 xl:ml-[calc((105vw-1280px)/2)] xl:px-0 2xl:ml-[calc((105vw-1534px)/2)] 4xl:ml-[11.25rem] 4xl:h-[50rem]">
           <div className="flex-1 lg:max-w-lg xl:ml-[10.313rem] xl:max-w-none">
             <p className="w-full text-[clamp(2rem,5.5vw,6.563rem)] uppercase leading-tight text-secondary lg:max-w-[31.25rem] 2xl:max-w-[37.5rem] 2xl:leading-[6.75rem] 4xl:h-[28.938rem]">
@@ -254,7 +254,8 @@ const Lage = () => {
 
         {/* section# 4 */}
         <div className="mb-[11.813rem] mt-[6.25rem] flex flex-col items-start gap-10 lg:flex-row">
-          <div className="w-full lg:max-w-[35rem]">
+          <div className="w-full lg:w-1/2 lg:max-w-[35rem] 2xl:w-full">
+            {/* <div className="w-full lg:max-w-[35rem]"> */}
             {faq.map((faqItem, index) => (
               <FaqItem
                 id={index}
@@ -266,13 +267,18 @@ const Lage = () => {
             ))}
           </div>
 
-          <Image
-            src={Essen}
-            width={960}
-            height={786}
-            alt="essen"
-            className="lg:w-[50%] lg:max-w-[60rem] 2xl:w-full"
-          />
+          <div className="relative flex-1 lg:w-[50%] lg:max-w-[60rem] 2xl:w-full">
+            {activeFaq >= 0 && (
+              <Image
+                src={`${activeFaq === 0 ? "/assets/images/lage/points.png" : "/assets/images/lage/points1.png"}`}
+                className="absolute"
+                width={960}
+                height={786}
+                alt=""
+              />
+            )}
+            <Image src={Essen} width={960} height={786} alt="essen" />
+          </div>
         </div>
       </section>
     </section>
