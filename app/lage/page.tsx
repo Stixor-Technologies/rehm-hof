@@ -147,15 +147,15 @@ const Lage = () => {
       {/* section# 1 */}
 
       <section className="mx-auto max-w-[120rem]">
-        <div className="mr-0 flex flex-col gap-10 bg-slate px-4 py-12 sm:px-8 lg:mt-[6.25rem] lg:flex-row lg:py-[5.188rem] lg:pr-0 xl:px-0 2xl:ml-[calc((105vw-1534px)/2)] 4xl:ml-[11.25rem]">
+        <div className="mr-0 flex flex-col gap-10 bg-slate px-4 py-12 sm:px-8 lg:mt-[6.25rem] lg:flex-row lg:py-[5.188rem] lg:pr-0 xl:px-0 2xl:ml-[calc((105vw-1534px)/2)] 4xl:ml-[11.25rem] 4xl:h-[50rem]">
           <div className=" flex-1  xl:ml-[10.313rem] ">
             <p className=" w-full text-[clamp(2rem,5.5vw,6.563rem)] uppercase leading-tight text-secondary lg:max-w-[31.25rem] 2xl:leading-[6.75rem] 4xl:h-[28.938rem]">
               Leben Zwischen stadtpark
-              <span className=" font-bold text-primary"> & </span>
+              <span className="font-bold text-primary"> & </span>
               alster
             </p>
 
-            <p className="mt-4 text-[clamp(1.2rem,2vw,2.188rem)]  tracking-[0.044rem] text-secondary lg:mt-[1.875rem] lg:max-w-[50.438rem] 2xl:leading-[3.125rem]">
+            <p className="mt-4 text-[clamp(1.2rem,2vw,2.188rem)]  tracking-[0.044rem] text-secondary lg:mt-[1.875rem] lg:max-w-[50.438rem] 2xl:leading-[3.125rem] 4xl:h-[8.813rem]">
               NATÜRLICH URBAN LEBEN: WASSER, PARK & DAS PULSIERENDE LEBEN VOR
               DER TÜR - DEIN ZUHAUSE IM HERZEN DES GESCHEHENS
             </p>
@@ -164,8 +164,8 @@ const Lage = () => {
             width={672}
             height={634}
             src={Leben}
-            alt=""
-            className="max-h-[39.625] w-full lg:w-[50%] lg:max-w-[42rem] 2xl:w-full"
+            alt="leben"
+            className="max-h-[39.625rem] w-full lg:w-[50%] lg:max-w-[42rem] 2xl:w-full"
           />
         </div>
       </section>
