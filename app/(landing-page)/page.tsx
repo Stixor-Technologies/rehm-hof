@@ -94,8 +94,8 @@ const LandingPage = () => {
       });
     } else {
       gsap.to(image2Ref.current, {
-        yPercent: -55,
-        scale: 1.15,
+        yPercent: -18,
+        // scale: 1.15,
       });
     }
   };
@@ -188,7 +188,11 @@ const LandingPage = () => {
           onClick={slideImage}
           className=" absolute right-0 top-4 z-10 w-24 max-w-[15.875rem] cursor-pointer sm:top-16 lg:top-[3.962rem] lg:h-[4.563rem] lg:w-auto "
         />
-        <div className="relative mx-auto h-full w-full max-w-[120rem] overflow-hidden">
+        <div
+          onMouseEnter={handleMouseEnter}
+          onMouseLeave={handleMouseLeave}
+          className="relative mx-auto h-full w-full max-w-[120rem] overflow-hidden"
+        >
           <div className=" z-10 flex flex-nowrap items-start">
             <div
               ref={image1Ref}
@@ -205,7 +209,7 @@ const LandingPage = () => {
 
             <div
               ref={image2Ref}
-              className=" w-full shrink-0 -translate-x-[200%]  overflow-hidden"
+              className=" w-full shrink-0 -translate-x-[200%] -translate-y-[18%] overflow-hidden"
             >
               <Image
                 src={Strassenansicht}
@@ -233,14 +237,14 @@ const LandingPage = () => {
       </section>
 
       {/* section# 2 */}
-      <section className="container mb-[6.25rem] mt-[5.125rem] flex flex-col justify-between gap-10 lg:flex-row">
+      <section className="container my-12 flex flex-col justify-between gap-7 lg:mb-[6.25rem] lg:mt-[5.125rem] lg:flex-row lg:gap-10">
         <div className="flex-1 lg:order-last lg:max-w-[35rem]">
           <Image
             src={logo}
             alt="Logo"
             width={210}
             height={104.79}
-            className="mx-auto pb-4 lg:mx-0 lg:pb-0"
+            className="max-w-[100px] pb-0 lg:mx-0 lg:pb-0"
           />
 
           <h2 className=" my-4 text-[clamp(2.063rem,5vw,4.063rem)] leading-snug text-primary lg:leading-[4.688rem] xl:my-[3.75rem]">
@@ -272,8 +276,8 @@ const LandingPage = () => {
       {/* section# 3 */}
       <section className="relative">
         <section className="relative z-10 bg-bone bg-opacity-50">
-          <div className="container flex flex-col justify-between gap-6 pb-[6.263rem] pt-[2.738rem] lg:flex-row lg:gap-[10vw] 4xl:h-[38.75rem]">
-            <div className="mt-[3.56rem] lg:order-1 lg:w-1/2 lg:max-w-[47.5rem] 2xl:w-full">
+          <div className="container flex flex-col justify-between gap-6 py-10 lg:flex-row lg:gap-[10vw] lg:pb-[6.263rem] lg:pt-[2.738rem] 4xl:h-[38.75rem]">
+            <div className="lg:order-1 lg:mt-[3.56rem] lg:w-1/2 lg:max-w-[47.5rem] 2xl:w-full">
               <h2 className="text-[clamp(1.6rem,2.4vw,2.813rem)] text-primary sm:w-1/2 lg:w-[70%] xl:mt-1.5 2xl:-mt-3.5 2xl:w-full 2xl:leading-[3.813rem]">
                 VIELFALTIGE WOHNMÖGLICHKEITEN IM HAMBURGER CHIC
               </h2>
@@ -317,7 +321,7 @@ const LandingPage = () => {
 
         {/* section# 4 */}
         {/* grid-cols-[53%_21%_26.4%] grid-rows-[45.9%_18.3%_24.3%] */}
-        <section className="container mb-[6.25rem] mt-[6.6rem] flex flex-col gap-16 md:flex-row md:gap-10">
+        <section className="container my-12 flex flex-col gap-7 md:flex-row md:gap-10 lg:mb-[6.25rem] lg:mt-[6.6rem]">
           {/* grid-cols-[52.632%_21.054%_26.316%] grid-rows-[43.14%_17.06%_22.745%] */}
           <div className="grid w-full max-w-[47.5rem] flex-1 grid-cols-[52.632%_21.054%_26.316%] grid-rows-[53.86%_21.297%_28.396%] place-content-end ">
             <div
@@ -372,7 +376,7 @@ const LandingPage = () => {
           PROJEKT-HIGHLIGHTS
         </h2>
 
-        <div className="mb-[6.25rem] mt-[3.75rem]">
+        <div className=" mb-14 mt-6 lg:mb-[6.25rem] lg:mt-[3.75rem]">
           <Marquee speed={90} autoFill loop={0}>
             <ul className="marquee-list">
               {marque1Data?.map((marqueItem) => (
