@@ -59,7 +59,7 @@ const FaqItem = ({
   });
   return (
     <div
-      className={` py-4 lg:pb-9 lg:pt-8 ${id !== 5 && "border-b border-b-black"}`}
+      className={` py-4 lg:pb-[clamp(0.3rem,2vw,2.281rem)] lg:pt-[clamp(0.2rem,2vw,2rem)] ${id !== 5 && "border-b border-b-black"}`}
     >
       <div
         className="group relative flex cursor-pointer items-center gap-[1.125rem]"
