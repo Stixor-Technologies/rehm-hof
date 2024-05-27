@@ -52,11 +52,10 @@ const KontaktForm = () => {
         .required("Erforderlich"),
       street: Yup.string()
         .required("Erforderlich")
-        .max(10, "Straße darf höchstens 10 Zeichen lang sein"),
+        .max(100, "Straße darf höchstens 100 Zeichen lang sein"),
       postalCode: Yup.string()
         .required("Erforderlich")
-        .matches(/^\d+$/, "Es sind nur numerische Werte zulässig")
-        .max(5, "Es sind maximal 5 Zeichen zulässig"),
+        .matches(/^\d{5}$/, "Es sind genau 5 numerische Zeichen erforderlich"),
 
       city: Yup.string()
         .trim()
@@ -115,7 +114,7 @@ const KontaktForm = () => {
         .oneOf([true], "Sie müssen die Datenschutzerklärung akzeptieren")
         .required("Erforderlich"),
     }),
-    onSubmit: async (values) => {
+    onSubmit: async (values, { resetForm }) => {
       try {
         const emailTemplate = `<div>
           <h2>${values.requestType.length > 0 ? `Sie haben eine neue Anfrage des Typs erhalten ${values.requestType[0]} aus ${values.firstName} ${values.lastName}` : `Sie haben eine Anfrage von erhalten ${values.firstName} ${values.lastName}`}</h2>
@@ -125,21 +124,21 @@ const KontaktForm = () => {
           <p><strong>Anrede:</strong>${values.salutation}</p>
           <p><strong>E-Mail: </strong>${values.email}</p>
           <p><strong>Telefon: </strong>${values.phone}</p>
-          <p><strong>Ausgewählte Kontaktmethode: </strong>${values.contactMethod[0]}</p>
+          <p><strong>Ausgewählte Kontaktmethode: </strong>${values.contactMethod.map((value: string, index: number) => <span key={index}>{values.contactMethod.length === index + 1 ? value : `${value}, `} </span>)}</p>
           
           <h3>Adresse</h3>
           <p><strong>Straße: </strong>${values.street}</p>
           <p><strong>PLZ: </strong>${values.postalCode}</p>
           <p><strong>Ort: </strong>${values.city}</p>
 
-          <h3>Raum und Fläche</h3>
-          <p><strong>Zimmer von: </strong>${values.roomsFrom}</p>
-          <p><strong>Zimmer bis: </strong>${values.roomsTo}</p>
-          <p><strong>Fläche von: </strong>${values.areaFrom}</p>
-          <p><strong>Zimmer bis: </strong>${values.areaTo}</p>
+          ${(values.roomsFrom || values.roomsTo || values.areaFrom || values.areaTo) && `<h3>Raum und Fläche</h3>`}
+          ${values.roomsFrom && `<p><strong>Zimmer von: </strong>${values.roomsFrom}</p>`}
+          ${values.roomsTo && `<p><strong>Zimmer bis: </strong>${values.roomsTo}</p>`}
+          ${values.areaFrom && `<p><strong>Fläche von: </strong>${values.areaFrom}</p>`}
+          ${values.areaTo && `<p><strong>Zimmer bis: </strong>${values.areaTo}</p>`}
 
 
-          <p><strong>NACHRICHT: </strong> ${values.message}</p></div>`;
+          ${values.message && `<p><strong>NACHRICHT: </strong> ${values.message}</p></div>`}`;
 
         const res = await fetch("/api/contact", {
           body: JSON.stringify({
@@ -157,6 +156,16 @@ const KontaktForm = () => {
         const resp = await res.json();
 
         if (resp?.code ? resp.code === 202 : resp[0].statusCode === 202) {
+          resetForm();
+          formik.setFieldValue("requestType", []);
+          formik.setFieldValue("contactMethod", []);
+          formik.setFieldValue("privacyPolicy", false);
+          document
+            .querySelectorAll(".custom-checkbox")
+            .forEach((checkbox: any) => {
+              checkbox.checked = false;
+            });
+
           toast.success(
             "Danke, dass Sie uns kontaktiert haben. Unser Team wird Sie bald erreichen",
             {

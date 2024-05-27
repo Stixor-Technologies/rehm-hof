@@ -29,13 +29,13 @@ const ProjectsSlider = () => {
       number: "01",
       header: "Obergeschoss",
       subHeading: "STADTHÄUSER 01 - 04",
-      map: "/assets/images/project-page/map1.png",
+      map: "/assets/images/project-page/map2.png",
     },
     {
       number: "02",
       header: "Obergeschoss",
       subHeading: "STADTHÄUSER 05 - 06",
-      map: "/assets/images/project-page/map1.png",
+      map: "/assets/images/project-page/map3.png",
     },
     {
       number: "03",
@@ -97,7 +97,7 @@ const ProjectsSlider = () => {
         <div className="relative flex-1 overflow-y-auto  lg:mt-[8.438rem] 2xl:mt-[9.936rem]">
           <table className="w-full table-fixed border-collapse">
             <thead>
-              <tr className=" text-lg leading-[1.875rem] tracking-[0.023rem] text-primary ">
+              <tr className=" tracking-[0.023rem] text-primary lg:text-lg lg:leading-[1.875rem] ">
                 <th className="w-[8.125rem] pb-[1.113rem] pl-[3.75rem] font-normal">
                   WE
                 </th>
@@ -123,6 +123,7 @@ const ProjectsSlider = () => {
             </thead>
             <tbody>
               {tableData?.map((data, idx) => {
+                console.log(active);
                 return (
                   <tr
                     key={idx}

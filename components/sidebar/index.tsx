@@ -38,7 +38,7 @@ const Sidebar = ({
 
   const link = (title: string, href: string, className: string = "") => (
     <button
-      className={`animated flex justify-start pb-8 text-4xl uppercase tracking-normal text-primary opacity-0 sm:pb-[2.813rem] sm:text-[4.063rem] sm:leading-[4.688rem] ${className} transition-all duration-500 hover:translate-x-[3.75rem]`}
+      className={`${!isMenuOpen ? "hidden" : "flex"} animated justify-start pb-8 text-4xl uppercase tracking-normal text-primary opacity-0 sm:pb-[2.813rem] sm:text-[4.063rem] sm:leading-[4.688rem] ${className} transition-all duration-500 hover:translate-x-[3.75rem]`}
       onClick={() => {
         setIsMenuOpen(false);
         document.body.classList.remove("!overflow-hidden");

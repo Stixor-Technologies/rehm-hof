@@ -32,16 +32,15 @@
   }
 
   .custom-list-type {
-    @apply before:pr-1.5 before:text-secondary before:content-['-'];
+    @apply tracking-normal before:pr-1.5 before:text-secondary before:content-['-'];
   }
 
   .td-row {
-    @apply bg-opacity-50 text-center text-lg leading-[2.125rem] text-secondary;
+    @apply bg-opacity-50 text-center text-secondary lg:text-lg lg:leading-[2.125rem];
   }
 
   .td-container {
-    @apply min-w-[5.75rem] border-b border-slate py-8;
-    /* background-color: aqua; */
+    @apply min-w-[5.75rem] border-b border-slate py-4 lg:py-8;
   }
 
   .td-item {
