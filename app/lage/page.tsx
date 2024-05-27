@@ -169,8 +169,17 @@ const Lage = () => {
               height={634}
               src={Leben}
               alt="leben"
-              className="absolute inset-0 h-full w-full transition-all duration-500 group-hover:opacity-0"
+              className="w-full lg:hidden lg:max-h-[39.625rem] lg:w-[40%] lg:max-w-[42rem] xl:w-1/2 2xl:w-full"
             />
+
+            <Image
+              width={672}
+              height={634}
+              src={Leben}
+              alt="leben"
+              className="absolute inset-0 w-full transition-all duration-500 group-hover:opacity-0 lg:h-full"
+            />
+
             <Image
               width={672}
               height={634}
@@ -190,7 +199,7 @@ const Lage = () => {
               HAMBURG-WINTERHUDE
             </h2>
 
-            <div className=" hamburg-winter-text mt-5 space-y-4 xl:mt-[3.75rem] 2xl:space-y-7">
+            <div className="hamburg-winter-text mt-5 space-y-4 xl:mt-[3.75rem] 2xl:space-y-7">
               <p>
                 Willkommen in einem gewachsenem Stadtteil voller Charme und
                 urbaner Raffinesse. Die Umgebung vereint auf einzigartige Weise
