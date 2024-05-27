@@ -244,14 +244,14 @@ const LandingPage = () => {
             alt="Logo"
             width={210}
             height={104.79}
-            className="max-w-[100px] pb-0 lg:mx-0 lg:pb-0"
+            className="max-w-[6.25rem] pb-0 lg:mx-0 lg:w-full lg:max-w-[13.125rem] lg:pb-0"
           />
 
           <h2 className=" my-4 text-[clamp(2.063rem,5vw,4.063rem)] leading-snug text-primary lg:leading-[4.688rem] xl:my-[3.75rem]">
             ENTDECKE DIE RUHE DES NEUEN.
           </h2>
 
-          <p className=" text-[clamp(1rem,2vw,1.253rem)] tracking-[0.025rem] text-secondary lg:leading-[2rem]">
+          <p className=" text-[clamp(1rem,2vw,1.253rem)] tracking-[0.025rem] text-secondary lg:leading-[2rem] 4xl:h-[248px]">
             In begehrter Lage von Hamburg-Winterhude erwartet Sie ein
             beeindruckendes Neubauprojekt, das moderne Architektur und urbanen
             Lifestyle vereint. Diese exklusive Anlage mit nur 9 Einheiten bietet
