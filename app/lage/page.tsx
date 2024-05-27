@@ -12,8 +12,6 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { faq } from "@/utils/utils";
 import { FaqITemType } from "@/utils/types";
-import Points from "@/public/assets/images/lage/points.png";
-import Points1 from "@/public/assets/images/points1.png";
 
 const FaqItem = ({
   id,
