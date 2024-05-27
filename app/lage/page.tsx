@@ -12,6 +12,8 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { faq } from "@/utils/utils";
 import { FaqITemType } from "@/utils/types";
+import Points from "@/public/assets/images/lage/points.png";
+import Points1 from "@/public/assets/images/points1.png";
 
 const FaqItem = ({
   id,
@@ -92,7 +94,7 @@ const FaqItem = ({
 
       <div
         ref={answerRef}
-        className="ml-[3.125rem] h-0 overflow-hidden text-lg leading-[1.875rem] text-secondary"
+        className="ml-[3.125rem] h-0 overflow-hidden  text-secondary lg:text-lg lg:leading-[1.875rem]"
       >
         <ul>
           {faqItem?.answer?.map((item, idx) => <li key={idx}>{item}</li>)}
@@ -110,6 +112,8 @@ const Lage = () => {
   const toggleActive = (id: number) => {
     setActiveFaq((prevActiveFaq) => (prevActiveFaq === id ? -1 : id));
   };
+
+  console.log(activeFaq);
 
   const { contextSafe } = useGSAP();
 
@@ -254,6 +258,7 @@ const Lage = () => {
 
         {/* section# 4 */}
         <div className="mb-[11.813rem] mt-[6.25rem] flex flex-col items-start gap-10 lg:flex-row">
+          {/* <div className="w-full lg:w-1/2 lg:max-w-[35rem] 2xl:w-full"> */}
           <div className="w-full lg:max-w-[35rem]">
             {faq.map((faqItem, index) => (
               <FaqItem
@@ -266,6 +271,16 @@ const Lage = () => {
             ))}
           </div>
 
+          {/* <div className="relative flex-1 lg:w-[50%] lg:max-w-[60rem] 2xl:w-full">
+            {activeFaq >= 0 && (
+              <Image
+                src={`${activeFaq === 0 ? "/assets/images/lage/points.png" : "/assets/images/lage/points1.png"}`}
+                className="absolute"
+                width={960}
+                height={786}
+                alt=""
+              />
+            )} */}
           <Image
             src={Essen}
             width={960}
@@ -273,6 +288,7 @@ const Lage = () => {
             alt="essen"
             className="lg:w-[50%] lg:max-w-[60rem] 2xl:w-full"
           />
+          {/* </div> */}
         </div>
       </section>
     </section>
