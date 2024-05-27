@@ -2,6 +2,7 @@
 import React, { useRef, useState } from "react";
 import HamburgWinterHude from "@/public/assets/images/lage/hamburg-winterhude.png";
 import Leben from "@/public/assets/images/lage/leben.png";
+import Leben2 from "@/public/assets/images/lage/leben2.png";
 import Essen from "@/public/assets/images/lage/essen.png";
 import Alster from "@/public/assets/images/lage/Alster.png";
 import Markt from "@/public/assets/images/lage/Markt.png";
@@ -161,13 +162,23 @@ const Lage = () => {
               DER TÜR - DEIN ZUHAUSE IM HERZEN DES GESCHEHENS
             </p>
           </div>
-          <Image
-            width={672}
-            height={634}
-            src={Leben}
-            alt="leben"
-            className="w-full lg:max-h-[39.625rem] lg:w-[40%] lg:max-w-[42rem] xl:w-1/2 2xl:w-full"
-          />
+
+          <div className="group relative w-full lg:max-h-[39.625rem] lg:w-[40%] lg:max-w-[42rem] xl:w-1/2 2xl:w-full">
+            <Image
+              width={672}
+              height={634}
+              src={Leben}
+              alt="leben"
+              className="absolute inset-0 h-full w-full transition-all duration-500 group-hover:opacity-0"
+            />
+            <Image
+              width={672}
+              height={634}
+              src={Leben2}
+              alt="leben"
+              className="absolute inset-0 h-full w-full opacity-0 transition-all duration-500 group-hover:opacity-100"
+            />
+          </div>
         </div>
       </section>
 
