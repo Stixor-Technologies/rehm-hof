@@ -116,7 +116,7 @@ const Lage = () => {
   const handleMouseEnter = contextSafe(() => {
     const tl = gsap.timeline();
     tl.to(image1Ref.current, {
-      scale: 1.26,
+      scale: 1.22,
       transformOrigin: "top right",
       duration: 1,
     }).to(
