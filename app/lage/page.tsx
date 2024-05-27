@@ -193,7 +193,7 @@ const Lage = () => {
 
       <section className="container">
         {/* section# 2 */}
-        <div className="mb-[6.375rem] mt-[6.438rem] flex flex-col items-start gap-10 lg:flex-row">
+        <div className="mb-[6.375rem] mt-[6.438rem] flex flex-col items-start gap-10 lg:flex-row xl:mb-4 2xl:mb-[6.375rem]">
           <div className="flex-1 lg:order-last lg:w-1/2 lg:max-w-[47.5rem]">
             <h2 className=" text-[clamp(2.063rem,4vw,4.063rem)] leading-none text-primary 2xl:leading-[4.688rem] 4xl:h-[4.75rem] 4xl:w-[52.125rem]">
               HAMBURG-WINTERHUDE
@@ -216,7 +216,7 @@ const Lage = () => {
                 höherschlagen.
               </p>
 
-              <p>
+              <p className="block xl:hidden 2xl:block">
                 Das lebhafte Treiben zeigt sich nicht nur in den Straßen,
                 sondern auch in einer breiten Palette von Sport- und
                 Freizeitmöglichkeiten. Der Stadtpark und das Alsterufer laden zu
@@ -241,6 +241,19 @@ const Lage = () => {
             className="w-full lg:w-1/2 lg:max-w-[47.5rem] lg:flex-1 2xl:w-full 2xl:flex-none"
           />
         </div>
+
+        <p className="hidden text-xl xl:block 2xl:hidden">
+          Das lebhafte Treiben zeigt sich nicht nur in den Straßen, sondern auch
+          in einer breiten Palette von Sport- und Freizeitmöglichkeiten. Der
+          Stadtpark und das Alsterufer laden zu entspannten Spaziergängen oder
+          ausgedehnten Laufrunden ein, während moderne Fitnessstudios und
+          exklusive Spa- und Wellnessclubs die sportlichen Ambitionen und das
+          Wellbeing der Bewohner unterstützen. Wassersportliebhaber können zudem
+          die nahegelegene Alster für ihre Aktivitäten nutzen, während der
+          Stadtpark Raum für Konzerte, Sportveranstaltungen und erholsame
+          Stunden im Grünen bietet. Des Weiteren zeichnen sich die
+          Bildungseinrichtungen in Winterhude sich durch höchste Qualität aus.
+        </p>
 
         {/* section# 3 */}
         <section className="my-[6.25rem] flex flex-col items-start gap-12 md:flex-row md:gap-10">
