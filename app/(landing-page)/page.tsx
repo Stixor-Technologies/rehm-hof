@@ -281,7 +281,7 @@ const LandingPage = () => {
               <h2 className="text-[clamp(1.6rem,2.4vw,2.813rem)] text-primary sm:w-1/2 lg:w-[70%] xl:mt-1.5 2xl:-mt-3.5 2xl:w-full 2xl:leading-[3.813rem]">
                 VIELFALTIGE WOHNMÖGLICHKEITEN IM HAMBURGER CHIC
               </h2>
-              <p className="mt-4 tracking-[0.025rem] text-secondary xl:mt-[3.75rem] xl:text-xl xl:leading-[1.938rem]">
+              <p className="mt-4 tracking-[0.025rem] text-secondary xl:mt-[3.75rem] xl:text-xl xl:leading-[1.938rem] 4xl:h-[11.5rem]">
                 Die Vielfalt der Wohnmöglichkeiten in diesem Neubauprojekt ist
                 bemerkenswert: von Stadthäusern mit privaten Gärten bis hin zu
                 einem exklusiven Penthouse mit Dachterrasse und großzügigen
