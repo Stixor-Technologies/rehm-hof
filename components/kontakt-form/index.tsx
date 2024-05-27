@@ -1,8 +1,9 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import * as Yup from "yup";
 import { useFormik } from "formik";
 import { toast } from "react-toastify";
+import { RotateCw } from "lucide-react";
 
 interface InputType {
   type?: string;
@@ -14,6 +15,7 @@ interface InputType {
 }
 
 const KontaktForm = () => {
+  const [isLoading, setIsLoading] = useState(false);
   const formik = useFormik({
     initialValues: {
       requestType: [],
@@ -116,6 +118,8 @@ const KontaktForm = () => {
     }),
     onSubmit: async (values, { resetForm }) => {
       try {
+        setIsLoading(true);
+
         const emailTemplate = `<div>
           <h2>${values.requestType.length > 0 ? `Sie haben eine neue Anfrage des Typs erhalten ${values.requestType[0]} aus ${values.firstName} ${values.lastName}` : `Sie haben eine Anfrage von erhalten ${values.firstName} ${values.lastName}`}</h2>
 
@@ -124,7 +128,7 @@ const KontaktForm = () => {
           <p><strong>Anrede:</strong>${values.salutation}</p>
           <p><strong>E-Mail: </strong>${values.email}</p>
           <p><strong>Telefon: </strong>${values.phone}</p>
-          <p><strong>Ausgewählte Kontaktmethode: </strong>${values.contactMethod.map((value: string, index: number) => <span key={index}>{values.contactMethod.length === index + 1 ? value : `${value}, `} </span>)}</p>
+          <p><strong>Ausgewählte Kontaktmethode: </strong>${values.contactMethod.join(", ")}</p>
           
           <h3>Adresse</h3>
           <p><strong>Straße: </strong>${values.street}</p>
@@ -178,6 +182,7 @@ const KontaktForm = () => {
               draggable: true,
             },
           );
+          setIsLoading(false);
         } else {
           toast.error("Bitte versuchen Sie es später noch einmal", {
             position: "top-right",
@@ -511,9 +516,14 @@ const KontaktForm = () => {
 
           <button
             type="submit"
-            className="hover flex w-full items-center justify-center border border-secondary bg-transparent px-16 py-2 transition-all duration-500 hover:bg-secondary hover:text-white sm:w-auto"
+            className="group flex h-[50px] w-full items-center justify-center border border-secondary bg-transparent px-16 py-2 transition-all duration-500 hover:bg-secondary hover:text-white sm:w-[200px]"
+            disabled={isLoading}
           >
-            Senden
+            {isLoading ? (
+              <RotateCw className="mr-2 h-7 w-7 animate-spin" />
+            ) : (
+              "Senden"
+            )}
           </button>
         </form>
       </div>
