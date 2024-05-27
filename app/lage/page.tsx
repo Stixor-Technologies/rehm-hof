@@ -157,7 +157,7 @@ const Lage = () => {
               alster
             </p>
 
-            <p className="mt-4 text-[clamp(1.2rem,2vw,2.188rem)] tracking-[0.044rem] text-secondary lg:mt-[1.875rem] lg:max-w-[50.438rem] 2xl:leading-[3.125rem] 4xl:h-[8.813rem]">
+            <p className="mt-4 text-[clamp(1.2rem,2vw,2.188rem)] tracking-[0.044rem] text-secondary lg:mt-[1.875rem] lg:max-w-[810px] 2xl:leading-[3.125rem] 4xl:h-[147px] 4xl:!w-[810px]">
               NATÜRLICH URBAN LEBEN: WASSER, PARK & DAS PULSIERENDE LEBEN VOR
               DER TÜR - DEIN ZUHAUSE IM HERZEN DES GESCHEHENS
             </p>
