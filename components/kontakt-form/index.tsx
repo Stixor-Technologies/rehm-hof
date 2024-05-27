@@ -55,8 +55,7 @@ const KontaktForm = () => {
         .max(100, "Straße darf höchstens 100 Zeichen lang sein"),
       postalCode: Yup.string()
         .required("Erforderlich")
-        .matches(/^\d+$/, "Es sind nur numerische Werte zulässig")
-        .max(5, "Es sind maximal 5 Zeichen zulässig"),
+        .matches(/^\d{5}$/, "Es sind genau 5 numerische Zeichen erforderlich"),
 
       city: Yup.string()
         .trim()
