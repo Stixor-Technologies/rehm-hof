@@ -3,14 +3,12 @@ import React, { useRef, useState } from "react";
 import Image from "next/image";
 import OSVG from "@/public/assets/images/o.svg";
 import logo from "@/public/assets/images/logo.svg";
-import Section1Image from "@/public/assets/images/home-page/section1.jpg";
 import StadTPark from "@/public/assets/images/home-page/Stadtpark.png";
-
 import InnenraumStaffel from "@/public/assets/images/home-page/Innenraum_Staffel.png";
 import Strassenansicht from "@/public/assets/images/home-page/Strassenansicht.png";
-import Bildergruppe from "@/public/assets/images/home-page/Bildergruppe.jpg";
+import Bildergruppe from "@/public/assets/images/home-page/Bildergruppe.png";
 import Pattern from "@/public/assets/images/Pattern.svg";
-import Section6Image from "@/public/assets/images/home-page/section6.jpg";
+import Section6Image from "@/public/assets/images/home-page/section6.png";
 import Building from "@/public/assets/images/home-page/buildings.png";
 import Marquee from "react-fast-marquee";
 import gsap from "gsap";
@@ -106,17 +104,7 @@ const LandingPage = () => {
     <div>
       {/* section# 1*/}
 
-      <section className="relative max-h-[41.667vw] w-full overflow-hidden">
-        {/* <Image
-          src={OSVG}
-          ref={buttonRef}
-          width={150}
-          height={300}
-          alt="slide-button"
-          onClick={slideImage}
-          className="absolute -right-20 top-3 z-10 cursor-pointer sm:right-0 sm:top-16"
-        /> */}
-
+      <section className="relative mx-auto h-[41.667vw] max-h-[800px] w-full max-w-[120rem] overflow-hidden">
         <Image
           src={OSVG}
           ref={buttonRef}
@@ -124,7 +112,7 @@ const LandingPage = () => {
           height={73}
           alt="slide-button"
           onClick={slideImage}
-          className=" absolute right-0 top-4 z-10 w-24 max-w-[15.875rem] cursor-pointer sm:top-16 lg:top-[3.962rem] lg:h-[4.563rem] lg:w-auto"
+          className=" absolute right-0 top-4 z-10 w-24 max-w-[15.875rem] cursor-pointer sm:top-16 lg:top-[3.962rem] lg:h-[4.563rem] lg:w-auto "
         />
         <div className="relative mx-auto h-full w-full max-w-[120rem] overflow-hidden">
           <div className=" z-10 flex flex-nowrap items-start">
@@ -156,12 +144,12 @@ const LandingPage = () => {
           </div>
         </div>
         <div
-          className="absolute inset-0 flex items-center bg-hero-gradient "
+          className="absolute inset-0 flex max-w-[1118px] items-center bg-hero-gradient"
           onMouseEnter={handleMouseEnter}
           onMouseLeave={handleMouseLeave}
         >
-          <div className="container">
-            <p className=" text-[clamp(1.5rem,5.5vw,6.563rem)] uppercase leading-tight text-white">
+          <div className="container  xl:ml-[calc((105vw-1278px)/2)] xl:pl-0 2xl:ml-[calc((105vw-1534px)/2)] 4xl:ml-[11.25rem]">
+            <p className=" text-[clamp(1.5rem,5.5vw,6.563rem)] uppercase leading-tight text-white 3xl:leading-[6.75rem]">
               Leben <br /> Zwischen <br /> stadtpark <br />
               <span className=" font-semibold text-primary">& </span>
               alster
@@ -209,9 +197,9 @@ const LandingPage = () => {
       {/* section# 3 */}
       <section className="relative">
         <section className="relative z-10 bg-bone bg-opacity-50">
-          <div className="container flex flex-col justify-between gap-6 pb-[6.263rem] pt-[2.738rem] lg:flex-row lg:gap-[10vw]">
-            <div className="mt-[3.563rem] lg:order-1 lg:w-1/2 lg:max-w-[47.5rem] 2xl:w-full">
-              <h2 className="text-[clamp(1.6rem,2.4vw,2.813rem)] text-primary sm:w-1/2 lg:w-[70%] 2xl:w-full 2xl:leading-[3.813rem]">
+          <div className="container flex flex-col justify-between gap-6 pb-[6.263rem] pt-[2.738rem] lg:flex-row lg:gap-[10vw] 4xl:h-[38.75rem]">
+            <div className="mt-[3.56rem] lg:order-1 lg:w-1/2 lg:max-w-[47.5rem] 2xl:w-full">
+              <h2 className="text-[clamp(1.6rem,2.4vw,2.813rem)] text-primary sm:w-1/2 lg:w-[70%] xl:mt-1.5 2xl:-mt-3.5 2xl:w-full 2xl:leading-[3.813rem]">
                 VIELFALTIGE WOHNMÖGLICHKEITEN IM HAMBURGER CHIC
               </h2>
               <p className="mt-4 tracking-[0.025rem] text-secondary xl:mt-[3.75rem] xl:text-xl xl:leading-[1.938rem]">
@@ -227,7 +215,7 @@ const LandingPage = () => {
 
             <div className="lg:order-0 flex max-w-[29.688rem] flex-col justify-between gap-5 uppercase text-primary sm:flex-row lg:w-[30%] lg:flex-col lg:gap-0 2xl:w-full">
               <div>
-                <div className="mb-3.5 flex w-full items-end gap-5 lg:gap-2">
+                <div className="flex w-full items-end gap-5 lg:gap-2">
                   <span className="town-houses-numbers">4</span>
                   <span className="town-houses-tag">STADTHÄUSER</span>
                 </div>
@@ -253,8 +241,9 @@ const LandingPage = () => {
         </section>
 
         {/* section# 4 */}
+        {/* grid-cols-[53%_21%_26.4%] grid-rows-[45.9%_18.3%_24.3%] */}
         <section className="container my-[6.25rem] flex flex-col gap-16 md:flex-row md:gap-10 2xl:mt-3.5">
-          <div className="grid w-full max-w-[47.5rem] flex-1 grid-cols-[53%_21%_26.4%] grid-rows-[45.9%_18.3%_24.3%] place-content-end ">
+          <div className="grid w-full max-w-[47.5rem] flex-1 grid-cols-[52.632%_21.054%_26.316%] grid-rows-[43.14%_17.06%_22.745%] place-content-end ">
             <div className="col-span-2 row-start-1 row-end-2">
               <Image src={Building} alt="building-sm" />
             </div>
@@ -321,11 +310,13 @@ const LandingPage = () => {
       </section>
 
       {/* section# 6 */}
-      <section className="container relative h-[35.875rem] max-w-[120rem] p-0">
+
+      <section className="container relative max-w-[120rem] p-0">
         <Image
           src={Section6Image}
-          fill
-          className="absolute object-cover"
+          width={1920}
+          height={574}
+          className="object-cover"
           alt="layout-tree"
         />
       </section>
