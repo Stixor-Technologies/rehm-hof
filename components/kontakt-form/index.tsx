@@ -35,19 +35,44 @@ const KontaktForm = () => {
     },
     validationSchema: Yup.object({
       salutation: Yup.string().required("Erforderlich"),
-      firstName: Yup.string().required("Erforderlich"),
-      lastName: Yup.string().required("Erforderlich"),
-      street: Yup.string().required("Erforderlich"),
+      firstName: Yup.string()
+        .trim()
+        .matches(
+          /^[A-Za-z]+(?: [A-Za-z]+)*$/,
+          "Ungültiger Vorname: Es sind nur alphabetische Zeichen und ein einzelnes Leerzeichen zwischen den Namen zulässig",
+        )
+        .required("Erforderlich"),
+
+      lastName: Yup.string()
+        .trim()
+        .matches(
+          /^[A-Za-z]+(?: [A-Za-z]+)*$/,
+          "Ungültiger name: Es sind nur alphabetische Zeichen und ein einzelnes Leerzeichen zwischen den Namen zulässig",
+        )
+        .required("Erforderlich"),
+      street: Yup.string()
+        .required("Erforderlich")
+        .max(10, "Straße darf höchstens 10 Zeichen lang sein"),
       postalCode: Yup.string()
         .required("Erforderlich")
+        .matches(/^\d+$/, "Es sind nur numerische Werte zulässig")
         .max(5, "Es sind maximal 5 Zeichen zulässig"),
-      city: Yup.string().required("Erforderlich"),
+
+      city: Yup.string()
+        .trim()
+        .matches(
+          /^[A-Za-z]+(?:[\s-][A-Za-z]+)*$/,
+          "Ungültiger Ort: nur alphabetische Zeichen, Leerzeichen und Bindestriche zulässig",
+        )
+        .required("Erforderlich"),
+
       phone: Yup.string()
         .required("Erforderlich")
         .matches(
-          /^\+?(\d[-\s]?){10,14}$/,
-          "Ungültige Telefonnummer. Bitte nur Zahlen, Leerzeichen und Bindestriche verwenden.",
+          /^\+?\d{11,13}$/,
+          "Ungültige Telefonnummer. Bitte nur Zahlen und maximal ein '+' am Anfang verwenden. Die Gesamtlänge sollte zwischen 11 und 13 Zeichen liegen.",
         ),
+
       email: Yup.string()
         .email("Ungültige E-Mail-Adresse")
         .required("Erforderlich"),
