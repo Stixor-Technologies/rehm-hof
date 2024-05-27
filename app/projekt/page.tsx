@@ -262,8 +262,8 @@ const Projekt = () => {
           </ul>
         </div>
 
-        <div className="flex-1 bg-slate px-5 py-14 xl:pb-[12.065rem] xl:pl-[12.688rem] xl:pt-[6.248rem]">
-          <div className="flex flex-col gap-7 sm:flex-row lg:gap-10">
+        <div className="flex-1 bg-slate px-5 py-14 xl:pb-[12.275rem] xl:pl-[12.688rem] xl:pt-[6.248rem]">
+          <div className="flex flex-col gap-7 font-light text-secondary sm:flex-row lg:gap-10">
             <div className="w-full sm:max-w-[22.5rem]">
               <p>
                 Die Stadthäuser kombinieren Ruhe mit urbaner Eleganz und sorgen
@@ -272,7 +272,7 @@ const Projekt = () => {
                 eigenen Eingang und einen privaten Gartenanteil, der ausreichend
                 Platz zum Spielen und Entspannen bietet.
               </p>
-              <p className="mt-7 lg:mt-10">
+              <p className="mt-7 lg:mt-6">
                 Dank der Photovoltaikanlage für Solarstrom und einer effizienten
                 Luft-Wasser-Wärmepumpe für Heizung und Kühlung leben die
                 zukünftigen Bewohner zudem umweltfreundlich und energiesparend.
