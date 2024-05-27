@@ -294,7 +294,7 @@ const Projekt = () => {
           width={496}
           height={114}
           alt="key-button"
-          className="absolute bottom-10 right-0 hidden w-56 max-w-[496px] sm:block xl:bottom-[10.2vw] xl:w-auto"
+          className="absolute bottom-10 right-0 hidden w-56 max-w-[496px] sm:block lg:h-[7.125rem] xl:bottom-[10.2vw] xl:w-auto"
         />
       </section>
 
