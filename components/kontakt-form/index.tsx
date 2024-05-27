@@ -216,7 +216,7 @@ const KontaktForm = () => {
         placeholder={placeholder}
         onChange={formik.handleChange}
         onBlur={formik.handleBlur}
-        className="w-full border-b border-black bg-transparent pb-4 ps-3.5 text-base leading-[1.875rem] tracking-[0.023rem] outline-none placeholder:text-secondary placeholder:text-opacity-50 md:text-lg 4xl:max-h-[35px]"
+        className="w-full border-b border-black bg-transparent pb-2 ps-[7px] text-base leading-[1.875rem] tracking-[0.023rem] outline-none placeholder:text-secondary placeholder:text-opacity-50 sm:pb-4 sm:ps-3.5 md:text-lg 4xl:max-h-[35px]"
       />
       {touched && error && (
         <div className="mt-2 text-sm text-red-600">{error}</div>
@@ -263,7 +263,7 @@ const KontaktForm = () => {
           }}
           className="text-lg leading-8 text-secondary placeholder:leading-[1.875rem]"
         >
-          <div className="mb-10 text-base sm:mb-[3.75rem] md:text-xl">
+          <div className="mb-5 text-base sm:mb-[3.75rem] md:text-xl">
             <label className="mb-[1.631rem] flex items-center">
               <input
                 type="checkbox"
@@ -287,7 +287,7 @@ const KontaktForm = () => {
             </label>
           </div>
 
-          <div className="mb-10 flex flex-col gap-10 object-contain sm:mb-[3.75rem] sm:flex-row sm:gap-16 4xl:max-h-[38px]">
+          <div className="mb-5 flex flex-col gap-5 object-contain sm:mb-[3.75rem] sm:flex-row sm:gap-16 4xl:max-h-[38px]">
             {inputTemplate({
               name: "salutation",
               placeholder: "Anrede*",
@@ -305,7 +305,7 @@ const KontaktForm = () => {
             })}
           </div>
 
-          <div className="mb-10 flex flex-col gap-10 sm:mb-[3.75rem] sm:flex-row sm:gap-16">
+          <div className="mb-5 flex flex-col gap-5 sm:mb-[3.75rem] sm:flex-row sm:gap-16">
             {inputTemplate({
               name: "firstName",
               placeholder: "Vorname*",
@@ -323,7 +323,7 @@ const KontaktForm = () => {
             })}
           </div>
 
-          <div className="mb-10 flex flex-col gap-10 sm:mb-[3.711rem] sm:flex-row sm:gap-16">
+          <div className="mb-5 flex flex-col gap-5 sm:mb-[3.711rem] sm:flex-row sm:gap-16">
             {inputTemplate({
               name: "lastName",
               placeholder: "Name*",
@@ -341,11 +341,11 @@ const KontaktForm = () => {
             })}
           </div>
 
-          <div className="mb-10 flex flex-col-reverse gap-10 sm:mb-[3.75rem] sm:flex-row sm:gap-16">
+          <div className="mb-5 flex flex-col-reverse gap-5 sm:mb-[3.75rem] sm:flex-row sm:gap-16">
             <div className="w-full text-base md:text-xl">
               <span className="text-lg md:text-xl">Bevorzugte Kontaktart</span>
 
-              <label className="flex items-center pb-[1.631rem] pt-11">
+              <label className="flex items-center pb-[1.631rem] pt-[30px] sm:pt-11">
                 <input
                   type="checkbox"
                   name="contactMethod"
@@ -384,7 +384,7 @@ const KontaktForm = () => {
               ) : null}
             </div>
 
-            <div className="flex w-full flex-col gap-[3.75rem]">
+            <div className="flex w-full flex-col gap-5 sm:gap-[3.75rem]">
               {inputTemplate({
                 name: "phone",
                 placeholder: "Telefon*",
@@ -403,9 +403,9 @@ const KontaktForm = () => {
             </div>
           </div>
 
-          <div className="mb-10 flex flex-col items-end gap-10 text-xl sm:mb-[3.75rem] sm:flex-row sm:gap-16">
+          <div className="mb-5 flex flex-col items-end gap-[30px] text-xl sm:mb-[3.75rem] sm:flex-row sm:gap-16">
             <div className="w-full 4xl:max-h-[13.375rem]">
-              <h2 className="mb-[2.188rem] text-lg md:text-xl 4xl:max-h-6">
+              <h2 className="mb-[30px] text-lg sm:mb-[2.188rem] md:text-xl 4xl:max-h-6">
                 NACHRICHT (FREIWILLIG)
               </h2>
 
@@ -418,7 +418,7 @@ const KontaktForm = () => {
               />
             </div>
 
-            <div className="flex w-full flex-col gap-[1.688rem] sm:gap-[2.063rem] sm:ps-2">
+            <div className="flex w-full flex-col gap-[30px] sm:gap-[2.063rem] sm:ps-2">
               <div>
                 <div className="flex flex-col gap-[1.688rem] sm:flex-row">
                   <div className="grid items-center gap-4 text-base sm:grid-cols-2 sm:gap-[1.125rem] md:max-w-[15.75rem] md:text-lg">
@@ -455,7 +455,7 @@ const KontaktForm = () => {
               </div>
 
               <div>
-                <div className="flex flex-col gap-[1.688rem] sm:flex-row">
+                <div className="flex flex-col gap-[30px] sm:flex-row sm:gap-[1.688rem]">
                   <div className="grid items-center gap-4 text-base sm:grid-cols-2 sm:gap-[1.125rem] md:max-w-[15.75rem] md:text-lg">
                     <label className="text-base md:text-xl">Fläche von</label>
                     <input
@@ -491,7 +491,7 @@ const KontaktForm = () => {
             </div>
           </div>
 
-          <div className="mb-10 flex flex-col items-start gap-10 text-xl sm:mb-[3.75rem] lg:flex-row lg:items-end lg:gap-16">
+          <div className="mb-5 flex flex-col items-start gap-5 text-xl sm:mb-[3.75rem] lg:flex-row lg:items-end lg:gap-16">
             <div>
               <label className="flex !w-full items-center text-base leading-8 md:text-xl lg:items-start">
                 <input

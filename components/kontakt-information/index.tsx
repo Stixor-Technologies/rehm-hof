@@ -3,7 +3,9 @@ import React from "react";
 
 const KontaktInformation = () => {
   return (
-    <div className={`container py-16 md:py-[6.25rem] 4xl:pe-[10.25rem]`}>
+    <div
+      className={`container py-8 sm:py-16 md:py-[6.25rem] 4xl:pe-[10.25rem]`}
+    >
       <div className="flex flex-col gap-10 lg:flex-row 2xl:gap-16 3xl:justify-between 4xl:gap-[11.5rem]">
         <div className="2xl:w-[35rem]">
           <Image
@@ -11,8 +13,9 @@ const KontaktInformation = () => {
             alt="Hyest Logo"
             width={294}
             height={70}
+            className="h-[40px] w-[180px] sm:h-[70px] sm:w-[294px]"
           />
-          <div className="mt-[3.75rem] text-base  tracking-[0.025rem] text-secondary md:text-lg xl:text-xl">
+          <div className="mt-[30px] text-base tracking-[0.025rem]  text-secondary sm:mt-[3.75rem] md:text-lg xl:text-xl">
             <p className="leading-8">
               HYEST ist ein modernes und spezialisiertes Unternehmen, das sich
               auf die Akquisition und den Verkauf von Grundstücken,
