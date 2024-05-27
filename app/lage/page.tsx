@@ -277,13 +277,7 @@ const Lage = () => {
                 alt=""
               />
             )}
-            <Image
-              src={Essen}
-              width={960}
-              height={786}
-              alt="essen"
-              // className="lg:w-[50%] lg:max-w-[60rem] 2xl:w-full"
-            />
+            <Image src={Essen} width={960} height={786} alt="essen" />
           </div>
         </div>
       </section>
