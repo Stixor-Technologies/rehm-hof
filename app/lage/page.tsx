@@ -57,9 +57,10 @@ const FaqItem = ({
 
     toggleActive(id);
   });
-
   return (
-    <div className={` border-b border-b-black py-4 lg:pb-9 lg:pt-8`}>
+    <div
+      className={` py-4 lg:pb-9 lg:pt-8 ${id !== 5 && "border-b border-b-black"}`}
+    >
       <div
         className="group relative flex cursor-pointer items-center gap-[1.125rem]"
         onClick={questionClicked}
