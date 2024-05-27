@@ -218,7 +218,7 @@ const Lage = () => {
             width={760}
             height={618}
             alt="Hamburg-WinterHude"
-            className="w-full lg:max-w-[47.5rem] lg:flex-1 2xl:flex-none"
+            className="w-full lg:w-1/2 lg:max-w-[47.5rem] lg:flex-1 2xl:w-full 2xl:flex-none"
           />
         </div>
 
