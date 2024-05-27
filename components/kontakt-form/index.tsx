@@ -177,25 +177,25 @@ const KontaktForm = () => {
         placeholder={placeholder}
         onChange={formik.handleChange}
         onBlur={formik.handleBlur}
-        className="w-full border-b border-black bg-transparent pb-4 ps-3.5 leading-[1.875rem] tracking-[0.023rem] outline-none placeholder:text-secondary placeholder:text-opacity-50"
+        className="w-full border-b border-black bg-transparent pb-4 ps-3.5 leading-[1.875rem] tracking-[0.023rem] outline-none placeholder:text-secondary placeholder:text-opacity-50 4xl:max-h-[35px]"
       />
-      {touched && error ? (
+      {touched && error && (
         <div className="mt-2 text-sm text-red-600">{error}</div>
-      ) : null}
+      )}
     </div>
   );
 
   return (
     <div className="bg-slate">
       <div className="container py-16 md:pb-[6.107rem] md:pt-[6.25rem]">
-        <div className="flex flex-col justify-between gap-5 pb-8 sm:pb-[3.438rem] lg:flex-row">
-          <h1 className="text-3xl uppercase leading-10 text-primary md:text-[4.063rem] md:leading-[4.688rem]">
+        <div className="mb-8 flex flex-col justify-between gap-5 sm:mb-[2.541rem] lg:flex-row">
+          <h1 className="text-3xl uppercase leading-10 text-primary md:text-[4.063rem] md:leading-[4.688rem] 4xl:max-h-[9.438rem]">
             INTERESSE?
             <br /> LASS DICH BERATEN
           </h1>
 
           <div className="text-base leading-8 tracking-[0.025rem] text-secondary md:text-xl">
-            <p className="pb-5 sm:pb-[1.875rem]">
+            <p className="mb-5 sm:mb-[1.875rem]">
               Gerne beraten wir dich und senden dir weitere Informationen zu.
               <br />
               Zur einfachen Bearbeitung deiner Anfrage nutz’ bitte unser
@@ -225,7 +225,7 @@ const KontaktForm = () => {
           className="text-lg leading-8 text-secondary placeholder:leading-[1.875rem]"
         >
           <div className="mb-10 text-base sm:mb-[3.75rem] md:text-xl">
-            <label className="flex items-center pb-7.5">
+            <label className="mb-[1.631rem] flex items-center">
               <input
                 type="checkbox"
                 name="requestType"
@@ -248,7 +248,7 @@ const KontaktForm = () => {
             </label>
           </div>
 
-          <div className="mb-10 flex flex-col gap-10 sm:mb-[3.75rem] sm:flex-row sm:gap-16">
+          <div className="mb-10 flex flex-col gap-10 object-contain sm:mb-[3.75rem] sm:flex-row sm:gap-16 4xl:max-h-[38px]">
             {inputTemplate({
               name: "salutation",
               placeholder: "Anrede*",
@@ -284,7 +284,7 @@ const KontaktForm = () => {
             })}
           </div>
 
-          <div className="mb-10 flex flex-col gap-10 sm:mb-[3.75rem] sm:flex-row sm:gap-16">
+          <div className="mb-10 flex flex-col gap-10 sm:mb-[3.711rem] sm:flex-row sm:gap-16">
             {inputTemplate({
               name: "lastName",
               placeholder: "Name*",
@@ -306,7 +306,7 @@ const KontaktForm = () => {
             <div className="w-full text-xl">
               <span>Bevorzugte Kontaktart</span>
 
-              <label className="flex items-center pb-[2.076rem] pt-11">
+              <label className="flex items-center pb-[1.631rem] pt-11">
                 <input
                   type="checkbox"
                   name="contactMethod"
@@ -317,7 +317,7 @@ const KontaktForm = () => {
                 Post
               </label>
 
-              <label className="flex items-center pb-[2.076rem]">
+              <label className="flex items-center pb-[1.631rem]">
                 <input
                   type="checkbox"
                   name="contactMethod"
@@ -365,8 +365,10 @@ const KontaktForm = () => {
           </div>
 
           <div className="mb-10 flex flex-col items-end gap-10 text-xl sm:mb-[3.75rem] sm:flex-row sm:gap-16">
-            <div className="w-full">
-              <h2 className="pb-[2.188rem]">NACHRICHT (FREIWILLIG)</h2>
+            <div className="w-full 4xl:max-h-[13.375rem]">
+              <h2 className="mb-[2.188rem] 4xl:max-h-6">
+                NACHRICHT (FREIWILLIG)
+              </h2>
 
               <textarea
                 name="message"
