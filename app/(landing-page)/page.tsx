@@ -234,16 +234,7 @@ const LandingPage = () => {
 
       {/* section# 2 */}
       <section className="container mb-[6.25rem] mt-[5.125rem] flex flex-col justify-between gap-10 lg:flex-row">
-        <div className="md:flex-1">
-          <Image
-            src={StadTPark}
-            width={760}
-            height={699}
-            alt="ENTDECKE"
-            className="max-h-[43.688rem] w-full lg:max-w-[47.5rem]"
-          />
-        </div>
-        <div className="flex-1 lg:max-w-[35rem]">
+        <div className="flex-1 lg:order-last lg:max-w-[35rem]">
           <Image
             src={logo}
             alt="Logo"
@@ -265,6 +256,16 @@ const LandingPage = () => {
             Umgebung einfügt und dennoch seinen eigenen unverwechselbaren
             Charakter besitzt.
           </p>
+        </div>
+
+        <div className="md:flex-1 lg:order-first">
+          <Image
+            src={StadTPark}
+            width={760}
+            height={699}
+            alt="ENTDECKE"
+            className="w-full lg:max-h-[43.688rem] lg:max-w-[47.5rem]"
+          />
         </div>
       </section>
 
