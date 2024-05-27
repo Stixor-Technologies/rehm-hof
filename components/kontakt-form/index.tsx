@@ -216,7 +216,7 @@ const KontaktForm = () => {
         placeholder={placeholder}
         onChange={formik.handleChange}
         onBlur={formik.handleBlur}
-        className="w-full border-b border-black bg-transparent pb-4 ps-3.5 leading-[1.875rem] tracking-[0.023rem] outline-none placeholder:text-secondary placeholder:text-opacity-50 4xl:max-h-[35px]"
+        className="w-full border-b border-black bg-transparent pb-4 ps-3.5 text-base leading-[1.875rem] tracking-[0.023rem] outline-none placeholder:text-secondary placeholder:text-opacity-50 md:text-lg 4xl:max-h-[35px]"
       />
       {touched && error && (
         <div className="mt-2 text-sm text-red-600">{error}</div>
@@ -342,8 +342,8 @@ const KontaktForm = () => {
           </div>
 
           <div className="mb-10 flex flex-col-reverse gap-10 sm:mb-[3.75rem] sm:flex-row sm:gap-16">
-            <div className="w-full text-xl">
-              <span>Bevorzugte Kontaktart</span>
+            <div className="w-full text-base md:text-xl">
+              <span className="text-lg md:text-xl">Bevorzugte Kontaktart</span>
 
               <label className="flex items-center pb-[1.631rem] pt-11">
                 <input
@@ -405,7 +405,7 @@ const KontaktForm = () => {
 
           <div className="mb-10 flex flex-col items-end gap-10 text-xl sm:mb-[3.75rem] sm:flex-row sm:gap-16">
             <div className="w-full 4xl:max-h-[13.375rem]">
-              <h2 className="mb-[2.188rem] 4xl:max-h-6">
+              <h2 className="mb-[2.188rem] text-lg md:text-xl 4xl:max-h-6">
                 NACHRICHT (FREIWILLIG)
               </h2>
 
@@ -421,8 +421,8 @@ const KontaktForm = () => {
             <div className="flex w-full flex-col gap-[1.688rem] sm:gap-[2.063rem] sm:ps-2">
               <div>
                 <div className="flex flex-col gap-[1.688rem] sm:flex-row">
-                  <div className="grid items-center gap-4 sm:grid-cols-2 sm:gap-[1.125rem] md:max-w-[15.75rem]">
-                    <label>Zimmer von</label>
+                  <div className="grid items-center gap-4 text-base sm:grid-cols-2 sm:gap-[1.125rem] md:max-w-[15.75rem] md:text-lg">
+                    <label className="text-base md:text-xl">Zimmer von</label>
                     <input
                       type="number"
                       name="roomsFrom"
@@ -434,7 +434,9 @@ const KontaktForm = () => {
                   </div>
 
                   <div className="flex flex-col items-start gap-4 sm:flex-row sm:items-center sm:gap-[1.563rem] md:max-w-[10.75rem]">
-                    <label className="w-[1.688rem]">bis</label>
+                    <label className="w-[1.688rem] text-base md:text-xl">
+                      bis
+                    </label>
                     <input
                       type="number"
                       name="roomsTo"
@@ -454,8 +456,8 @@ const KontaktForm = () => {
 
               <div>
                 <div className="flex flex-col gap-[1.688rem] sm:flex-row">
-                  <div className="grid items-center gap-4 sm:grid-cols-2 sm:gap-[1.125rem] md:max-w-[15.75rem]">
-                    <label>Fläche von</label>
+                  <div className="grid items-center gap-4 text-base sm:grid-cols-2 sm:gap-[1.125rem] md:max-w-[15.75rem] md:text-lg">
+                    <label className="text-base md:text-xl">Fläche von</label>
                     <input
                       type="number"
                       name="areaFrom"
@@ -467,7 +469,9 @@ const KontaktForm = () => {
                   </div>
 
                   <div className="flex flex-col items-start gap-4 sm:flex-row sm:items-center sm:gap-[1.563rem] md:max-w-[10.75rem]">
-                    <label className="w-[1.688rem]">bis</label>
+                    <label className="w-[1.688rem] text-base md:text-xl">
+                      bis
+                    </label>
                     <input
                       type="number"
                       name="areaTo"
@@ -511,7 +515,7 @@ const KontaktForm = () => {
               ) : null}
             </div>
 
-            <h2 className="lg:ps-2">* Pflichtfelder</h2>
+            <h2 className="text-base md:text-xl lg:ps-2">* Pflichtfelder</h2>
           </div>
 
           <button
