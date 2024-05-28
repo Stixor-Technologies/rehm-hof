@@ -1,5 +1,5 @@
 "use client";
-import React, { useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import RehmstrasseBg from "@/public/assets/images/project-page/rehmstrasse-bg.png";
 import InteriorBg from "@/public/assets/images/project-page/interior-bg.png";
@@ -25,6 +25,18 @@ const Projekt = () => {
   const tapImageRef = useRef<HTMLImageElement | null>(null);
 
   const DURATION = 0.7;
+  const [windowSize, setWindowSize] = useState<number>(0);
+
+  useEffect(() => {
+    const handleWindowResize = () => {
+      setWindowSize(window.innerWidth);
+    };
+    handleWindowResize();
+    window.addEventListener("resize", handleWindowResize);
+    return () => {
+      window.removeEventListener("resize", handleWindowResize);
+    };
+  }, []);
 
   const { contextSafe } = useGSAP();
 
@@ -41,6 +53,7 @@ const Projekt = () => {
         gruppeImage2Ref.current,
         {
           scale: 1.25,
+          yPercent: windowSize >= 1536 ? -4 : windowSize >= 1024 ? -8 : -4,
           transformOrigin: "bottom right",
           duration: DURATION,
         },
@@ -58,6 +71,7 @@ const Projekt = () => {
         gruppeImage2Ref.current,
         {
           scale: 1,
+          yPercent: 0,
           duration: DURATION,
         },
         0,
@@ -154,7 +168,7 @@ const Projekt = () => {
           className=" w-full max-w-[71.25rem] lg:w-1/2 3xl:w-full"
         />
 
-        <div className=" px-4 sm:px-8 lg:w-1/2 lg:max-w-[35rem] lg:px-4 4xl:px-0">
+        <div className=" px-4 sm:px-8 lg:w-1/2 lg:max-w-[35rem] lg:px-0 xl:pr-8 4xl:px-0">
           <Image
             src={OSVGGray}
             width={340}
@@ -177,21 +191,10 @@ const Projekt = () => {
         </div>
       </section>
 
-      {/* section# 4 */}
       <section className="container">
-        <div className="mb-[3.125rem] mt-[2.563rem] flex flex-row flex-wrap items-start gap-10">
-          <p className="tracking-[0.025rem] text-secondary  xl:text-xl xl:leading-[2rem] 4xl:max-w-[35rem]">
-            Der „Rehm-Hof“ integriert modernste energetische Technologien,
-            einschließlich einer Photovoltaikanlage für Solarstrom, einer
-            effizienten Luft-Wasser-Wärmepumpe zur Heizung und Kühlung, sowie
-            einem begrünten Dach zur Verbesserung der Wärmedämmung und
-            Biodiversität. Diese nachhaltigen Lösungen tragen zur Verringerung
-            der Umweltbelastung bei und bieten langfristige Kosteneinsparungen
-            für die Bewohner.
-          </p>
-
-          <div className="flex flex-wrap gap-10">
-            <div className="max-h-[21.688rem] overflow-hidden">
+        <div className="mb-[3.125rem] mt-[2.563rem] flex flex-col items-start gap-4 sm:gap-10 2xl:flex-row">
+          <div className="flex flex-col gap-4 sm:flex-row sm:gap-10 2xl:order-last 2xl:shrink-0">
+            <div className="h-[80vw] max-h-[21.688rem]  overflow-hidden sm:h-[32.7vw]">
               <Image
                 onMouseEnter={handleMouseEnterInterior}
                 onMouseLeave={handleMouseLeaveInterior}
@@ -215,9 +218,18 @@ const Projekt = () => {
               />
             </div>
           </div>
+          <p className="tracking-[0.025rem]  text-secondary xl:text-xl xl:leading-[2rem] 2xl:order-first 4xl:max-w-[35rem]">
+            Der „Rehm-Hof“ integriert modernste energetische Technologien,
+            einschließlich einer Photovoltaikanlage für Solarstrom, einer
+            effizienten Luft-Wasser-Wärmepumpe zur Heizung und Kühlung, sowie
+            einem begrünten Dach zur Verbesserung der Wärmedämmung und
+            Biodiversität. Diese nachhaltigen Lösungen tragen zur Verringerung
+            der Umweltbelastung bei und bieten langfristige Kosteneinsparungen
+            für die Bewohner.
+          </p>
         </div>
 
-        <div className="flex items-start gap-10">
+        <div className="flex flex-col items-start gap-4 sm:flex-row sm:gap-10">
           <div className="overflow-hidden">
             <Image
               ref={gruppeImage1Ref}
@@ -228,17 +240,17 @@ const Projekt = () => {
             />
           </div>
           <div
-            className="group max-h-[555px] overflow-hidden"
+            className="h-[45vw] max-h-[34.688rem]  overflow-hidden sm:h-[32.7vw] 2xl:h-[555px]"
             onMouseEnter={handleMouseEnterGruppe}
             onMouseLeave={handleMouseLeaveGruppe}
           >
             <Image
-              // ref={gruppeImage2Ref}
+              ref={gruppeImage2Ref}
               src={BuilderGruppe}
               width={1160}
               height={555}
               alt="wood-texture"
-              className="origin-bottom-right -translate-y-[240px] transition-all duration-500 group-hover:-translate-y-[270px] group-hover:scale-125"
+              className="-translate-y-[27%]"
             />
           </div>
         </div>
