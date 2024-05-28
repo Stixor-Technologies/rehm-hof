@@ -150,7 +150,7 @@ const Lage = () => {
 
       <section className="ml-4 max-w-[120rem] sm:ml-8  lg:mx-auto">
         <div className="mr-0 mt-12 flex flex-col gap-10 bg-slate px-4 py-12 sm:px-8 lg:ml-[calc((105vw-100%)/2)] lg:mt-[6.25rem] lg:flex-row lg:justify-end lg:py-[5.188rem] lg:pr-0 xl:ml-[calc((105vw-1280px)/2)] xl:px-0 2xl:ml-[calc((105vw-1534px)/2)] 4xl:ml-[11.25rem] 4xl:h-[50rem]">
-          <div className="flex-1 lg:max-w-lg xl:ml-[10.313rem] xl:max-w-none">
+          <div className="flex-1 lg:max-w-lg xl:ml-[160px] xl:max-w-none">
             <p className="w-full text-[clamp(2rem,5.5vw,6.563rem)] uppercase leading-tight text-secondary lg:max-w-[31.25rem] 2xl:max-w-[37.5rem] 2xl:leading-[6.75rem] 4xl:h-[28.938rem]">
               Leben Zwischen stadtpark
               <span className="font-bold text-primary"> & </span>

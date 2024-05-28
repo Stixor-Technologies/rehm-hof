@@ -180,7 +180,7 @@ const Projekt = () => {
       {/* section# 4 */}
       <section className="container">
         <div className="mb-[3.125rem] mt-[2.563rem] flex flex-row flex-wrap items-start gap-10">
-          <p className="tracking-[0.025rem] text-secondary lg:mt-[3.125rem] xl:text-xl xl:leading-[2rem] 4xl:max-w-[35rem]">
+          <p className="tracking-[0.025rem] text-secondary  xl:text-xl xl:leading-[2rem] 4xl:max-w-[35rem]">
             Der „Rehm-Hof“ integriert modernste energetische Technologien,
             einschließlich einer Photovoltaikanlage für Solarstrom, einer
             effizienten Luft-Wasser-Wärmepumpe zur Heizung und Kühlung, sowie
