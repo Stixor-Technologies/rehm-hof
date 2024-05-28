@@ -53,7 +53,7 @@ const Projekt = () => {
         gruppeImage2Ref.current,
         {
           scale: 1.25,
-          yPercent: windowSize >= 1024 ? -8 : -4,
+          yPercent: windowSize >= 1536 ? -4 : windowSize >= 1024 ? -8 : -4,
           transformOrigin: "bottom right",
           duration: DURATION,
         },
@@ -168,7 +168,7 @@ const Projekt = () => {
           className=" w-full max-w-[71.25rem] lg:w-1/2 3xl:w-full"
         />
 
-        <div className=" px-4 sm:px-8 lg:w-1/2 lg:max-w-[35rem] lg:px-4 4xl:px-0">
+        <div className=" px-4 sm:px-8 lg:w-1/2 lg:max-w-[35rem] lg:px-0 xl:pr-8 4xl:px-0">
           <Image
             src={OSVGGray}
             width={340}
@@ -191,79 +191,10 @@ const Projekt = () => {
         </div>
       </section>
 
-      {/* section# 4 */}
-      {/* <section className="container">
-        <div className="mb-[3.125rem] mt-[2.563rem] flex flex-row flex-wrap items-start gap-10">
-          <p className="tracking-[0.025rem] text-secondary  xl:text-xl xl:leading-[2rem] 4xl:max-w-[35rem]">
-            Der „Rehm-Hof“ integriert modernste energetische Technologien,
-            einschließlich einer Photovoltaikanlage für Solarstrom, einer
-            effizienten Luft-Wasser-Wärmepumpe zur Heizung und Kühlung, sowie
-            einem begrünten Dach zur Verbesserung der Wärmedämmung und
-            Biodiversität. Diese nachhaltigen Lösungen tragen zur Verringerung
-            der Umweltbelastung bei und bieten langfristige Kosteneinsparungen
-            für die Bewohner.
-          </p>
-
-          <div className="flex flex-wrap gap-10">
-            <div className="max-h-[17.7rem] overflow-hidden sm:max-h-[21.688rem]">
-              <Image
-                onMouseEnter={handleMouseEnterInterior}
-                onMouseLeave={handleMouseLeaveInterior}
-                ref={tapImageRef}
-                src={Tap}
-                width={360}
-                height={347}
-                alt="tap-interior"
-              />
-            </div>
-
-            <div className="overflow-hidden">
-              <Image
-                onMouseEnter={handleMouseEnterInterior}
-                onMouseLeave={handleMouseLeaveInterior}
-                ref={showerImageRef}
-                src={Shower}
-                width={560}
-                height={347}
-                alt="shower-interior"
-              />
-            </div>
-          </div>
-        </div>
-
-        <div className="flex items-start gap-10">
-          <div className="overflow-hidden">
-            <Image
-              ref={gruppeImage1Ref}
-              src={Room}
-              width={360}
-              height={410}
-              alt="wood-texture"
-            />
-          </div>
-          <div
-            className="group max-h-[555px] overflow-hidden"
-            onMouseEnter={handleMouseEnterGruppe}
-            onMouseLeave={handleMouseLeaveGruppe}
-          >
-            <Image
-              // ref={gruppeImage2Ref}
-              src={BuilderGruppe}
-              width={1160}
-              height={555}
-              alt="wood-texture"
-              className="origin-bottom-right -translate-y-[240px] transition-all duration-500 group-hover:-translate-y-[270px] group-hover:scale-125"
-            />
-          </div>
-        </div>
-      </section> */}
-
       <section className="container">
         <div className="mb-[3.125rem] mt-[2.563rem] flex flex-col items-start gap-4 sm:gap-10 2xl:flex-row">
           <div className="flex flex-col gap-4 sm:flex-row sm:gap-10 2xl:order-last 2xl:shrink-0">
-            {/* <div className="max-h-[17.7rem] overflow-hidden sm:max-h-[21.688rem]"> */}
             <div className="h-[80vw] max-h-[21.688rem]  overflow-hidden sm:h-[32.7vw]">
-              {/* max-h-[21.688rem] h-[34vw] */}
               <Image
                 onMouseEnter={handleMouseEnterInterior}
                 onMouseLeave={handleMouseLeaveInterior}
@@ -298,32 +229,6 @@ const Projekt = () => {
           </p>
         </div>
 
-        {/* <div className="flex items-start gap-10">
-          <div className="overflow-hidden">
-            <Image
-              ref={gruppeImage1Ref}
-              src={Room}
-              width={360}
-              height={410}
-              alt="wood-texture"
-            />
-          </div>
-          <div
-            className="group max-h-[555px] overflow-hidden"
-            onMouseEnter={handleMouseEnterGruppe}
-            onMouseLeave={handleMouseLeaveGruppe}
-          >
-            <Image
-              // ref={gruppeImage2Ref}
-              src={BuilderGruppe}
-              width={1160}
-              height={555}
-              alt="wood-texture"
-              className="origin-bottom-right -translate-y-[240px] transition-all duration-500 group-hover:-translate-y-[270px] group-hover:scale-125"
-            />
-          </div>
-        </div> */}
-
         <div className="flex flex-col items-start gap-4 sm:flex-row sm:gap-10">
           <div className="overflow-hidden">
             <Image
@@ -335,9 +240,7 @@ const Projekt = () => {
             />
           </div>
           <div
-            // className="group max-h-[555px] overflow-hidden"
-            // className="group max-h-[555px] overflow-hidden"
-            className="h-[45vw] max-h-[34.688rem]  overflow-hidden sm:h-[32.7vw]"
+            className="h-[45vw] max-h-[34.688rem]  overflow-hidden sm:h-[32.7vw] 2xl:h-[555px]"
             onMouseEnter={handleMouseEnterGruppe}
             onMouseLeave={handleMouseLeaveGruppe}
           >
@@ -347,8 +250,7 @@ const Projekt = () => {
               width={1160}
               height={555}
               alt="wood-texture"
-              // className="origin-bottom-right -translate-y-[240px] transition-all duration-500 group-hover:-translate-y-[270px] group-hover:scale-125"
-              className=" -translate-y-[27%]"
+              className="-translate-y-[27%]"
             />
           </div>
         </div>
