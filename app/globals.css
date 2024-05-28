@@ -89,7 +89,7 @@
 }
 
 .swiper-button-next {
-  @apply !right-[26%] !top-auto bottom-1.5 !h-4 !w-4 !opacity-100 sm:!right-[35%] md:!right-[40%] lg:!left-[0.313rem] lg:!top-[24.063rem] lg:bottom-auto lg:!h-[1.238rem] lg:!w-[1.852rem];
+  @apply !right-[26%] !top-auto bottom-1.5 !h-4 !w-4 !opacity-100 sm:!right-[35%] md:!right-[40%] lg:!left-[0.313rem] lg:!top-[27.063rem] lg:bottom-auto lg:!h-[1.238rem] lg:!w-[1.852rem];
 }
 
 .swiper-button-prev {
