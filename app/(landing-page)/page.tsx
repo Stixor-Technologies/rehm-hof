@@ -199,12 +199,13 @@ const LandingPage = () => {
             </div>
           </div>
         </div>
+
         <div
-          className="absolute inset-0 flex max-w-[1118px] items-center bg-hero-gradient"
+          className="absolute inset-0 flex max-w-[1118px] items-center bg-hero-gradient 4xl:block"
           onMouseEnter={handleMouseEnter}
           onMouseLeave={handleMouseLeave}
         >
-          <div className="container  xl:ml-[calc((105vw-1278px)/2)] xl:pl-0 2xl:ml-[calc((105vw-1534px)/2)] 4xl:ml-[11.25rem]">
+          <div className="container xl:ml-[calc((105vw-1278px)/2)] xl:pl-0 2xl:ml-[calc((105vw-1534px)/2)] 4xl:ml-[11.25rem] 4xl:mt-[176px]">
             <p className="text-[clamp(1.5rem,5.5vw,6.563rem)] uppercase leading-tight text-white 3xl:leading-[6.75rem]">
               Leben <br /> Zwischen <br /> stadtpark <br />
               <span className=" font-semibold text-primary">& </span>
