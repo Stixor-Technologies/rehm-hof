@@ -271,7 +271,7 @@ const LandingPage = () => {
               </p>
             </div>
 
-            <div className="lg:order-0 flex max-w-[29.688rem] flex-col justify-between gap-5 uppercase text-primary sm:flex-row lg:w-[30%] lg:flex-col lg:gap-0 2xl:w-full">
+            <div className="lg:order-0 flex flex-col justify-between gap-5 uppercase text-primary sm:flex-row lg:w-[30%] lg:max-w-[29.688rem] lg:flex-col lg:gap-0 2xl:w-full">
               <div>
                 <div className="mb-5 flex w-full items-end gap-5 lg:gap-2">
                   <span className="town-houses-numbers">4</span>
@@ -287,12 +287,12 @@ const LandingPage = () => {
                 </div>
               </div>
 
-              <hr className="my-6 ml-[calc(475px-1920px)] hidden h-1 bg-primary lg:block xl:mb-[2.188rem] xl:mt-12" />
+              <hr className="my-6 -ml-10 mr-10  h-1 bg-primary lg:ml-[calc(475px-1920px)] lg:mr-0 lg:block xl:mb-[2.188rem] xl:mt-12" />
 
-              <div className="town-houses-tag self-end">
-                <p>1 - 4,5 ZIMMER</p>
+              <div className="town-houses-tag sm:mt-4">
+                <p className="text-left lg:text-right">1 - 4,5 ZIMMER</p>
 
-                <p>115 - 168 M2</p>
+                <p className="text-left lg:text-right">115 - 168 M2</p>
               </div>
             </div>
           </div>
