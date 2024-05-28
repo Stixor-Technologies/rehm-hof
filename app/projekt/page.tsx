@@ -6,7 +6,7 @@ import InteriorBg from "@/public/assets/images/project-page/interior-bg.png";
 import ProjectGroupBg from "@/public/assets/images/project-page/project-group-bg.png";
 import ProjectsHighlight from "@/components/project-highlight";
 import Pattern from "@/public/assets/images/Pattern.svg";
-import BuilderGruppe from "@/public/assets/images/project-page/bildergruppe.png";
+import BuilderGruppe from "@/public/assets/images/project-page/bildergruppe2.png";
 import Room from "@/public/assets/images/lage/room.png";
 import Tap from "@/public/assets/images/project-page/taps.png";
 import Shower from "@/public/assets/images/project-page/shower.png";
@@ -40,7 +40,7 @@ const Projekt = () => {
       .to(
         gruppeImage2Ref.current,
         {
-          scale: 1.17,
+          scale: 1.25,
           transformOrigin: "bottom right",
           duration: DURATION,
         },
@@ -160,7 +160,7 @@ const Projekt = () => {
             width={340}
             height={73}
             alt="slide-button"
-            className=" absolute right-0 top-4 -z-10  w-24 max-w-[21.25rem] cursor-pointer sm:top-16 lg:top-0 lg:h-[4.563rem] lg:w-full 2xl:top-[1.962rem] "
+            className=" absolute right-0  top-[54vw]  -z-10 w-24 max-w-[21.25rem] cursor-pointer lg:top-0 lg:h-[4.563rem] lg:w-full 2xl:top-[1.962rem] "
           />
           <h2 className="text-[clamp(2.063rem,4vw,4.063rem)] leading-tight text-primary 2xl:leading-[4.688rem]">
             MODERN INTERIOR
@@ -180,7 +180,7 @@ const Projekt = () => {
       {/* section# 4 */}
       <section className="container">
         <div className="mb-[3.125rem] mt-[2.563rem] flex flex-row flex-wrap items-start gap-10">
-          <p className="tracking-[0.025rem] text-secondary lg:mt-[3.125rem] xl:text-xl xl:leading-[2rem] 4xl:max-w-[35rem]">
+          <p className="tracking-[0.025rem] text-secondary  xl:text-xl xl:leading-[2rem] 4xl:max-w-[35rem]">
             Der „Rehm-Hof“ integriert modernste energetische Technologien,
             einschließlich einer Photovoltaikanlage für Solarstrom, einer
             effizienten Luft-Wasser-Wärmepumpe zur Heizung und Kühlung, sowie
@@ -228,16 +228,17 @@ const Projekt = () => {
             />
           </div>
           <div
-            className="overflow-hidden"
+            className="group max-h-[555px] overflow-hidden"
             onMouseEnter={handleMouseEnterGruppe}
             onMouseLeave={handleMouseLeaveGruppe}
           >
             <Image
-              ref={gruppeImage2Ref}
+              // ref={gruppeImage2Ref}
               src={BuilderGruppe}
               width={1160}
               height={555}
               alt="wood-texture"
+              className="origin-bottom-right -translate-y-[240px] transition-all duration-500 group-hover:-translate-y-[270px] group-hover:scale-125"
             />
           </div>
         </div>

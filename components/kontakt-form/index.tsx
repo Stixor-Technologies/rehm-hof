@@ -1,8 +1,9 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import * as Yup from "yup";
 import { useFormik } from "formik";
 import { toast } from "react-toastify";
+import { RotateCw } from "lucide-react";
 
 interface InputType {
   type?: string;
@@ -14,6 +15,7 @@ interface InputType {
 }
 
 const KontaktForm = () => {
+  const [isLoading, setIsLoading] = useState(false);
   const formik = useFormik({
     initialValues: {
       requestType: [],
@@ -116,6 +118,8 @@ const KontaktForm = () => {
     }),
     onSubmit: async (values, { resetForm }) => {
       try {
+        setIsLoading(true);
+
         const emailTemplate = `<div>
           <h2>${values.requestType.length > 0 ? `Sie haben eine neue Anfrage des Typs erhalten ${values.requestType[0]} aus ${values.firstName} ${values.lastName}` : `Sie haben eine Anfrage von erhalten ${values.firstName} ${values.lastName}`}</h2>
 
@@ -124,7 +128,7 @@ const KontaktForm = () => {
           <p><strong>Anrede:</strong>${values.salutation}</p>
           <p><strong>E-Mail: </strong>${values.email}</p>
           <p><strong>Telefon: </strong>${values.phone}</p>
-          <p><strong>Ausgewählte Kontaktmethode: </strong>${values.contactMethod.map((value: string, index: number) => <span key={index}>{values.contactMethod.length === index + 1 ? value : `${value}, `} </span>)}</p>
+          <p><strong>Ausgewählte Kontaktmethode: </strong>${values.contactMethod.join(", ")}</p>
           
           <h3>Adresse</h3>
           <p><strong>Straße: </strong>${values.street}</p>
@@ -178,6 +182,7 @@ const KontaktForm = () => {
               draggable: true,
             },
           );
+          setIsLoading(false);
         } else {
           toast.error("Bitte versuchen Sie es später noch einmal", {
             position: "top-right",
@@ -211,7 +216,7 @@ const KontaktForm = () => {
         placeholder={placeholder}
         onChange={formik.handleChange}
         onBlur={formik.handleBlur}
-        className="w-full border-b border-black bg-transparent pb-4 ps-3.5 leading-[1.875rem] tracking-[0.023rem] outline-none placeholder:text-secondary placeholder:text-opacity-50 4xl:max-h-[35px]"
+        className="w-full border-b border-black bg-transparent pb-2 ps-[7px] text-base leading-[1.875rem] tracking-[0.023rem] outline-none placeholder:text-secondary placeholder:text-opacity-50 sm:pb-4 sm:ps-3.5 md:text-lg 4xl:max-h-[35px]"
       />
       {touched && error && (
         <div className="mt-2 text-sm text-red-600">{error}</div>
@@ -258,7 +263,7 @@ const KontaktForm = () => {
           }}
           className="text-lg leading-8 text-secondary placeholder:leading-[1.875rem]"
         >
-          <div className="mb-10 text-base sm:mb-[3.75rem] md:text-xl">
+          <div className="mb-5 text-base sm:mb-[3.75rem] md:text-xl">
             <label className="mb-[1.631rem] flex items-center">
               <input
                 type="checkbox"
@@ -282,7 +287,7 @@ const KontaktForm = () => {
             </label>
           </div>
 
-          <div className="mb-10 flex flex-col gap-10 object-contain sm:mb-[3.75rem] sm:flex-row sm:gap-16 4xl:max-h-[38px]">
+          <div className="mb-5 flex flex-col gap-5 object-contain sm:mb-[3.75rem] sm:flex-row sm:gap-16 4xl:max-h-[38px]">
             {inputTemplate({
               name: "salutation",
               placeholder: "Anrede*",
@@ -300,7 +305,7 @@ const KontaktForm = () => {
             })}
           </div>
 
-          <div className="mb-10 flex flex-col gap-10 sm:mb-[3.75rem] sm:flex-row sm:gap-16">
+          <div className="mb-5 flex flex-col gap-5 sm:mb-[3.75rem] sm:flex-row sm:gap-16">
             {inputTemplate({
               name: "firstName",
               placeholder: "Vorname*",
@@ -318,7 +323,7 @@ const KontaktForm = () => {
             })}
           </div>
 
-          <div className="mb-10 flex flex-col gap-10 sm:mb-[3.711rem] sm:flex-row sm:gap-16">
+          <div className="mb-5 flex flex-col gap-5 sm:mb-[3.711rem] sm:flex-row sm:gap-16">
             {inputTemplate({
               name: "lastName",
               placeholder: "Name*",
@@ -336,11 +341,11 @@ const KontaktForm = () => {
             })}
           </div>
 
-          <div className="mb-10 flex flex-col-reverse gap-10 sm:mb-[3.75rem] sm:flex-row sm:gap-16">
-            <div className="w-full text-xl">
-              <span>Bevorzugte Kontaktart</span>
+          <div className="mb-5 flex flex-col-reverse gap-5 sm:mb-[3.75rem] sm:flex-row sm:gap-16">
+            <div className="w-full text-base md:text-xl">
+              <span className="text-lg md:text-xl">Bevorzugte Kontaktart</span>
 
-              <label className="flex items-center pb-[1.631rem] pt-11">
+              <label className="flex items-center pb-[1.631rem] pt-[30px] sm:pt-11">
                 <input
                   type="checkbox"
                   name="contactMethod"
@@ -379,7 +384,7 @@ const KontaktForm = () => {
               ) : null}
             </div>
 
-            <div className="flex w-full flex-col gap-[3.75rem]">
+            <div className="flex w-full flex-col gap-5 sm:gap-[3.75rem]">
               {inputTemplate({
                 name: "phone",
                 placeholder: "Telefon*",
@@ -398,9 +403,9 @@ const KontaktForm = () => {
             </div>
           </div>
 
-          <div className="mb-10 flex flex-col items-end gap-10 text-xl sm:mb-[3.75rem] sm:flex-row sm:gap-16">
+          <div className="mb-5 flex flex-col items-end gap-[30px] text-xl sm:mb-[3.75rem] sm:flex-row sm:gap-16">
             <div className="w-full 4xl:max-h-[13.375rem]">
-              <h2 className="mb-[2.188rem] 4xl:max-h-6">
+              <h2 className="mb-[30px] text-lg sm:mb-[2.188rem] md:text-xl 4xl:max-h-6">
                 NACHRICHT (FREIWILLIG)
               </h2>
 
@@ -413,11 +418,11 @@ const KontaktForm = () => {
               />
             </div>
 
-            <div className="flex w-full flex-col gap-[1.688rem] sm:gap-[2.063rem] sm:ps-2">
+            <div className="flex w-full flex-col gap-[30px] sm:gap-[2.063rem] sm:ps-2">
               <div>
                 <div className="flex flex-col gap-[1.688rem] sm:flex-row">
-                  <div className="grid items-center gap-4 sm:grid-cols-2 sm:gap-[1.125rem] md:max-w-[15.75rem]">
-                    <label>Zimmer von</label>
+                  <div className="grid items-center gap-4 text-base sm:grid-cols-2 sm:gap-[1.125rem] md:max-w-[15.75rem] md:text-lg">
+                    <label className="text-base md:text-xl">Zimmer von</label>
                     <input
                       type="number"
                       name="roomsFrom"
@@ -429,7 +434,9 @@ const KontaktForm = () => {
                   </div>
 
                   <div className="flex flex-col items-start gap-4 sm:flex-row sm:items-center sm:gap-[1.563rem] md:max-w-[10.75rem]">
-                    <label className="w-[1.688rem]">bis</label>
+                    <label className="w-[1.688rem] text-base md:text-xl">
+                      bis
+                    </label>
                     <input
                       type="number"
                       name="roomsTo"
@@ -448,9 +455,9 @@ const KontaktForm = () => {
               </div>
 
               <div>
-                <div className="flex flex-col gap-[1.688rem] sm:flex-row">
-                  <div className="grid items-center gap-4 sm:grid-cols-2 sm:gap-[1.125rem] md:max-w-[15.75rem]">
-                    <label>Fläche von</label>
+                <div className="flex flex-col gap-[30px] sm:flex-row sm:gap-[1.688rem]">
+                  <div className="grid items-center gap-4 text-base sm:grid-cols-2 sm:gap-[1.125rem] md:max-w-[15.75rem] md:text-lg">
+                    <label className="text-base md:text-xl">Fläche von</label>
                     <input
                       type="number"
                       name="areaFrom"
@@ -462,7 +469,9 @@ const KontaktForm = () => {
                   </div>
 
                   <div className="flex flex-col items-start gap-4 sm:flex-row sm:items-center sm:gap-[1.563rem] md:max-w-[10.75rem]">
-                    <label className="w-[1.688rem]">bis</label>
+                    <label className="w-[1.688rem] text-base md:text-xl">
+                      bis
+                    </label>
                     <input
                       type="number"
                       name="areaTo"
@@ -482,7 +491,7 @@ const KontaktForm = () => {
             </div>
           </div>
 
-          <div className="mb-10 flex flex-col items-start gap-10 text-xl sm:mb-[3.75rem] lg:flex-row lg:items-end lg:gap-16">
+          <div className="mb-5 flex flex-col items-start gap-5 text-xl sm:mb-[3.75rem] lg:flex-row lg:items-end lg:gap-16">
             <div>
               <label className="flex !w-full items-center text-base leading-8 md:text-xl lg:items-start">
                 <input
@@ -506,14 +515,19 @@ const KontaktForm = () => {
               ) : null}
             </div>
 
-            <h2 className="lg:ps-2">* Pflichtfelder</h2>
+            <h2 className="text-base md:text-xl lg:ps-2">* Pflichtfelder</h2>
           </div>
 
           <button
             type="submit"
-            className="hover flex w-full items-center justify-center border border-secondary bg-transparent px-16 py-2 transition-all duration-500 hover:bg-secondary hover:text-white sm:w-auto"
+            className="group flex h-[50px] w-full items-center justify-center border border-secondary bg-transparent px-16 py-2 transition-all duration-500 hover:bg-secondary hover:text-white sm:w-[200px]"
+            disabled={isLoading}
           >
-            Senden
+            {isLoading ? (
+              <RotateCw className="mr-2 h-7 w-7 animate-spin" />
+            ) : (
+              "Senden"
+            )}
           </button>
         </form>
       </div>

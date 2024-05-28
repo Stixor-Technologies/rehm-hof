@@ -2,6 +2,7 @@
 import React, { useRef, useState } from "react";
 import HamburgWinterHude from "@/public/assets/images/lage/hamburg-winterhude.png";
 import Leben from "@/public/assets/images/lage/leben.png";
+import Leben2 from "@/public/assets/images/lage/leben2.png";
 import Essen from "@/public/assets/images/lage/essen.png";
 import Alster from "@/public/assets/images/lage/Alster.png";
 import Markt from "@/public/assets/images/lage/Markt.png";
@@ -149,37 +150,56 @@ const Lage = () => {
 
       <section className="ml-4 max-w-[120rem] sm:ml-8  lg:mx-auto">
         <div className="mr-0 mt-12 flex flex-col gap-10 bg-slate px-4 py-12 sm:px-8 lg:ml-[calc((105vw-100%)/2)] lg:mt-[6.25rem] lg:flex-row lg:justify-end lg:py-[5.188rem] lg:pr-0 xl:ml-[calc((105vw-1280px)/2)] xl:px-0 2xl:ml-[calc((105vw-1534px)/2)] 4xl:ml-[11.25rem] 4xl:h-[50rem]">
-          <div className="flex-1 lg:max-w-lg xl:ml-[10.313rem] xl:max-w-none">
+          <div className="flex-1 lg:max-w-lg xl:ml-[160px] xl:max-w-none">
             <p className="w-full text-[clamp(2rem,5.5vw,6.563rem)] uppercase leading-tight text-secondary lg:max-w-[31.25rem] 2xl:max-w-[37.5rem] 2xl:leading-[6.75rem] 4xl:h-[28.938rem]">
               Leben Zwischen stadtpark
               <span className="font-bold text-primary"> & </span>
               alster
             </p>
 
-            <p className="mt-4 text-[clamp(1.2rem,2vw,2.188rem)] tracking-[0.044rem] text-secondary lg:mt-[1.875rem] lg:max-w-[50.438rem] 2xl:leading-[3.125rem] 4xl:h-[8.813rem]">
+            <p className="mt-4 text-[clamp(1.2rem,2vw,2.188rem)] tracking-[0.044rem] text-secondary lg:mt-[1.875rem] lg:max-w-[810px] 2xl:leading-[3.125rem] 4xl:h-[147px] 4xl:!w-[810px]">
               NATÜRLICH URBAN LEBEN: WASSER, PARK & DAS PULSIERENDE LEBEN VOR
               DER TÜR - DEIN ZUHAUSE IM HERZEN DES GESCHEHENS
             </p>
           </div>
-          <Image
-            width={672}
-            height={634}
-            src={Leben}
-            alt="leben"
-            className="w-full lg:max-h-[39.625rem] lg:w-[40%] lg:max-w-[42rem] xl:w-1/2 2xl:w-full"
-          />
+
+          <div className="group relative w-full lg:max-h-[39.625rem] lg:w-[40%] lg:max-w-[42rem] xl:w-1/2 2xl:w-full">
+            <Image
+              width={672}
+              height={634}
+              src={Leben}
+              alt="leben"
+              className="w-full lg:hidden lg:max-h-[39.625rem] lg:w-[40%] lg:max-w-[42rem] xl:w-1/2 2xl:w-full"
+            />
+
+            <Image
+              width={672}
+              height={634}
+              src={Leben}
+              alt="leben"
+              className="absolute inset-0 w-full transition-all duration-500 group-hover:opacity-0 lg:h-full"
+            />
+
+            <Image
+              width={672}
+              height={634}
+              src={Leben2}
+              alt="leben"
+              className="absolute inset-0 h-full w-full opacity-0 transition-all duration-500 group-hover:opacity-100"
+            />
+          </div>
         </div>
       </section>
 
       <section className="container">
         {/* section# 2 */}
-        <div className="mb-[6.375rem] mt-[6.438rem] flex flex-col items-start gap-10 lg:flex-row">
+        <div className="mb-[6.375rem] mt-[6.438rem] flex flex-col items-start gap-10 lg:flex-row xl:mb-4 2xl:mb-[6.375rem]">
           <div className="flex-1 lg:order-last lg:w-1/2 lg:max-w-[47.5rem]">
             <h2 className=" text-[clamp(2.063rem,4vw,4.063rem)] leading-none text-primary 2xl:leading-[4.688rem] 4xl:h-[4.75rem] 4xl:w-[52.125rem]">
               HAMBURG-WINTERHUDE
             </h2>
 
-            <div className=" hamburg-winter-text mt-5 space-y-4 xl:mt-[3.75rem] 2xl:space-y-7">
+            <div className="hamburg-winter-text mt-5 space-y-4 xl:mt-[3.75rem] 2xl:space-y-7">
               <p>
                 Willkommen in einem gewachsenem Stadtteil voller Charme und
                 urbaner Raffinesse. Die Umgebung vereint auf einzigartige Weise
@@ -196,7 +216,7 @@ const Lage = () => {
                 höherschlagen.
               </p>
 
-              <p>
+              <p className="block xl:hidden 2xl:block">
                 Das lebhafte Treiben zeigt sich nicht nur in den Straßen,
                 sondern auch in einer breiten Palette von Sport- und
                 Freizeitmöglichkeiten. Der Stadtpark und das Alsterufer laden zu
@@ -221,6 +241,19 @@ const Lage = () => {
             className="w-full lg:w-1/2 lg:max-w-[47.5rem] lg:flex-1 2xl:w-full 2xl:flex-none"
           />
         </div>
+
+        <p className="hidden text-xl leading-8 tracking-[0.4px] text-secondary xl:block 2xl:hidden">
+          Das lebhafte Treiben zeigt sich nicht nur in den Straßen, sondern auch
+          in einer breiten Palette von Sport- und Freizeitmöglichkeiten. Der
+          Stadtpark und das Alsterufer laden zu entspannten Spaziergängen oder
+          ausgedehnten Laufrunden ein, während moderne Fitnessstudios und
+          exklusive Spa- und Wellnessclubs die sportlichen Ambitionen und das
+          Wellbeing der Bewohner unterstützen. Wassersportliebhaber können zudem
+          die nahegelegene Alster für ihre Aktivitäten nutzen, während der
+          Stadtpark Raum für Konzerte, Sportveranstaltungen und erholsame
+          Stunden im Grünen bietet. Des Weiteren zeichnen sich die
+          Bildungseinrichtungen in Winterhude sich durch höchste Qualität aus.
+        </p>
 
         {/* section# 3 */}
         <section className="my-[6.25rem] flex flex-col items-start gap-12 md:flex-row md:gap-10">

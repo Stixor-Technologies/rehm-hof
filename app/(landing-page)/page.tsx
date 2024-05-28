@@ -300,7 +300,7 @@ const LandingPage = () => {
 
         {/* section# 4 */}
         {/* grid-cols-[53%_21%_26.4%] grid-rows-[45.9%_18.3%_24.3%] */}
-        <section className="container my-12 flex flex-col gap-7 md:flex-row md:gap-10 lg:mb-[6.25rem] lg:mt-[6.6rem]">
+        <section className="container my-12 flex flex-col gap-7 md:flex-row md:gap-10 lg:my-[6.25rem]">
           {/* grid-cols-[52.632%_21.054%_26.316%] grid-rows-[43.14%_17.06%_22.745%] */}
           <div className="grid w-full max-w-[47.5rem] flex-1 grid-cols-[52.632%_21.054%_26.316%] grid-rows-[53.86%_21.297%_28.396%] place-content-end ">
             <div
