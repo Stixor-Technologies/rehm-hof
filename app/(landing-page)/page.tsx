@@ -10,9 +10,9 @@ import Bildergruppe from "@/public/assets/images/home-page/Bildergruppe.png";
 import Pattern from "@/public/assets/images/Pattern.svg";
 import Section6Image from "@/public/assets/images/home-page/section6.png";
 import Building from "@/public/assets/images/home-page/buildings.png";
-import Marquee from "react-fast-marquee";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
+import ProjectsHighlight from "@/components/project-highlight";
 
 const LandingPage = () => {
   const buttonRef = useRef<HTMLImageElement | null>(null);
@@ -28,27 +28,6 @@ const LandingPage = () => {
   const [activeImage, setActiveImage] = useState<number>(1);
 
   const DURATION = 0.3;
-
-  const marque1Data = [
-    "INDIVIDUELLE GRUNDRISSMÖGLICHKEITEN",
-    "PHOTOVOLTAIKANLAGE",
-    "AUFZUG, DIREKT INS PENTHOUSE",
-    "INDIVIDUELLE GRUNDRISSMÖGLICHKEITEN",
-  ];
-
-  const marque2Data = [
-    "GÄRTEN/TERRASSEN/BALKONE/DACHTERRASSEN",
-    "RUHIGE INNENHOFLAGE",
-    "TIEFGARAGENSTELLPLÄTZE",
-    "GÄRTEN/TERRASSEN/BALKONE/DACHTERRASSEN",
-  ];
-
-  const marque3Data = [
-    "LUFT/ WASSER-WÄREPUMPENANLAGE",
-    "EXKLUSIVE MATERIALAUSWAHL",
-    "LUFT/ WASSER-WÄREPUMPENANLAGE",
-    "EXKLUSIVE MATERIALAUSWAHL",
-  ];
 
   const { contextSafe } = useGSAP();
 
@@ -220,12 +199,13 @@ const LandingPage = () => {
             </div>
           </div>
         </div>
+
         <div
-          className="absolute inset-0 flex max-w-[1118px] items-center bg-hero-gradient"
+          className="absolute inset-0 flex max-w-[1118px] items-center bg-hero-gradient 4xl:block"
           onMouseEnter={handleMouseEnter}
           onMouseLeave={handleMouseLeave}
         >
-          <div className="container  xl:ml-[calc((105vw-1278px)/2)] xl:pl-0 2xl:ml-[calc((105vw-1534px)/2)] 4xl:ml-[11.25rem]">
+          <div className="container xl:ml-[calc((105vw-1278px)/2)] xl:pl-0 2xl:ml-[calc((105vw-1534px)/2)] 4xl:ml-[11.25rem] 4xl:mt-[176px]">
             <p className="text-[clamp(1.5rem,5.5vw,6.563rem)] uppercase leading-tight text-white 3xl:leading-[6.75rem]">
               Leben <br /> Zwischen <br /> stadtpark <br />
               <span className=" font-semibold text-primary">& </span>
@@ -291,7 +271,7 @@ const LandingPage = () => {
               </p>
             </div>
 
-            <div className="lg:order-0 flex max-w-[29.688rem] flex-col justify-between gap-5 uppercase text-primary sm:flex-row lg:w-[30%] lg:flex-col lg:gap-0 2xl:w-full">
+            <div className="lg:order-0 flex flex-col justify-between gap-5 uppercase text-primary sm:flex-row lg:w-[30%] lg:max-w-[29.688rem] lg:flex-col lg:gap-0 2xl:w-full">
               <div>
                 <div className="mb-5 flex w-full items-end gap-5 lg:gap-2">
                   <span className="town-houses-numbers">4</span>
@@ -307,12 +287,12 @@ const LandingPage = () => {
                 </div>
               </div>
 
-              <hr className="my-6 ml-[calc(475px-1920px)] hidden h-1 bg-primary lg:block xl:mb-[2.188rem] xl:mt-12" />
+              <hr className="my-6 -ml-10 mr-10  h-1 bg-primary lg:ml-[calc(475px-1920px)] lg:mr-0 lg:block xl:mb-[2.188rem] xl:mt-12" />
 
-              <div className="town-houses-tag self-end">
-                <p>1 - 4,5 ZIMMER</p>
+              <div className="town-houses-tag sm:mt-4">
+                <p className="text-left lg:text-right">1 - 4,5 ZIMMER</p>
 
-                <p>115 - 168 M2</p>
+                <p className="text-left lg:text-right">115 - 168 M2</p>
               </div>
             </div>
           </div>
@@ -363,50 +343,15 @@ const LandingPage = () => {
         <Image
           src={Pattern}
           alt="pattern"
-          fill
-          className="absolute !-left-5 !bottom-2.5 !top-auto hidden max-h-[58.375rem] max-w-[21.25rem] object-cover lg:block"
+          width={340}
+          height={934}
+          className="absolute !-left-5 !bottom-2.5 !top-auto hidden h-[48.65vw] max-h-[58.375rem] w-[17.71vw]  max-w-[21.25rem] overflow-visible object-cover lg:block"
         />
       </section>
 
       {/* section# 5 */}
 
-      <section>
-        <h2 className=" mx-auto w-full max-w-[61.25rem] text-center text-[clamp(2.063rem,5vw,4.063rem)] text-primary 2xl:leading-[4.688rem]">
-          PROJEKT-HIGHLIGHTS
-        </h2>
-
-        <div className=" mb-14 mt-6 lg:mb-[6.25rem] lg:mt-[3.75rem]">
-          <Marquee speed={90} autoFill loop={0}>
-            <ul className="marquee-list">
-              {marque1Data?.map((marqueItem) => (
-                <li key={marqueItem} className="marquee-list-item">
-                  <span className="marquee-item flex-1">{marqueItem}</span>
-                </li>
-              ))}
-            </ul>
-          </Marquee>
-
-          <Marquee speed={90} autoFill loop={0} direction="right">
-            <ul className="marquee-list">
-              {marque2Data?.map((marqueItem) => (
-                <li key={marqueItem} className="marquee-list-item !border-0">
-                  <span className="marquee-item flex-1">{marqueItem}</span>
-                </li>
-              ))}
-            </ul>
-          </Marquee>
-
-          <Marquee speed={90} autoFill loop={0}>
-            <ul className="marquee-list">
-              {marque3Data?.map((marqueItem) => (
-                <li key={marqueItem} className="marquee-list-item">
-                  <span className="marquee-item flex-1">{marqueItem}</span>
-                </li>
-              ))}
-            </ul>
-          </Marquee>
-        </div>
-      </section>
+      <ProjectsHighlight />
 
       {/* section# 6 */}
 

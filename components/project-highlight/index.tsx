@@ -34,7 +34,7 @@ const ProjectsHighlight = () => {
 
   return (
     <section>
-      <h2 className=" mx-auto w-full max-w-[61.25rem] text-center text-[clamp(2.063rem,5vw,4.063rem)] leading-tight text-primary 2xl:leading-[4.688rem]">
+      <h2 className=" mx-auto w-full max-w-[61.25rem] px-4 text-center text-[clamp(2.063rem,5vw,4.063rem)] leading-tight text-primary 2xl:leading-[4.688rem]">
         PROJEKT-HIGHLIGHTS
       </h2>
 

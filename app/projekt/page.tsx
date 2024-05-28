@@ -264,7 +264,7 @@ const Projekt = () => {
         </div>
 
         <div className="flex-1 bg-slate px-5 py-14 xl:pb-[12.275rem] xl:pl-[12.688rem] xl:pt-[6.248rem]">
-          <div className="flex flex-col gap-7 text-secondary sm:flex-row lg:gap-10">
+          <div className="relative z-10 flex flex-col gap-7 text-secondary sm:flex-row lg:gap-10">
             <div className="w-full sm:max-w-[22.5rem]">
               <p>
                 Die Stadthäuser kombinieren Ruhe mit urbaner Eleganz und sorgen
@@ -295,7 +295,7 @@ const Projekt = () => {
           width={496}
           height={114}
           alt="key-button"
-          className="absolute bottom-10 right-0 hidden w-56 max-w-[496px] sm:block xl:bottom-[10.2vw] xl:w-auto"
+          className="absolute bottom-10 right-0 hidden w-56 max-w-[496px] sm:block lg:h-[7.125rem] xl:bottom-[10.2vw] xl:w-auto"
         />
       </section>
 

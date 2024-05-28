@@ -35,10 +35,16 @@ const ProjectsSlider = () => {
       number: "02",
       header: "Obergeschoss",
       subHeading: "STADTHÄUSER 05 - 06",
-      map: "/assets/images/project-page/map3.png",
+      map: "/assets/images/project-page/map2.png",
     },
     {
       number: "03",
+      header: "Obergeschoss",
+      subHeading: "STADTHÄUSER 05 - 06",
+      map: "/assets/images/project-page/map3.png",
+    },
+    {
+      number: "04",
       header: "Obergeschoss",
       subHeading: "STADTHÄUSER 05 - 06",
       map: "/assets/images/project-page/map1.png",
@@ -123,11 +129,18 @@ const ProjectsSlider = () => {
             </thead>
             <tbody>
               {tableData?.map((data, idx) => {
-                console.log(active);
+                const shouldHideRow =
+                  (active === 0 && idx === 1) || (active >= 1 && idx === 0);
+
+                const isBgColorApplied = active === idx;
+
+                if (shouldHideRow) {
+                  return null;
+                }
                 return (
                   <tr
                     key={idx}
-                    className={`td-row ${((active === 1 && idx === 0) || (active !== 1 && active === idx)) && "bg-slate"}`}
+                    className={`td-row ${isBgColorApplied ? "bg-slate" : ""}`}
                   >
                     <td
                       className={`td-container pl-[3.75rem] ${tableData?.length - 1 === idx && "border-none"}`}
