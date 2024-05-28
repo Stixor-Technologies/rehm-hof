@@ -1,5 +1,5 @@
 "use client";
-import React, { useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import RehmstrasseBg from "@/public/assets/images/project-page/rehmstrasse-bg.png";
 import InteriorBg from "@/public/assets/images/project-page/interior-bg.png";
@@ -25,6 +25,18 @@ const Projekt = () => {
   const tapImageRef = useRef<HTMLImageElement | null>(null);
 
   const DURATION = 0.7;
+  const [windowSize, setWindowSize] = useState<number>(0);
+
+  useEffect(() => {
+    const handleWindowResize = () => {
+      setWindowSize(window.innerWidth);
+    };
+    handleWindowResize();
+    window.addEventListener("resize", handleWindowResize);
+    return () => {
+      window.removeEventListener("resize", handleWindowResize);
+    };
+  }, []);
 
   const { contextSafe } = useGSAP();
 
@@ -41,6 +53,7 @@ const Projekt = () => {
         gruppeImage2Ref.current,
         {
           scale: 1.25,
+          yPercent: windowSize >= 1024 ? -8 : -4,
           transformOrigin: "bottom right",
           duration: DURATION,
         },
@@ -58,6 +71,7 @@ const Projekt = () => {
         gruppeImage2Ref.current,
         {
           scale: 1,
+          yPercent: 0,
           duration: DURATION,
         },
         0,
@@ -310,7 +324,7 @@ const Projekt = () => {
           </div>
         </div> */}
 
-        <div className="flex items-start gap-10">
+        <div className="flex flex-col items-start gap-4 sm:flex-row sm:gap-10">
           <div className="overflow-hidden">
             <Image
               ref={gruppeImage1Ref}
@@ -321,17 +335,20 @@ const Projekt = () => {
             />
           </div>
           <div
-            className="group max-h-[555px] overflow-hidden"
+            // className="group max-h-[555px] overflow-hidden"
+            // className="group max-h-[555px] overflow-hidden"
+            className="h-[45vw] max-h-[34.688rem]  overflow-hidden sm:h-[32.7vw]"
             onMouseEnter={handleMouseEnterGruppe}
             onMouseLeave={handleMouseLeaveGruppe}
           >
             <Image
-              // ref={gruppeImage2Ref}
+              ref={gruppeImage2Ref}
               src={BuilderGruppe}
               width={1160}
               height={555}
               alt="wood-texture"
-              className="origin-bottom-right -translate-y-[240px] transition-all duration-500 group-hover:-translate-y-[270px] group-hover:scale-125"
+              // className="origin-bottom-right -translate-y-[240px] transition-all duration-500 group-hover:-translate-y-[270px] group-hover:scale-125"
+              className=" -translate-y-[27%]"
             />
           </div>
         </div>
