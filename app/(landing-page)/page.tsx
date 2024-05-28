@@ -10,7 +10,6 @@ import Bildergruppe from "@/public/assets/images/home-page/Bildergruppe.png";
 import Pattern from "@/public/assets/images/Pattern.svg";
 import Section6Image from "@/public/assets/images/home-page/section6.png";
 import Building from "@/public/assets/images/home-page/buildings.png";
-import Marquee from "react-fast-marquee";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import ProjectsHighlight from "@/components/project-highlight";
