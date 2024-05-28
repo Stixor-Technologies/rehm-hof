@@ -142,9 +142,7 @@ const ProjectsSlider = () => {
                     key={idx}
                     className={`td-row ${isBgColorApplied ? "bg-slate" : ""}`}
                   >
-                    <td
-                      className={`td-container pl-[3.75rem] ${tableData?.length - 1 === idx && "border-none"}`}
-                    >
+                    <td className={`td-container pl-[3.75rem]`}>
                       {data?.WE?.map((we, idx) => (
                         <div
                           key={idx}
@@ -155,9 +153,7 @@ const ProjectsSlider = () => {
                         </div>
                       ))}
                     </td>
-                    <td
-                      className={`td-container pl-[2.875rem] ${tableData?.length - 1 === idx && "border-none"}`}
-                    >
+                    <td className={`td-container pl-[2.875rem]`}>
                       {data?.GESCHOSS?.map((geschoss, idx) => (
                         <span key={idx} className="td-item">
                           {geschoss.value}
@@ -165,9 +161,7 @@ const ProjectsSlider = () => {
                       ))}
                     </td>
 
-                    <td
-                      className={`td-container pl-[2.342rem] ${tableData?.length - 1 === idx && "border-none"}`}
-                    >
+                    <td className={`td-container pl-[2.342rem]`}>
                       {data?.GRÖßE?.map((grobe, idx) => (
                         <span key={idx} className="td-item">
                           {grobe.value}
@@ -176,7 +170,7 @@ const ProjectsSlider = () => {
                     </td>
 
                     <td
-                      className={`td-container pl-[2.445rem] ${active === 1 && "hidden"} text-pink ${tableData?.length - 1 === idx && "border-none"}`}
+                      className={`td-container pl-[2.445rem] ${active === 1 && "hidden"} text-pink`}
                     >
                       {data?.GARTEN?.map((garten, idx) => (
                         <span key={idx} className="td-item">
@@ -185,9 +179,7 @@ const ProjectsSlider = () => {
                       ))}
                     </td>
 
-                    <td
-                      className={`td-container pl-[2.983rem] ${tableData?.length - 1 === idx && "border-none"}`}
-                    >
+                    <td className={`td-container pl-[2.983rem]`}>
                       {data?.ZIMMER?.map((zimmer, idx) => (
                         <span key={idx} className="td-item">
                           {zimmer.value}
@@ -196,7 +188,7 @@ const ProjectsSlider = () => {
                     </td>
 
                     <td
-                      className={`td-container pl-[2.636rem] ${active === 1 ? "text-secondary" : "text-pink"} ${tableData?.length - 1 === idx && "border-none"}`}
+                      className={`td-container pl-[2.636rem] ${active === 1 ? "text-secondary" : "text-pink"}`}
                     >
                       {data?.KAUFPREIS?.map((kaufpreis, idx) => (
                         <span key={idx} className="td-item">
@@ -204,9 +196,7 @@ const ProjectsSlider = () => {
                         </span>
                       ))}
                     </td>
-                    <td
-                      className={`td-container p-10 ${tableData?.length - 1 === idx && "border-none"}`}
-                    ></td>
+                    <td className={`td-container p-10`}></td>
                   </tr>
                 );
               })}

@@ -40,7 +40,7 @@
   }
 
   .td-container {
-    @apply min-w-[5.75rem] border-b border-slate py-4 lg:py-8;
+    @apply min-w-[5.75rem] border-t border-slate py-4 lg:py-8;
   }
 
   .td-item {
