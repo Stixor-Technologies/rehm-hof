@@ -28,8 +28,8 @@ const Sidebar = ({
       gsap.to("#sidebar", {
         width: 0,
         height: 0,
-        top: 112,
-        left: 64,
+        top: window.innerWidth > 768 ? 112 : 40,
+        left: window.innerWidth > 768 ? 64 : 24,
         opacity: 0,
         duration: 0.3,
       });
@@ -53,7 +53,7 @@ const Sidebar = ({
   return (
     <>
       <div
-        className="absolute left-16 top-28 z-40 h-0 w-0 overflow-x-hidden bg-slate opacity-0"
+        className="absolute left-6 top-10 z-40 h-0 w-0 overflow-x-hidden bg-slate opacity-0 md:left-16 md:top-28"
         id="sidebar"
       />
       <div className="absolute left-4 top-28 z-50 flex flex-col sm:left-16 sm:top-[13.688rem] xl:top-[13.688rem] 4xl:left-[11.25rem]">
