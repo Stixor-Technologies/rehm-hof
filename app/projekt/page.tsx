@@ -160,7 +160,7 @@ const Projekt = () => {
             width={340}
             height={73}
             alt="slide-button"
-            className=" absolute right-0 top-4 -z-10  w-24 max-w-[21.25rem] cursor-pointer sm:top-16 lg:top-0 lg:h-[4.563rem] lg:w-full 2xl:top-[1.962rem] "
+            className=" absolute right-0  top-[54vw]  -z-10 w-24 max-w-[21.25rem] cursor-pointer lg:top-0 lg:h-[4.563rem] lg:w-full 2xl:top-[1.962rem] "
           />
           <h2 className="text-[clamp(2.063rem,4vw,4.063rem)] leading-tight text-primary 2xl:leading-[4.688rem]">
             MODERN INTERIOR
