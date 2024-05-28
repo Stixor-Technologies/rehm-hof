@@ -343,8 +343,9 @@ const LandingPage = () => {
         <Image
           src={Pattern}
           alt="pattern"
-          fill
-          className="absolute !-left-5 !bottom-2.5 !top-auto hidden max-h-[58.375rem] max-w-[21.25rem] object-cover lg:block"
+          width={340}
+          height={934}
+          className="absolute !-left-5 !bottom-2.5 !top-auto hidden h-[48.65vw] max-h-[58.375rem] w-[17.71vw]  max-w-[21.25rem] overflow-visible object-cover lg:block"
         />
       </section>
 
