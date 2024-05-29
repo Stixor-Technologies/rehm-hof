@@ -240,7 +240,7 @@ const Projekt = () => {
             />
           </div>
           <div
-            className="h-[45vw] max-h-[34.688rem]  overflow-hidden sm:h-[32.7vw] 2xl:h-[555px]"
+            className=" h-[45vw] max-h-[34.688rem] overflow-hidden sm:h-[32.7vw] xl:h-[33vw] xl:max-h-[435px] 2xl:h-[555px] 2xl:max-h-[555px]"
             onMouseEnter={handleMouseEnterGruppe}
             onMouseLeave={handleMouseLeaveGruppe}
           >
