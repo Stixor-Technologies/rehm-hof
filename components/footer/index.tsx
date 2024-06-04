@@ -80,8 +80,8 @@ const Footer = () => {
               {info("20354 Hamburg")}
 
               <div className={`${linkGroupClasses} !px-0 pt-[1.313rem]`}>
-                {info("T 040/34 63 40")}
-                {info("E verkauf@hyest.de")}
+                {link(`tel:+040/34 63 40`, "T 040/34 63 40")}
+                {link(`mailto:+verkauf@hyest.de`, "verkauf@hyest.de")}
               </div>
             </div>
 
