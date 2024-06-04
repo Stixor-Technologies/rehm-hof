@@ -65,15 +65,19 @@ export const tableData = [
     WE: [
       {
         value: "01",
+        pdfLink: "/assets/pdfs/stadthaus-01.pdf",
       },
       {
         value: "02",
+        pdfLink: "/assets/pdfs/stadthaus-02.pdf",
       },
       {
         value: "03",
+        pdfLink: "/assets/pdfs/stadthaus-03.pdf",
       },
       {
         value: "04",
+        pdfLink: "/assets/pdfs/stadthaus-04.pdf",
       },
     ],
 
@@ -157,18 +161,21 @@ export const tableData = [
     WE: [
       {
         value: "01",
+        pdfLink: "/assets/pdfs/stadthaus-01.pdf",
       },
       {
         value: "02",
+        pdfLink: "/assets/pdfs/stadthaus-02.pdf",
       },
       {
         value: "03",
+        pdfLink: "/assets/pdfs/stadthaus-03.pdf",
       },
       {
         value: "04",
+        pdfLink: "/assets/pdfs/stadthaus-04.pdf",
       },
     ],
-
     GESCHOSS: [
       {
         value: "EG - 1. OG",
@@ -249,9 +256,11 @@ export const tableData = [
     WE: [
       {
         value: "05",
+        pdfLink: "/assets/pdfs/wohnung-05.pdf",
       },
       {
         value: "06",
+        pdfLink: "/assets/pdfs/wohnung-06.pdf",
       },
     ],
 
@@ -305,9 +314,11 @@ export const tableData = [
     WE: [
       {
         value: "07",
+        pdfLink: "/assets/pdfs/wohnung-07.pdf",
       },
       {
         value: "08",
+        pdfLink: "/assets/pdfs/wohnung-08.pdf",
       },
     ],
 
@@ -361,6 +372,7 @@ export const tableData = [
     WE: [
       {
         value: "09",
+        pdfLink: "/assets/pdfs/wohnung-09.pdf",
       },
     ],
 
