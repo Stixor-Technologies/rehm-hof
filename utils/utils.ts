@@ -31,27 +31,32 @@ export const faq: FaqITemType[] = [
   {
     question: "SPORT / FITNESS",
     icon: "/assets/images/lage/sports.svg",
-    answer: [
-      "17 Stadtpark",
-      "18 Hayns-Park",
-      "19 Leigeweise Winterhuder Kai",
-      "20 Meenkwiese",
-    ],
+    answer: ["17 SUPCO", "18 Keiser", "19 Alster Sport Club e.V."],
   },
   {
     question: "SCHULE",
     icon: "/assets/images/lage/schule.svg",
-    answer: ["21 Stadtpark", "22 Hayns-Park"],
+    answer: [
+      "20 Katholische Schule St.Antonius",
+      "21 Heinrich-Hertz-Schule",
+      "22 Grundschule Alsterdorfer Straße",
+      "23 Marie Beschutz Schule",
+    ],
   },
   {
     question: "KITA",
     icon: "/assets/images/lage/kita.svg",
-    answer: ["23 Stadtpark", "24 Hayns-Park"],
+    answer: [
+      "24 Kita Drachenkinderland",
+      "25 Katholischer Kindergarten St.Antonius",
+      "26 Kita Ludolfstraße",
+      "27 AWO Kita Haynspark",
+    ],
   },
   {
     question: "EINKAUF (tägl. Bedarf)",
     icon: "/assets/images/lage/einkauf.svg",
-    answer: ["25 Stadtpark"],
+    answer: ["28 Penny", "29 Netto", "30 Edeka", "31 Aldi"],
   },
 ];
 
