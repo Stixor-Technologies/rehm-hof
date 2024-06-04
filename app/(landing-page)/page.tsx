@@ -290,9 +290,9 @@ const LandingPage = () => {
               <hr className="-ml-10 mr-10 h-1 bg-primary lg:ml-[calc(475px-1920px)] lg:mr-0 lg:block " />
 
               <div className="town-houses-tag mt-6 xl:mt-[2.188rem]">
-                <p className="text-left lg:text-right">1 - 4,5 ZIMMER</p>
+                <p className="text-left lg:text-right">3,5 - 5 ZIMMER</p>
 
-                <p className="text-left lg:text-right">115 - 168 M2</p>
+                <p className="text-left lg:text-right">116 - 177 M2</p>
               </div>
             </div>
           </div>
