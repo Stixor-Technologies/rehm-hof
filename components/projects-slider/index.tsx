@@ -1,6 +1,7 @@
 import React, { useRef, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperClass from "swiper";
+import Link from "next/link";
 
 // Import Swiper styles
 import "swiper/css";
@@ -40,13 +41,13 @@ const ProjectsSlider = () => {
     {
       number: "03",
       header: "Obergeschoss",
-      subHeading: "STADTHÄUSER 05 - 06",
+      subHeading: "STADTHÄUSER 07 - 08",
       map: "/assets/images/project-page/map3.png",
     },
     {
       number: "04",
       header: "Obergeschoss",
-      subHeading: "STADTHÄUSER 05 - 06",
+      subHeading: "STADTHÄUSER 09",
       map: "/assets/images/project-page/map1.png",
     },
   ];
@@ -121,7 +122,7 @@ const ProjectsSlider = () => {
                 <th className="w-[6.046rem] pb-[1.113rem]  pl-[2.983rem] font-normal">
                   ZIMMER
                 </th>
-                <th className="w-[8.761rem] pb-[1.113rem] pl-[2.636rem] font-normal">
+                <th className="w-[9.761rem] pb-[1.113rem] pl-[2.636rem] font-normal">
                   KAUFPREIS
                 </th>
                 <th className=" w-[3.125rem]] pb-[1.113rem] font-normal 3xl:w-auto"></th>
@@ -148,7 +149,14 @@ const ProjectsSlider = () => {
                           key={idx}
                           className="flex items-center gap-[0.668rem]"
                         >
-                          <Image src={LinkIcon} width={16} height={16} alt="" />
+                          <Link target="_blank" href={we.pdfLink}>
+                            <Image
+                              src={LinkIcon}
+                              width={16}
+                              height={16}
+                              alt=""
+                            />
+                          </Link>
                           <span className="td-item flex-1">{we.value}</span>
                         </div>
                       ))}

@@ -9,7 +9,7 @@ import Strassenansicht from "@/public/assets/images/home-page/Strassenansicht.pn
 import Bildergruppe from "@/public/assets/images/home-page/Bildergruppe.png";
 import Pattern from "@/public/assets/images/Pattern.svg";
 import Section6Image from "@/public/assets/images/home-page/section6.png";
-import Building from "@/public/assets/images/home-page/buildings.png";
+import Building from "@/public/assets/images/home-page/building.jpeg";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import ProjectsHighlight from "@/components/project-highlight";
@@ -68,7 +68,7 @@ const LandingPage = () => {
     if (activeImage === 1) {
       // TODO: These Gsap transition will be different for both images, need to change them later
       gsap.to(image1Ref.current, {
-        yPercent: -52,
+        yPercent: -42,
         scale: 1.15,
       });
     } else {
@@ -174,7 +174,7 @@ const LandingPage = () => {
           <div className=" z-10 flex flex-nowrap items-start">
             <div
               ref={image1Ref}
-              className=" w-full  shrink-0 overflow-hidden lg:-translate-y-[6%]"
+              className=" w-full  shrink-0 overflow-hidden lg:-translate-y-[2%]"
             >
               <Image
                 src={Building}
@@ -290,9 +290,9 @@ const LandingPage = () => {
               <hr className="-ml-10 mr-10 h-1 bg-primary lg:ml-[calc(475px-1920px)] lg:mr-0 lg:block " />
 
               <div className="town-houses-tag mt-6 xl:mt-[2.188rem]">
-                <p className="text-left lg:text-right">1 - 4,5 ZIMMER</p>
+                <p className="text-left lg:text-right">3,5 - 5 ZIMMER</p>
 
-                <p className="text-left lg:text-right">115 - 168 M2</p>
+                <p className="text-left lg:text-right">116 - 177 M2</p>
               </div>
             </div>
           </div>
