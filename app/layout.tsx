@@ -5,6 +5,7 @@ import type { Metadata } from "next";
 import { Raleway } from "next/font/google";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Script from "next/script";
 
 const raleway = Raleway({ subsets: ["latin"] });
 
@@ -20,6 +21,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <Script
+          async
+          defer
+          src="https://cdn.feedbucket.app/assets/feedbucket.js"
+          data-feedbucket="jYcMFi5CS92ZSac6C82H"
+        ></Script>
+      </head>
       <body className={`${raleway.className} bg-white`}>
         <Navbar />
         {children}
