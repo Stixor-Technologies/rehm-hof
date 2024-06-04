@@ -121,7 +121,7 @@ const ProjectsSlider = () => {
                 <th className="w-[6.046rem] pb-[1.113rem]  pl-[2.983rem] font-normal">
                   ZIMMER
                 </th>
-                <th className="w-[8.761rem] pb-[1.113rem] pl-[2.636rem] font-normal">
+                <th className="w-[9.761rem] pb-[1.113rem] pl-[2.636rem] font-normal">
                   KAUFPREIS
                 </th>
                 <th className=" w-[3.125rem]] pb-[1.113rem] font-normal 3xl:w-auto"></th>

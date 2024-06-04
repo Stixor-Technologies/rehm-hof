@@ -94,16 +94,16 @@ export const tableData = [
 
     GRÖßE: [
       {
-        value: "122.92 m²",
+        value: "125.86 m²",
       },
       {
-        value: "143.08 m²",
+        value: "146.11 m²",
       },
       {
-        value: "173.81 m²",
+        value: "176.59 m²",
       },
       {
-        value: "111.93 m²",
+        value: "115.53 m²",
       },
     ],
 
@@ -133,22 +133,22 @@ export const tableData = [
         value: "4",
       },
       {
-        value: "3 1/2",
+        value: "3.5",
       },
     ],
 
     KAUFPREIS: [
       {
-        value: "860.000 €",
+        value: "16.00.000 €",
       },
       {
-        value: "899.000 €",
+        value: "2.000.000 €",
       },
       {
-        value: "489.000 €",
+        value: "2.400.000 €",
       },
       {
-        value: "459.000 €",
+        value: "1.400.000 €",
       },
     ],
   },
@@ -186,16 +186,16 @@ export const tableData = [
 
     GRÖßE: [
       {
-        value: "122.92 m²",
+        value: "125.86 m²",
       },
       {
-        value: "143.08 m²",
+        value: "146.11 m²",
       },
       {
-        value: "173.81 m²",
+        value: "176.59 m²",
       },
       {
-        value: "111.93 m²",
+        value: "115.53 m²",
       },
     ],
 
@@ -225,22 +225,22 @@ export const tableData = [
         value: "4",
       },
       {
-        value: "3 1/2",
+        value: "3.5",
       },
     ],
 
     KAUFPREIS: [
       {
-        value: "860.000 €",
+        value: "16.00.000 €",
       },
       {
-        value: "899.000 €",
+        value: "2.000.000 €",
       },
       {
-        value: "489.000 €",
+        value: "2.400.000 €",
       },
       {
-        value: "459.000 €",
+        value: "1.400.000 €",
       },
     ],
   },
@@ -257,19 +257,19 @@ export const tableData = [
 
     GESCHOSS: [
       {
-        value: "2 OG",
+        value: "2. OG",
       },
       {
-        value: "2 OG",
+        value: "2. OG",
       },
     ],
 
     GRÖßE: [
       {
-        value: "140.11 m²",
+        value: "142.75 m²",
       },
       {
-        value: "154.85 m²",
+        value: "156.75 m²",
       },
     ],
 
@@ -293,10 +293,10 @@ export const tableData = [
 
     KAUFPREIS: [
       {
-        value: "383.000 €",
+        value: "1.900.000 €",
       },
       {
-        value: "510.000 €",
+        value: "2.150.000 €",
       },
     ],
   },
@@ -313,19 +313,19 @@ export const tableData = [
 
     GESCHOSS: [
       {
-        value: "3 OG",
+        value: "3. OG",
       },
       {
-        value: "3 OG",
+        value: "3. OG",
       },
     ],
 
     GRÖßE: [
       {
-        value: "140.11 m²",
+        value: "142.75 m²",
       },
       {
-        value: "154.85 m²",
+        value: "156.75 m²",
       },
     ],
 
@@ -349,10 +349,10 @@ export const tableData = [
 
     KAUFPREIS: [
       {
-        value: "383.000 €",
+        value: "1.900.000 €",
       },
       {
-        value: "510.000 €",
+        value: "2.150.000 €",
       },
     ],
   },
@@ -366,13 +366,13 @@ export const tableData = [
 
     GESCHOSS: [
       {
-        value: "STG",
+        value: "4. OG",
       },
     ],
 
     GRÖßE: [
       {
-        value: "175 m²",
+        value: "167.62 m²",
       },
     ],
 
@@ -390,7 +390,7 @@ export const tableData = [
 
     KAUFPREIS: [
       {
-        value: "383.000 €",
+        value: "2.700.000 €",
       },
     ],
   },
