@@ -2,7 +2,6 @@
 import React, { useRef, useState } from "react";
 import HamburgWinterHude from "@/public/assets/images/lage/hamburg-winterhude.png";
 import Leben from "@/public/assets/images/lage/leben.png";
-import Leben2 from "@/public/assets/images/lage/leben2.png";
 import Essen from "@/public/assets/images/lage/essen.png";
 import Alster from "@/public/assets/images/lage/Alster.png";
 import Markt from "@/public/assets/images/lage/Markt.png";
@@ -163,29 +162,13 @@ const Lage = () => {
             </p>
           </div>
 
-          <div className="group relative w-full lg:max-h-[39.625rem] lg:w-[40%] lg:max-w-[42rem] xl:w-1/2 2xl:w-full">
+          <div className=" inline-block overflow-hidden bg-gray-600 lg:max-h-[39.625rem] lg:w-[40%] lg:max-w-[42rem] xl:w-1/2 2xl:w-full">
             <Image
               width={672}
               height={634}
               src={Leben}
               alt="leben"
-              className="w-full lg:hidden lg:max-h-[39.625rem] lg:w-[40%] lg:max-w-[42rem] xl:w-1/2 2xl:w-full"
-            />
-
-            <Image
-              width={672}
-              height={634}
-              src={Leben}
-              alt="leben"
-              className="absolute inset-0 w-full transition-all duration-500 group-hover:opacity-0 lg:h-full"
-            />
-
-            <Image
-              width={672}
-              height={634}
-              src={Leben2}
-              alt="leben"
-              className="absolute inset-0 h-full w-full opacity-0 transition-all duration-500 group-hover:opacity-100"
+              className="block h-full w-full origin-left duration-500 hover:scale-125 "
             />
           </div>
         </div>

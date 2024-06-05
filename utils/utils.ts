@@ -31,16 +31,16 @@ export const faq: FaqITemType[] = [
   {
     question: "SPORT / FITNESS",
     icon: "/assets/images/lage/sports.svg",
-    answer: ["17 SUPCO", "18 Keiser", "19 Alster Sport Club e.V."],
+    answer: ["17 SUPcO", "18 Kieser", "19 Alster Sport Club e.V."],
   },
   {
     question: "SCHULE",
     icon: "/assets/images/lage/schule.svg",
     answer: [
-      "20 Katholische Schule St.Antonius",
+      "20 Katholische Schule St. Antonius",
       "21 Heinrich-Hertz-Schule",
       "22 Grundschule Alsterdorfer Straße",
-      "23 Marie Beschutz Schule",
+      "23 Marie Beschütz Schule",
     ],
   },
   {
@@ -48,7 +48,7 @@ export const faq: FaqITemType[] = [
     icon: "/assets/images/lage/kita.svg",
     answer: [
       "24 Kita Drachenkinderland",
-      "25 Katholischer Kindergarten St.Antonius",
+      "25 Katholischer Kindergarten St. Antonius",
       "26 Kita Ludolfstraße",
       "27 AWO Kita Haynspark",
     ],
