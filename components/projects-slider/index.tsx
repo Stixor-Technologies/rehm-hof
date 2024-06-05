@@ -36,19 +36,19 @@ const ProjectsSlider = () => {
       number: "02",
       header: "Obergeschoss",
       subHeading: "STADTHÄUSER 05 - 06",
-      map: "/assets/images/project-page/map2.png",
+      map: "/assets/images/project-page/map3.png",
     },
     {
       number: "03",
       header: "Obergeschoss",
       subHeading: "STADTHÄUSER 07 - 08",
-      map: "/assets/images/project-page/map3.png",
+      map: "/assets/images/project-page/map4.png",
     },
     {
       number: "04",
       header: "Obergeschoss",
       subHeading: "STADTHÄUSER 09",
-      map: "/assets/images/project-page/map1.png",
+      map: "/assets/images/project-page/map5.png",
     },
   ];
   return (
@@ -93,7 +93,7 @@ const ProjectsSlider = () => {
                     width={642}
                     height={615}
                     alt=""
-                    className="w-full "
+                    className="z-10 w-full bg-white"
                   />
                 </div>
               </SwiperSlide>
