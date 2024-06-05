@@ -36,11 +36,12 @@
   }
 
   .td-row {
-    @apply bg-opacity-50 text-center text-secondary lg:text-lg lg:leading-[2.125rem];
+    /* @apply bg-opacity-50 text-center text-secondary lg:text-lg lg:leading-[2.125rem]; */
+    @apply bg-opacity-50 text-center text-[10px] leading-[clamp(1.4rem,4vw,2.125rem)] text-secondary sm:text-[clamp(0.6rem,2vw,1rem)];
   }
 
   .td-container {
-    @apply min-w-[5.75rem] border-t border-slate py-4 lg:py-8;
+    @apply min-w-[5.75rem] border-t border-slate !px-[0.6vw] py-4 lg:py-8;
   }
 
   .td-item {
