@@ -250,12 +250,16 @@ const KontaktForm = () => {
               </ul>
 
               <ul>
-                {/* <li>T 040/34 63 40</li>
-                <li>E verkauf@hyest.de</li> */}
-                <Link className="block" href={`tel:+040/34 63 40`}>
+                <Link
+                  className="block transition-all duration-300 hover:text-primary"
+                  href={`tel:+040/34 63 40`}
+                >
                   T 040/34 63 40
                 </Link>
-                <Link className="block" href={`mailto:+verkauf@hyest.de`}>
+                <Link
+                  className="block transition-all duration-300 hover:text-primary"
+                  href={`mailto:+verkauf@hyest.de`}
+                >
                   E verkauf@hyest.de
                 </Link>
               </ul>
@@ -514,7 +518,12 @@ const KontaktForm = () => {
                 <span>
                   {" "}
                   Ich bin mit den Erklärungen der{" "}
-                  <Link href="/datenschutz">DATENSCHUTZRICHTLINIE</Link>{" "}
+                  <Link
+                    className="transition-all duration-300 hover:text-primary"
+                    href="/datenschutz"
+                  >
+                    DATENSCHUTZRICHTLINIE
+                  </Link>{" "}
                   einverstanden.
                 </span>
               </label>
