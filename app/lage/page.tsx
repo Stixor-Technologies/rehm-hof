@@ -142,7 +142,6 @@ const Lage = () => {
       0,
     );
   });
-  console.log(`/assets/images/lage/points-${activeFaq}.png`);
   return (
     <section>
       {/* section# 1 */}

@@ -102,34 +102,8 @@ const ProjectsSlider = () => {
         </Swiper>
 
         <div className="relative flex-1 overflow-y-auto lg:mt-[8.438rem] 2xl:mt-[9.936rem]">
-          {/* <table className="w-full table-fixed border-collapse"> */}
           <table className="w-full table-auto border-collapse lg:table-fixed">
             <thead>
-              {/* <tr className=" tracking-[0.023rem] text-primary lg:text-lg lg:leading-[1.875rem] ">
-                <th className="min-w-[15.125rem] pb-[1.113rem] pl-[3.75rem] font-normal">
-                  WE
-                </th>
-                <th className=" pb-[1.113rem] pl-[2.875rem] font-normal">
-                  GESCHOSS
-                </th>
-                <th className="min-w-[7.842rem] pb-[1.113rem] pl-[2.342rem] font-normal">
-                  m²
-                </th>
-
-                <th
-                  className={`min-w-[7.133rem] pb-[1.113rem] pl-[2.445rem] font-normal `}
-                >
-                  GARTEN
-                </th>
-                <th className="min-w-[6.046rem] pb-[1.113rem]  pl-[2.983rem] font-normal">
-                  ZIMMER
-                </th>
-                <th className="min-w-[9.761rem] pb-[1.113rem] pl-[2.636rem] font-normal">
-                  PREIS
-                </th>
-                <th className=" min-w-[3.125rem]] pb-[1.113rem] font-normal 3xl:w-auto"></th>
-              </tr> */}
-
               <tr className=" text-[10px] leading-[clamp(1.4rem,4vw,2.125rem)] tracking-[0.023rem] text-primary sm:text-[clamp(0.6rem,2vw,1rem)] ">
                 <th className="pb-[1.113rem] font-normal lg:w-[9.125rem]">
                   WE
@@ -150,7 +124,6 @@ const ProjectsSlider = () => {
                 <th className="pb-[1.113rem]  font-normal lg:w-[6.761rem]">
                   PREIS
                 </th>
-                {/* <th className=" pb-[1.113rem] font-normal 3xl:w-auto"></th> */}
               </tr>
             </thead>
             <tbody>
@@ -206,10 +179,7 @@ const ProjectsSlider = () => {
                       ))}
                     </td>
 
-                    <td
-                      // className={`td-container pl-[2.445rem] ${active === 1 && "hidden"} text-pink`}
-                      className={`td-container pl-[2.445rem]  `}
-                    >
+                    <td className={`td-container pl-[2.445rem]  `}>
                       {data?.GARTEN?.map((garten, idx) => (
                         <span key={idx} className="td-item">
                           {garten.value}
@@ -225,20 +195,13 @@ const ProjectsSlider = () => {
                       ))}
                     </td>
 
-                    <td
-                      // className={`td-container pl-[2.636rem] ${active === 1 ? "text-secondary" : "text-pink"}`}
-
-                      className={`td-container pl-[2.636rem]`}
-
-                      // className={`td-container pl-[2.636rem] `}
-                    >
+                    <td className={`td-container pl-[2.636rem]`}>
                       {data?.KAUFPREIS?.map((kaufpreis, idx) => (
                         <span key={idx} className="td-item">
                           {kaufpreis.value}
                         </span>
                       ))}
                     </td>
-                    {/* <td className={`td-container p-10`}></td> */}
                   </tr>
                 );
               })}
