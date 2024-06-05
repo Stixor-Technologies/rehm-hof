@@ -142,7 +142,7 @@ const Lage = () => {
       0,
     );
   });
-
+  console.log(`/assets/images/lage/points-${activeFaq}.png`);
   return (
     <section>
       {/* section# 1 */}
@@ -162,7 +162,7 @@ const Lage = () => {
             </p>
           </div>
 
-          <div className=" inline-block overflow-hidden bg-gray-600 lg:max-h-[39.625rem] lg:w-[40%] lg:max-w-[42rem] xl:w-1/2 2xl:w-full">
+          <div className=" inline-block overflow-hidden lg:max-h-[39.625rem] lg:w-[40%] lg:max-w-[42rem] xl:w-1/2 2xl:w-full">
             <Image
               width={672}
               height={634}
@@ -286,13 +286,21 @@ const Lage = () => {
           <div className="relative flex-1 lg:w-[50%] lg:max-w-[60rem] 2xl:w-full">
             {activeFaq >= 0 && (
               <Image
-                src={`${activeFaq === 0 ? "/assets/images/lage/points.png" : "/assets/images/lage/points1.png"}`}
+                src={`/assets/images/lage/points-${activeFaq}.png`}
                 className="absolute"
                 width={960}
                 height={786}
                 alt=""
               />
             )}
+
+            <Image
+              src={`/assets/images/lage/u.png`}
+              className="absolute"
+              width={960}
+              height={786}
+              alt=""
+            />
             <Image src={Essen} width={960} height={786} alt="essen" />
           </div>
         </div>
