@@ -2,7 +2,6 @@
 import React, { useRef, useState } from "react";
 import HamburgWinterHude from "@/public/assets/images/lage/hamburg-winterhude.png";
 import Leben from "@/public/assets/images/lage/leben.png";
-import Leben2 from "@/public/assets/images/lage/leben2.png";
 import Essen from "@/public/assets/images/lage/essen.png";
 import Alster from "@/public/assets/images/lage/Alster.png";
 import Markt from "@/public/assets/images/lage/Markt.png";
