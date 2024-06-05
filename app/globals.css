@@ -59,7 +59,7 @@
 }
 
 .swiper-pagination {
-  @apply !static !-bottom-10 flex-col gap-[0.772rem] p-0  md:!max-h-max lg:!absolute lg:!bottom-auto lg:!left-0 lg:!top-[11.65rem] lg:flex lg:!w-[1.1rem] lg:gap-2 2xl:!top-[12.158rem] 2xl:!w-[1.916rem] 2xl:gap-[0.772rem];
+  @apply !static !-bottom-10 mt-2 flex-col gap-[0.772rem]  p-0 md:!max-h-max lg:!absolute lg:!bottom-auto lg:!left-0 lg:!top-[11.65rem] lg:mt-0 lg:flex lg:!w-[1.1rem] lg:gap-2 2xl:!top-[12.158rem] 2xl:!w-[1.916rem] 2xl:gap-[0.772rem];
 }
 
 .swiper-pagination-bullet {
