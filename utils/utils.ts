@@ -64,19 +64,19 @@ export const tableData = [
   {
     WE: [
       {
-        value: "01",
+        value: "Stadthaus 01",
         pdfLink: "/assets/pdfs/stadthaus-01.pdf",
       },
       {
-        value: "02",
+        value: "Stadthaus 02",
         pdfLink: "/assets/pdfs/stadthaus-02.pdf",
       },
       {
-        value: "03",
+        value: "Stadthaus 03",
         pdfLink: "/assets/pdfs/stadthaus-03.pdf",
       },
       {
-        value: "04",
+        value: "Stadthaus 04",
         pdfLink: "/assets/pdfs/stadthaus-04.pdf",
       },
     ],
@@ -143,7 +143,7 @@ export const tableData = [
 
     KAUFPREIS: [
       {
-        value: "16.00.000 €",
+        value: "1.6.00.000 €",
       },
       {
         value: "2.000.000 €",
@@ -160,19 +160,19 @@ export const tableData = [
   {
     WE: [
       {
-        value: "01",
+        value: "Stadthaus 01",
         pdfLink: "/assets/pdfs/stadthaus-01.pdf",
       },
       {
-        value: "02",
+        value: "Stadthaus 02",
         pdfLink: "/assets/pdfs/stadthaus-02.pdf",
       },
       {
-        value: "03",
+        value: "Stadthaus 03",
         pdfLink: "/assets/pdfs/stadthaus-03.pdf",
       },
       {
-        value: "04",
+        value: "Stadthaus 04",
         pdfLink: "/assets/pdfs/stadthaus-04.pdf",
       },
     ],
@@ -238,7 +238,7 @@ export const tableData = [
 
     KAUFPREIS: [
       {
-        value: "16.00.000 €",
+        value: "1.6.00.000 €",
       },
       {
         value: "2.000.000 €",
@@ -255,11 +255,11 @@ export const tableData = [
   {
     WE: [
       {
-        value: "05",
+        value: "Wohnung 05",
         pdfLink: "/assets/pdfs/wohnung-05.pdf",
       },
       {
-        value: "06",
+        value: "Wohnung 06",
         pdfLink: "/assets/pdfs/wohnung-06.pdf",
       },
     ],
@@ -313,11 +313,11 @@ export const tableData = [
   {
     WE: [
       {
-        value: "07",
+        value: "Wohnung 07",
         pdfLink: "/assets/pdfs/wohnung-07.pdf",
       },
       {
-        value: "08",
+        value: "Wohnung 08",
         pdfLink: "/assets/pdfs/wohnung-08.pdf",
       },
     ],
@@ -371,7 +371,7 @@ export const tableData = [
   {
     WE: [
       {
-        value: "09",
+        value: "Wohnung 09",
         pdfLink: "/assets/pdfs/wohnung-09.pdf",
       },
     ],

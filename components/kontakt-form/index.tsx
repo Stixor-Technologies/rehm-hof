@@ -4,6 +4,7 @@ import * as Yup from "yup";
 import { useFormik } from "formik";
 import { toast } from "react-toastify";
 import { RotateCw } from "lucide-react";
+import Link from "next/link";
 
 interface InputType {
   type?: string;
@@ -249,8 +250,14 @@ const KontaktForm = () => {
               </ul>
 
               <ul>
-                <li>T 040/34 63 40</li>
-                <li>E verkauf@hyest.de</li>
+                {/* <li>T 040/34 63 40</li>
+                <li>E verkauf@hyest.de</li> */}
+                <Link className="block" href={`tel:+040/34 63 40`}>
+                  T 040/34 63 40
+                </Link>
+                <Link className="block" href={`mailto:+verkauf@hyest.de`}>
+                  E verkauf@hyest.de
+                </Link>
               </ul>
             </div>
           </div>
@@ -504,8 +511,12 @@ const KontaktForm = () => {
                 />
                 Datenschutzrichtlinie*
                 <br />
-                Ich bin mit den Erklärungen der DATENSCHUTZRICHTLINIE
-                einverstanden.
+                <span>
+                  {" "}
+                  Ich bin mit den Erklärungen der{" "}
+                  <Link href="/datenschutz">DATENSCHUTZRICHTLINIE</Link>{" "}
+                  einverstanden.
+                </span>
               </label>
 
               {formik.touched.privacyPolicy && formik.errors.privacyPolicy ? (

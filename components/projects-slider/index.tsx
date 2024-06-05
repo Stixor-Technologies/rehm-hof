@@ -101,31 +101,29 @@ const ProjectsSlider = () => {
           ))}
         </Swiper>
 
-        <div className="relative flex-1 overflow-y-auto  lg:mt-[8.438rem] 2xl:mt-[9.936rem]">
-          <table className="w-full table-fixed border-collapse">
+        <div className="relative flex-1 overflow-y-auto lg:mt-[8.438rem] 2xl:mt-[9.936rem]">
+          <table className="w-full table-auto border-collapse lg:table-fixed">
             <thead>
-              <tr className=" tracking-[0.023rem] text-primary lg:text-lg lg:leading-[1.875rem] ">
-                <th className="w-[8.125rem] pb-[1.113rem] pl-[3.75rem] font-normal">
+              <tr className=" text-[10px] leading-[clamp(1.4rem,4vw,2.125rem)] tracking-[0.023rem] text-primary sm:text-[clamp(0.6rem,2vw,1rem)] ">
+                <th className="pb-[1.113rem] font-normal lg:w-[9.125rem]">
                   WE
                 </th>
-                <th className="w-[8.625rem] pb-[1.113rem] pl-[2.875rem] font-normal">
+                <th className="pb-[1.113rem] font-normal lg:w-[5.625rem]">
                   GESCHOSS
                 </th>
-                <th className="w-[7.842rem] pb-[1.113rem] pl-[2.342rem] font-normal">
-                  GRÖßE
+                <th className="pb-[1.113rem] font-normal lg:w-[5.842rem]">
+                  m²
                 </th>
-                <th
-                  className={`w-[7.133rem] pb-[1.113rem] pl-[2.445rem] font-normal ${active === 1 && "hidden"}`}
-                >
+
+                <th className={`pb-[1.113rem]  font-normal lg:w-[5.133rem] `}>
                   GARTEN
                 </th>
-                <th className="w-[6.046rem] pb-[1.113rem]  pl-[2.983rem] font-normal">
+                <th className="pb-[1.113rem] font-normal   lg:w-[5.046rem]">
                   ZIMMER
                 </th>
-                <th className="w-[9.761rem] pb-[1.113rem] pl-[2.636rem] font-normal">
-                  KAUFPREIS
+                <th className="pb-[1.113rem]  font-normal lg:w-[6.761rem]">
+                  PREIS
                 </th>
-                <th className=" w-[3.125rem]] pb-[1.113rem] font-normal 3xl:w-auto"></th>
               </tr>
             </thead>
             <tbody>
@@ -147,17 +145,21 @@ const ProjectsSlider = () => {
                       {data?.WE?.map((we, idx) => (
                         <div
                           key={idx}
-                          className="flex items-center gap-[0.668rem]"
+                          className="flex items-center justify-center gap-[0.668rem]"
                         >
-                          <Link target="_blank" href={we.pdfLink}>
+                          <Link
+                            target="_blank"
+                            href={we.pdfLink}
+                            className="shrink-0 "
+                          >
                             <Image
                               src={LinkIcon}
-                              width={16}
-                              height={16}
+                              width={12}
+                              height={12}
                               alt=""
                             />
                           </Link>
-                          <span className="td-item flex-1">{we.value}</span>
+                          <span className="td-item">{we.value}</span>
                         </div>
                       ))}
                     </td>
@@ -177,9 +179,7 @@ const ProjectsSlider = () => {
                       ))}
                     </td>
 
-                    <td
-                      className={`td-container pl-[2.445rem] ${active === 1 && "hidden"} text-pink`}
-                    >
+                    <td className={`td-container pl-[2.445rem]  `}>
                       {data?.GARTEN?.map((garten, idx) => (
                         <span key={idx} className="td-item">
                           {garten.value}
@@ -195,16 +195,13 @@ const ProjectsSlider = () => {
                       ))}
                     </td>
 
-                    <td
-                      className={`td-container pl-[2.636rem] ${active === 1 ? "text-secondary" : "text-pink"}`}
-                    >
+                    <td className={`td-container pl-[2.636rem]`}>
                       {data?.KAUFPREIS?.map((kaufpreis, idx) => (
                         <span key={idx} className="td-item">
                           {kaufpreis.value}
                         </span>
                       ))}
                     </td>
-                    <td className={`td-container p-10`}></td>
                   </tr>
                 );
               })}
