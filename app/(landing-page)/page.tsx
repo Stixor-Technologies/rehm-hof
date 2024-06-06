@@ -160,7 +160,6 @@ const LandingPage = () => {
         (context) => {
           if (context.conditions) {
             const { isMobile, isTablet } = context.conditions;
-            // if (isDesktop) {
             const tl = gsap.timeline();
             console.log(activeImage);
             tl.to(textRef.current, {
@@ -172,7 +171,6 @@ const LandingPage = () => {
                 start: isMobile ? "top 6%" : isTablet ? "top 7%" : "top 10%",
                 end: "+=60%",
                 scrub: true,
-                // markers: true,
               },
             });
 
@@ -186,7 +184,6 @@ const LandingPage = () => {
                   trigger: textRef.current,
                   start: isMobile ? "top 7%" : isTablet ? "top 10%" : "top 20%",
                   scrub: true,
-                  markers: true,
                 },
               },
               0,
@@ -203,7 +200,6 @@ const LandingPage = () => {
               },
               0,
             );
-            // }
           }
         },
       );
