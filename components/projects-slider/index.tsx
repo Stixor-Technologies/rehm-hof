@@ -146,8 +146,8 @@ const ProjectsSlider = () => {
                         >
                           <Link
                             target="_blank"
-                            href={we.pdfLink}
-                            className="shrink-0 "
+                            href={we.pdfLink ?? "/projekt"}
+                            className={`shrink-0 ${we.pdfLink ? "" : " pointer-events-none"}`}
                           >
                             <Image
                               src={LinkIcon}

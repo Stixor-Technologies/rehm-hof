@@ -33,19 +33,6 @@ const LandingPage = () => {
   const [isSliderActive, setIsSliderActive] = useState<boolean>(false);
   const [activeImage, setActiveImage] = useState<number>(1);
 
-  const [windowSize, setWindowSize] = useState<number>(0);
-
-  useEffect(() => {
-    const handleWindowResize = () => {
-      setWindowSize(window.innerWidth);
-    };
-    handleWindowResize();
-    window.addEventListener("resize", handleWindowResize);
-    return () => {
-      window.removeEventListener("resize", handleWindowResize);
-    };
-  }, []);
-
   const DURATION = 0.3;
 
   const { contextSafe } = useGSAP();
@@ -93,28 +80,6 @@ const LandingPage = () => {
       );
     }
   });
-
-  const handleMouseEnter = () => {
-    if (windowSize < 1024)
-      if (activeImage === 1) {
-        gsap.to(image1Ref.current, {
-          yPercent: -42,
-          scale: 1.15,
-        });
-      } else {
-        gsap.to(image2Ref.current, {
-          yPercent: -18,
-        });
-      }
-  };
-
-  const handleMouseLeave = () => {
-    if (windowSize < 1024)
-      gsap.to(activeImage === 1 ? image1Ref.current : image2Ref.current, {
-        yPercent: 0,
-        scale: 1,
-      });
-  };
 
   const handleMouseEnterCollage = contextSafe(() => {
     const tl = gsap.timeline();
@@ -188,53 +153,57 @@ const LandingPage = () => {
       const mm = gsap.matchMedia();
       mm.add(
         {
+          isMobile: "(max-width: 640px)",
+          isTablet: "(min-width: 642px) and (max-width: 1023px)",
           isDesktop: "(min-width: 1024px)",
         },
         (context) => {
           if (context.conditions) {
-            const { isDesktop } = context.conditions;
-            if (isDesktop) {
-              const tl = gsap.timeline();
-              console.log(activeImage);
-              tl.to(textRef.current, {
-                y: -832 - (textRef.current?.clientHeight || 0) - 64,
-                duration: 1,
-                ease: "none",
+            const { isMobile, isTablet, isDesktop } = context.conditions;
+            // if (isDesktop) {
+            const tl = gsap.timeline();
+            console.log(activeImage);
+            tl.to(textRef.current, {
+              y: -832 - (textRef.current?.clientHeight || 0) - 64,
+              duration: 1,
+              ease: "none",
+              scrollTrigger: {
+                trigger: bannerContainer.current,
+                start: isMobile ? "top 6%" : isTablet ? "top 7%" : "top 10%",
+                end: "+=60%",
+                scrub: true,
+                // markers: true,
+              },
+            });
+
+            tl.to(
+              image1Ref.current,
+              {
+                yPercent: -42,
+                scale: 1.15,
+                duration: 0.3,
                 scrollTrigger: {
-                  trigger: bannerContainer.current,
-                  start: "top 10%",
-                  end: "+=60%",
+                  trigger: textRef.current,
+                  start: isMobile ? "top 7%" : isTablet ? "top 10%" : "top 20%",
+                  scrub: true,
+                  markers: true,
+                },
+              },
+              0,
+            ).to(
+              image2Ref.current,
+              {
+                yPercent: -18,
+                duration: 0.3,
+                scrollTrigger: {
+                  trigger: textRef.current,
+                  start: isMobile ? "top 7%" : isTablet ? "top 10%" : "top 20%",
                   scrub: true,
                 },
-              });
-
-              tl.to(
-                image1Ref.current,
-                {
-                  yPercent: -42,
-                  scale: 1.15,
-                  duration: 0.3,
-                  scrollTrigger: {
-                    trigger: textRef.current,
-                    start: "top 20%",
-                    scrub: true,
-                  },
-                },
-                0,
-              ).to(
-                image2Ref.current,
-                {
-                  yPercent: -18,
-                  duration: 0.3,
-                  scrollTrigger: {
-                    trigger: textRef.current,
-                    start: "top 20%",
-                    scrub: true,
-                  },
-                },
-                0,
-              );
-            }
+              },
+              0,
+            );
+            // }
           }
         },
       );
@@ -259,11 +228,7 @@ const LandingPage = () => {
           onClick={slideImage}
           className=" absolute right-0 top-4 z-10 w-24 max-w-[15.875rem] cursor-pointer sm:top-16 lg:top-[3.962rem] lg:h-[4.563rem] lg:w-auto "
         />
-        <div
-          onMouseEnter={handleMouseEnter}
-          onMouseLeave={handleMouseLeave}
-          className="relative mx-auto h-full w-full max-w-[120rem] overflow-hidden"
-        >
+        <div className="relative mx-auto h-full w-full max-w-[120rem] overflow-hidden">
           <div className=" z-10 flex flex-nowrap items-start">
             <div
               ref={image1Ref}
@@ -293,11 +258,7 @@ const LandingPage = () => {
           </div>
         </div>
 
-        <div
-          className="absolute inset-0 flex max-w-[1118px] items-center bg-hero-gradient 4xl:block"
-          onMouseEnter={handleMouseEnter}
-          onMouseLeave={handleMouseLeave}
-        >
+        <div className="absolute inset-0 flex max-w-[1118px] items-center bg-hero-gradient 4xl:block">
           <div className="container xl:ml-[calc((105vw-1278px)/2)] xl:pl-0 2xl:ml-[calc((105vw-1534px)/2)] 4xl:ml-[11.25rem] 4xl:mt-[176px]">
             <div ref={textRef}>
               <p className="text-[clamp(1.5rem,5.5vw,6.563rem)] uppercase leading-tight text-white 3xl:leading-[6.75rem]">
