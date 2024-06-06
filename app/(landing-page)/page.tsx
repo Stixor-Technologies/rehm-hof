@@ -13,8 +13,11 @@ import Building from "@/public/assets/images/home-page/building.jpeg";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import ProjectsHighlight from "@/components/project-highlight";
+import { ScrollTrigger } from "gsap/all";
 
 const LandingPage = () => {
+  gsap.registerPlugin(ScrollTrigger);
+
   const buttonRef = useRef<HTMLImageElement | null>(null);
   const image1Ref = useRef<HTMLDivElement | null>(null);
   const image2Ref = useRef<HTMLDivElement | null>(null);
@@ -23,6 +26,9 @@ const LandingPage = () => {
   const collageImage2Container = useRef<HTMLDivElement | null>(null);
   const collageImage1Ref = useRef<HTMLImageElement | null>(null);
   const collageImage2Ref = useRef<HTMLImageElement | null>(null);
+
+  const bannerContainer = useRef<HTMLElement | null>(null);
+  const textRef = useRef<HTMLDivElement | null>(null);
 
   const [isSliderActive, setIsSliderActive] = useState<boolean>(false);
   const [activeImage, setActiveImage] = useState<number>(1);
@@ -35,11 +41,18 @@ const LandingPage = () => {
     const tl = gsap.timeline();
 
     setIsSliderActive(!isSliderActive);
+    tl.to(bannerContainer.current, {
+      y: 0,
+    });
     if (!isSliderActive) {
       setActiveImage(2);
-      tl.to(buttonRef.current, {
-        right: -40,
-      }).to(
+      tl.to(
+        buttonRef.current,
+        {
+          right: -40,
+        },
+        0,
+      ).to(
         [image1Ref.current, image2Ref.current],
         {
           xPercent: 100,
@@ -50,9 +63,13 @@ const LandingPage = () => {
       );
     } else {
       setActiveImage(1);
-      tl.to(buttonRef.current, {
-        right: 0,
-      }).to(
+      tl.to(
+        buttonRef.current,
+        {
+          right: 0,
+        },
+        0,
+      ).to(
         [image1Ref.current, image2Ref.current],
         {
           xPercent: 0,
@@ -63,27 +80,6 @@ const LandingPage = () => {
       );
     }
   });
-
-  const handleMouseEnter = () => {
-    if (activeImage === 1) {
-      // TODO: These Gsap transition will be different for both images, need to change them later
-      gsap.to(image1Ref.current, {
-        yPercent: -42,
-        scale: 1.15,
-      });
-    } else {
-      gsap.to(image2Ref.current, {
-        yPercent: -18,
-      });
-    }
-  };
-
-  const handleMouseLeave = () => {
-    gsap.to(activeImage === 1 ? image1Ref.current : image2Ref.current, {
-      yPercent: 0,
-      scale: 1,
-    });
-  };
 
   const handleMouseEnterCollage = contextSafe(() => {
     const tl = gsap.timeline();
@@ -152,11 +148,77 @@ const LandingPage = () => {
       );
   });
 
+  useGSAP(
+    () => {
+      const mm = gsap.matchMedia();
+      mm.add(
+        {
+          isMobile: "(max-width: 640px)",
+          isTablet: "(min-width: 642px) and (max-width: 1023px)",
+          isDesktop: "(min-width: 1024px)",
+        },
+        (context) => {
+          if (context.conditions) {
+            const { isMobile, isTablet } = context.conditions;
+            // if (isDesktop) {
+            const tl = gsap.timeline();
+            console.log(activeImage);
+            tl.to(textRef.current, {
+              y: -832 - (textRef.current?.clientHeight || 0) - 64,
+              duration: 1,
+              ease: "none",
+              scrollTrigger: {
+                trigger: bannerContainer.current,
+                start: isMobile ? "top 6%" : isTablet ? "top 7%" : "top 10%",
+                end: "+=60%",
+                scrub: true,
+                // markers: true,
+              },
+            });
+
+            tl.to(
+              image1Ref.current,
+              {
+                yPercent: -42,
+                scale: 1.15,
+                duration: 0.3,
+                scrollTrigger: {
+                  trigger: textRef.current,
+                  start: isMobile ? "top 7%" : isTablet ? "top 10%" : "top 20%",
+                  scrub: true,
+                  markers: true,
+                },
+              },
+              0,
+            ).to(
+              image2Ref.current,
+              {
+                yPercent: -18,
+                duration: 0.3,
+                scrollTrigger: {
+                  trigger: textRef.current,
+                  start: isMobile ? "top 7%" : isTablet ? "top 10%" : "top 20%",
+                  scrub: true,
+                },
+              },
+              0,
+            );
+            // }
+          }
+        },
+      );
+    },
+    { scope: bannerContainer },
+  );
+
   return (
     <div>
       {/* section# 1*/}
 
-      <section className="relative mx-auto h-[41.667vw] max-h-[800px] w-full max-w-[120rem] overflow-hidden">
+      <section
+        ref={bannerContainer}
+        className="relative mx-auto h-[41.667vw] max-h-[800px] w-full max-w-[120rem] overflow-hidden"
+      >
         <Image
           src={OSVG}
           ref={buttonRef}
@@ -166,11 +228,7 @@ const LandingPage = () => {
           onClick={slideImage}
           className=" absolute right-0 top-4 z-10 w-24 max-w-[15.875rem] cursor-pointer sm:top-16 lg:top-[3.962rem] lg:h-[4.563rem] lg:w-auto "
         />
-        <div
-          onMouseEnter={handleMouseEnter}
-          onMouseLeave={handleMouseLeave}
-          className="relative mx-auto h-full w-full max-w-[120rem] overflow-hidden"
-        >
+        <div className="relative mx-auto h-full w-full max-w-[120rem] overflow-hidden">
           <div className=" z-10 flex flex-nowrap items-start">
             <div
               ref={image1Ref}
@@ -200,17 +258,15 @@ const LandingPage = () => {
           </div>
         </div>
 
-        <div
-          className="absolute inset-0 flex max-w-[1118px] items-center bg-hero-gradient 4xl:block"
-          onMouseEnter={handleMouseEnter}
-          onMouseLeave={handleMouseLeave}
-        >
+        <div className="absolute inset-0 flex max-w-[1118px] items-center bg-hero-gradient 4xl:block">
           <div className="container xl:ml-[calc((105vw-1278px)/2)] xl:pl-0 2xl:ml-[calc((105vw-1534px)/2)] 4xl:ml-[11.25rem] 4xl:mt-[176px]">
-            <p className="text-[clamp(1.5rem,5.5vw,6.563rem)] uppercase leading-tight text-white 3xl:leading-[6.75rem]">
-              Leben <br /> Zwischen <br /> stadtpark <br />
-              <span className=" font-semibold text-primary">& </span>
-              alster
-            </p>
+            <div ref={textRef}>
+              <p className="text-[clamp(1.5rem,5.5vw,6.563rem)] uppercase leading-tight text-white 3xl:leading-[6.75rem]">
+                Leben <br /> Zwischen <br /> stadtpark <br />
+                <span className=" font-semibold text-primary">& </span>
+                alster
+              </p>
+            </div>
           </div>
         </div>
       </section>
