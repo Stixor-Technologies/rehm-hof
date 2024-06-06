@@ -111,21 +111,6 @@ export const tableData = [
       },
     ],
 
-    GARTEN: [
-      {
-        value: "88.4 m²",
-      },
-      {
-        value: "92.7 m²",
-      },
-      {
-        value: "49.3 m²",
-      },
-      {
-        value: "46.0 m²",
-      },
-    ],
-
     ZIMMER: [
       {
         value: "4",
@@ -143,7 +128,7 @@ export const tableData = [
 
     KAUFPREIS: [
       {
-        value: "1.6.00.000 €",
+        value: "1.600.000 €",
       },
       {
         value: "2.000.000 €",
@@ -206,21 +191,6 @@ export const tableData = [
       },
     ],
 
-    GARTEN: [
-      {
-        value: "88.4 m²",
-      },
-      {
-        value: "92.7 m²",
-      },
-      {
-        value: "49.3 m²",
-      },
-      {
-        value: "46.0 m²",
-      },
-    ],
-
     ZIMMER: [
       {
         value: "4",
@@ -238,7 +208,7 @@ export const tableData = [
 
     KAUFPREIS: [
       {
-        value: "1.6.00.000 €",
+        value: "1.600.000 €",
       },
       {
         value: "2.000.000 €",
@@ -279,15 +249,6 @@ export const tableData = [
       },
       {
         value: "156.75 m²",
-      },
-    ],
-
-    GARTEN: [
-      {
-        value: "-",
-      },
-      {
-        value: "-",
       },
     ],
 
@@ -340,15 +301,6 @@ export const tableData = [
       },
     ],
 
-    GARTEN: [
-      {
-        value: "-",
-      },
-      {
-        value: "-",
-      },
-    ],
-
     ZIMMER: [
       {
         value: "4",
@@ -385,12 +337,6 @@ export const tableData = [
     GRÖßE: [
       {
         value: "167.62 m²",
-      },
-    ],
-
-    GARTEN: [
-      {
-        value: "-",
       },
     ],
 

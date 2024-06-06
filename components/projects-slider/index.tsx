@@ -53,7 +53,7 @@ const ProjectsSlider = () => {
   ];
   return (
     <div className=" container ml-auto mt-[4.188rem] max-w-[120rem] pl-4 sm:pl-8 lg:pr-0 3xl:pl-[11.25rem]">
-      <div className="flex flex-col gap-10 lg:flex-row 2xl:gap-[6.273rem]">
+      <div className="flex flex-col gap-10 lg:flex-row lg:gap-5 2xl:gap-[6.273rem]">
         <Swiper
           effect={"fade"}
           navigation={true}
@@ -61,7 +61,7 @@ const ProjectsSlider = () => {
             clickable: true,
           }}
           modules={[EffectFade, Navigation, Pagination]}
-          className="mySwiper !mx-0 lg:w-1/2 lg:max-w-[43.728rem]"
+          className="mySwiper !mx-0 lg:w-[45%] lg:max-w-[43.728rem]"
           onPaginationUpdate={(swiper) => {
             setActive(swiper?.activeIndex);
           }}
@@ -87,7 +87,7 @@ const ProjectsSlider = () => {
                   </div>
                 </div>
 
-                <div className=" mt-6 lg:ml-[3.625rem] lg:mt-[2.526rem] ">
+                <div className=" mt-6 lg:ml-[1.5rem]  lg:mt-[2.526rem] xl:ml-[3.625rem] ">
                   <Image
                     src={slide?.map}
                     width={642}
@@ -102,26 +102,23 @@ const ProjectsSlider = () => {
         </Swiper>
 
         <div className="relative flex-1 overflow-y-auto lg:mt-[8.438rem] 2xl:mt-[9.936rem]">
-          <table className="w-full table-auto border-collapse lg:table-fixed">
+          <table className="w-full table-fixed border-collapse lg:table-fixed">
             <thead>
-              <tr className=" text-[10px] leading-[clamp(1.4rem,4vw,2.125rem)] tracking-[0.023rem] text-primary sm:text-[clamp(0.6rem,2vw,1rem)] ">
-                <th className="pb-[1.113rem] font-normal lg:w-[9.125rem]">
+              <tr className="text-[10px] leading-[clamp(1.4rem,4vw,2.125rem)] tracking-[0.023rem] text-primary sm:text-[clamp(0.6rem,2vw,1rem)] ">
+                <th className="w-[0.5rem] pb-[1.113rem] font-normal lg:w-[9.125rem]">
                   WE
                 </th>
-                <th className="pb-[1.113rem] font-normal lg:w-[5.625rem]">
+                <th className="w-[0.3rem] pb-[1.113rem] font-normal lg:w-[5.625rem]">
                   GESCHOSS
                 </th>
-                <th className="pb-[1.113rem] font-normal lg:w-[5.842rem]">
+                <th className="w-[0.3rem] pb-[1.113rem] font-normal lg:w-[5.842rem]">
                   m²
                 </th>
 
-                <th className={`pb-[1.113rem]  font-normal lg:w-[5.133rem] `}>
-                  GARTEN
-                </th>
-                <th className="pb-[1.113rem] font-normal   lg:w-[5.046rem]">
+                <th className="w-[0.1rem] pb-[1.113rem] font-normal   lg:w-[3.046rem]">
                   ZIMMER
                 </th>
-                <th className="pb-[1.113rem]  font-normal lg:w-[6.761rem]">
+                <th className="w-[0.4rem] pb-[1.113rem]  font-normal lg:w-[6.761rem]">
                   PREIS
                 </th>
               </tr>
@@ -163,7 +160,7 @@ const ProjectsSlider = () => {
                         </div>
                       ))}
                     </td>
-                    <td className={`td-container pl-[2.875rem]`}>
+                    <td className={`td-container`}>
                       {data?.GESCHOSS?.map((geschoss, idx) => (
                         <span key={idx} className="td-item">
                           {geschoss.value}
@@ -171,7 +168,7 @@ const ProjectsSlider = () => {
                       ))}
                     </td>
 
-                    <td className={`td-container pl-[2.342rem]`}>
+                    <td className={`td-container`}>
                       {data?.GRÖßE?.map((grobe, idx) => (
                         <span key={idx} className="td-item">
                           {grobe.value}
@@ -179,15 +176,7 @@ const ProjectsSlider = () => {
                       ))}
                     </td>
 
-                    <td className={`td-container pl-[2.445rem]  `}>
-                      {data?.GARTEN?.map((garten, idx) => (
-                        <span key={idx} className="td-item">
-                          {garten.value}
-                        </span>
-                      ))}
-                    </td>
-
-                    <td className={`td-container pl-[2.983rem]`}>
+                    <td className={`td-container`}>
                       {data?.ZIMMER?.map((zimmer, idx) => (
                         <span key={idx} className="td-item">
                           {zimmer.value}
@@ -195,7 +184,7 @@ const ProjectsSlider = () => {
                       ))}
                     </td>
 
-                    <td className={`td-container pl-[2.636rem]`}>
+                    <td className={`td-container`}>
                       {data?.KAUFPREIS?.map((kaufpreis, idx) => (
                         <span key={idx} className="td-item">
                           {kaufpreis.value}
