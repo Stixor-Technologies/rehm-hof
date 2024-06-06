@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useRef, useState } from "react";
 import Image from "next/image";
 import OSVG from "@/public/assets/images/o.svg";
 import logo from "@/public/assets/images/logo.svg";
@@ -159,7 +159,7 @@ const LandingPage = () => {
         },
         (context) => {
           if (context.conditions) {
-            const { isMobile, isTablet, isDesktop } = context.conditions;
+            const { isMobile, isTablet } = context.conditions;
             // if (isDesktop) {
             const tl = gsap.timeline();
             console.log(activeImage);
