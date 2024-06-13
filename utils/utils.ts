@@ -312,10 +312,10 @@ export const tableData = [
 
     KAUFPREIS: [
       {
-        value: "1.900.000 €",
+        value: "2.025.000 €",
       },
       {
-        value: "2.150.000 €",
+        value: "2.250.000 €",
       },
     ],
   },
