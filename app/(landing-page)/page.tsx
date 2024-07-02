@@ -316,7 +316,7 @@ const LandingPage = () => {
                 Die Vielfalt der Wohnmöglichkeiten in diesem Neubauprojekt ist
                 bemerkenswert: von Stadthäusern mit privaten Gärten bis hin zu
                 einem exklusiven Penthouse mit Dachterrasse und großzügigen
-                Etagenwohnungen. Die Wohnflächen variieren zwischen 112 und 176
+                Etagenwohnungen. Die Wohnflächen variieren zwischen 116 und 177
                 Quadratmetern, um den Bedürfnissen verschiedener Lebensstile
                 gerecht zu werden. Hier vereinen sich großzügige Räume mit
                 durchdachtem Design.
